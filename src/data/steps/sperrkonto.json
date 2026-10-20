@@ -1,0 +1,125 @@
+{
+  "id": "sperrkonto",
+  "city": "munich",
+  "phase": "pre_arrival",
+  "official_title": "Sperrkonto",
+  "official_title_check": { "kind": "verified", "source": "https://www.auswaertiges-amt.de/de/sperrkonto/375488" },
+  "title": {
+    "en": "Opening a blocked account",
+    "tr": "Bloke hesap açma (Sperrkonto)",
+    "de": "Sperrkonto einrichten"
+  },
+  "summary": {
+    "en": "A blocked account (Sperrkonto) shows you can cover your living costs in Germany. You need it for your student visa or residence permit, and you can only take out a fixed amount each month.",
+    "tr": "Bloke hesap (Sperrkonto), Almanya'da geçimini karşılayabildiğini gösteriyor. Öğrenci vizesi ya da oturum izni başvurusunda isteniyor; hesaptan her ay yalnız belirli bir tutar çekebiliyorsun.",
+    "de": "Das Sperrkonto zeigt, dass du deinen Lebensunterhalt in Deutschland bezahlen kannst. Du brauchst es für Visum oder Aufenthaltserlaubnis, und pro Monat kannst du nur einen festen Betrag abheben."
+  },
+  "authority": null,
+  "documents": [
+    {
+      "official": "Ausgefülltes Antragsformular des Kontoanbieters (Kontoeröffnungsformular)",
+      "plain": {
+        "en": "This form comes from the account provider (a bank or a similar service provider) and is filled in to open the account; this can usually be done online.",
+        "tr": "Hesabı açmak için hesap sağlayıcının (banka ya da benzeri bir hizmet) verdiği form. Çoğu zaman internetten doldurulur.",
+        "de": "Dieses Formular stammt vom Kontoanbieter (Bank oder ähnlicher Dienstleister) und wird zur Kontoeröffnung ausgefüllt; in der Regel ist das online möglich."
+      }
+    },
+    {
+      "official": "Kopie des gültigen Reisepasses",
+      "plain": {
+        "en": "A copy of your valid passport, sent to the account provider. In some procedures, the forms and the passport copy are certified at a German mission abroad.",
+        "tr": "Geçerli pasaportunun kopyası; hesap sağlayıcıya gönderilir. Bazı işlemlerde formlar ve pasaport kopyası bir Alman temsilciliğinde onaylatılır.",
+        "de": "Eine Kopie deines gültigen Reisepasses, die an den Kontoanbieter geschickt wird. In manchen Verfahren werden die Formulare und die Passkopie bei einer deutschen Auslandsvertretung beglaubigt."
+      }
+    },
+    {
+      "official": "Angabe des Sperrbegünstigten (Auslandsvertretung oder zuständige Ausländerbehörde)",
+      "plain": {
+        "en": "You name the authority that is entered as beneficiary of the account (Sperrbegünstigter): the German mission abroad if you apply before entering Germany, or the local Ausländerbehörde once you're already in the country. The beneficiary cannot access the money itself.",
+        "tr": "Hesabın lehtarı (Sperrbegünstigter) olarak yazılacak kurum: Almanya'ya girmeden önce başvuruyorsan ilgili Alman temsilciliği, girdikten sonra yetkili Ausländerbehörde. Lehtar kurum paraya kendisi erişemez.",
+        "de": "Hier gibst du die Stelle an, die als Sperrbegünstigter eingetragen wird: die deutsche Auslandsvertretung bei einer Beantragung vor der Einreise, oder die zuständige Ausländerbehörde nach der Einreise. Der Sperrbegünstigte selbst kann nicht auf das Guthaben zugreifen."
+      }
+    },
+    {
+      "official": "Einzahlungsnachweis über den geforderten Regelbedarf (z. B. 11.904 € jährlich für Studierende, Stand 06.10.2026)",
+      "plain": {
+        "en": "Proof that the deposited amount covers the required yearly sum: 11,904 euros for students (992 euros per month for 12 months), as of 6 October 2026.",
+        "tr": "Yatırılan paranın gereken yıllık tutarı karşıladığını gösteren belge: öğrenciler için 11.904 Euro (12 ay boyunca ayda 992 Euro), 06.10.2026 itibarıyla.",
+        "de": "Nachweis, dass der eingezahlte Betrag die geforderte Jahressumme erreicht: Für Studierende sind das 11.904 Euro (12 Monate à 992 Euro), Stand 06.10.2026."
+      }
+    },
+    {
+      "official": "Online-Formular zur Aufhebung des Sperrkontos",
+      "plain": {
+        "en": "The online form used to close the blocked account once it's no longer needed. In Munich, processing usually takes 6 to 8 weeks.",
+        "tr": "Hesaba artık ihtiyacın kalmadığında kapatmak için kullanılan çevrimiçi form. Münih'te işlem genelde 6-8 hafta sürüyor.",
+        "de": "Das Online-Formular, mit dem das Sperrkonto aufgehoben wird, wenn es nicht mehr benötigt wird. In München dauert die Bearbeitung meist 6 bis 8 Wochen."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": null,
+    "text": {
+      "en": "There is no fixed deadline in days. You show proof of the required amount when you submit your visa or residence permit application, and the account is usually set up for one year.",
+      "tr": "Gün sayısıyla belirlenmiş bir yasal süre yok. Gerekli tutarın yattığını vize veya oturum izni başvurusu yaparken gösterirsin; hesap genelde bir yıllığına açılır.",
+      "de": "Es gibt keine feste Frist in Tagen. Der Nachweis über den erforderlichen Betrag wird bei der Visum- oder Aufenthaltstitel-Beantragung vorgelegt, und das Konto wird in der Regel für ein Jahr eingerichtet."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "Depositing less than the required yearly amount (11,904 euros for students as of 6 October 2026). The account is then not accepted as proof.",
+      "tr": "Gereken yıllık tutardan (öğrenciler için 11.904 Euro, 06.10.2026 itibarıyla) az para yatırmak. Hesap o zaman kanıt olarak kabul edilmez.",
+      "de": "Weniger als den geforderten Jahresbetrag einzahlen (für Studierende 11.904 Euro, Stand 06.10.2026). Das Konto wird dann nicht als Nachweis akzeptiert."
+    },
+    {
+      "en": "Naming the wrong body as Sperrbegünstigter. It's the German mission abroad before you enter Germany, and the local Ausländerbehörde after you arrive.",
+      "tr": "Sperrbegünstigter olarak yanlış kurumu yazmak. Almanya'ya girmeden önce ilgili Alman temsilciliği, girdikten sonra yetkili Ausländerbehörde yazılır.",
+      "de": "Die falsche Stelle als Sperrbegünstigten angeben. Vor der Einreise ist es die deutsche Auslandsvertretung, nach der Einreise die zuständige Ausländerbehörde."
+    },
+    {
+      "en": "Opening an ordinary account instead of a real Sperrkonto. A Sperrkonto is defined by a fixed amount that can be withdrawn each month and by a named Sperrbegünstigter.",
+      "tr": "Gerçek bir Sperrkonto yerine sıradan bir hesap açmak. Sperrkonto'yu ayırt eden iki şey var: her ay çekilebilen sabit bir tutar ve belirtilmiş bir Sperrbegünstigter.",
+      "de": "Ein gewöhnliches Konto statt eines echten Sperrkontos eröffnen. Ein Sperrkonto zeichnet sich durch einen festen Betrag aus, der pro Monat abgehoben werden darf, und durch einen benannten Sperrbegünstigten."
+    },
+    {
+      "en": "Leaving the closing (Aufhebung) request until the last moment. In Munich, processing usually takes 6 to 8 weeks.",
+      "tr": "Hesabı kapatma (Aufhebung) başvurusunu son ana bırakmak. Münih'te işlem genelde 6-8 hafta sürüyor.",
+      "de": "Die Aufhebung des Sperrkontos zu spät beantragen. In München dauert die Bearbeitung meist 6 bis 8 Wochen."
+    },
+    {
+      "en": "Forgetting to give your Sperrkonto provider the details of your new German account. With online providers, the monthly amount is usually paid into a current account (Girokonto) you open after arrival; at some banks, such as Sparkasse, you use the money directly from the Sperrkonto.",
+      "tr": "Almanya'da açtığın yeni hesabın bilgilerini Sperrkonto sağlayıcına vermeyi unutmak. Online sağlayıcılarda aylık tutar genelde geldikten sonra açtığın vadesiz hesaba (Girokonto) ödenir; Sparkasse gibi bazı bankalarda ise parayı doğrudan Sperrkonto'dan kullanırsın.",
+      "de": "Vergessen, dem Sperrkonto-Anbieter die Daten des neuen deutschen Kontos zu geben. Bei Online-Anbietern wird der Monatsbetrag in der Regel auf ein Girokonto ausgezahlt, das du nach der Ankunft eröffnest; bei manchen Banken, etwa der Sparkasse, nutzt du das Geld direkt vom Sperrkonto."
+    }
+  ],
+  "booking_url": null,
+  "appointment": {
+    "mode": "no_appointment",
+    "walk_in": null,
+    "phone": null,
+    "slot_release": null,
+    "note": {
+      "en": "No appointment with an authority: the Sperrkonto is opened with a provider before arrival.",
+      "tr": "Makam randevusu yok: Sperrkonto, Almanya'ya gelmeden önce bir sağlayıcıda açılır.",
+      "de": "Kein Behördentermin: Das Sperrkonto wird vor der Einreise bei einem Anbieter eröffnet."
+    },
+    "sources": [
+      "https://www.auswaertiges-amt.de/de/service/visa-und-aufenthalt/nationale-visa/visa-schule-studium-sprachkurs/sperrkonto",
+      "https://www.auswaertiges-amt.de/de/sperrkonto/375488"
+    ]
+  },
+  "prerequisites": [],
+  "typical_duration_days": null,
+  "sources": [
+    "https://www.auswaertiges-amt.de/de/service/visa-und-aufenthalt/nationale-visa/visa-schule-studium-sprachkurs/sperrkonto",
+    "https://www.auswaertiges-amt.de/de/sperrkonto/375488",
+    "https://tripolis.diplo.de/ly-de/service/05-visaeinreise/2170746-2170746",
+    "https://quito.diplo.de/ec-de/service/05-visaeinreise/2433880-2433880",
+    "https://stadt.muenchen.de/service/info/studenten/10308882/",
+    "https://stadt.muenchen.de/service/info/studenten/1089339/",
+    "https://www.bayernportal.de/dokumente/leistung/7888647521",
+    "https://www.fintiba.com/de/germany/visa/financial-proof",
+    "https://www.sparkasse.de/themen/studium/sperrkonto.html"
+  ],
+  "last_verified": "2026-10-06"
+}

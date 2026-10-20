@@ -1,0 +1,130 @@
+{
+  "id": "semesterticket",
+  "city": "munich",
+  "phase": "first_90_days",
+  "official_title": "Deutschlandticket für Studierende (MVV/MVG-Ermäßigungsticket, ehemals Semesterticket)",
+  "official_title_check": { "kind": "verified", "source": "https://www.mvg.de/abos-tickets/abos/ermaessigungsticket/hilfe-ermaessigungsticket/ermaessigungsticket-gueltigkeit.html" },
+  "title": {
+    "en": "Student Deutschlandticket",
+    "tr": "Öğrenci bileti (Deutschlandticket)",
+    "de": "Deutschlandticket für Studierende"
+  },
+  "summary": {
+    "en": "The Ermäßigungsticket is a discounted Deutschlandticket for students in Bavaria: 43 euros a month instead of 63 for the regular one (checked with MVG on 6 October 2026). You order it online in the MVG customer portal and need to prove you're a student. It's valid on local and regional transport across Germany.",
+    "tr": "Ermäßigungsticket, Bavyera'daki öğrenciler için indirimli Deutschlandticket. Ayda 43 avro, normal Deutschlandticket ise 63 avro (MVG'den 06.10.2026'da kontrol edildi). MVG müşteri portalından online sipariş edilir, öğrenci olduğunu belgelemen gerekir. Almanya genelinde şehir içi ve bölgesel toplu taşımada geçer.",
+    "de": "Das Ermäßigungsticket ist ein günstigeres Deutschlandticket für Studierende in Bayern: 43 statt 63 Euro im Monat (bei der MVG geprüft am 06.10.2026). Du bestellst es online im MVG-Kundenportal und weist nach, dass du studierst. Es gilt deutschlandweit im Nah- und Regionalverkehr."
+  },
+  "authority": {
+    "official": "MVG (Münchner Verkehrsgesellschaft) im Auftrag des MVV",
+    "plain": {
+      "en": "MVG, the Munich transport company, issues and manages the ticket on behalf of the MVV, the Munich transport network. It is ordered through the MVG customer portal, not at a counter.",
+      "tr": "MVG (Münih ulaşım şirketi), bileti MVV (Münih ulaşım birliği) adına düzenler ve yönetir. Bilet gişeden değil, MVG müşteri portalından sipariş edilir.",
+      "de": "MVG, die Münchner Verkehrsgesellschaft, stellt das Ticket im Auftrag des MVV aus und verwaltet es. Die Bestellung läuft über das MVG-Kundenportal, nicht am Schalter."
+    }
+  },
+  "documents": [
+    {
+      "official": "Immatrikulationsbescheinigung",
+      "plain": {
+        "en": "The current certificate of enrolment from your university. It must not be older than two months when uploaded.",
+        "tr": "Üniversitenden aldığın güncel kayıt belgesi. Yüklediğin anda en fazla 2 aylık olmalı.",
+        "de": "Die aktuelle Studienbescheinigung deiner Hochschule. Sie darf beim Hochladen nicht älter als zwei Monate sein."
+      }
+    },
+    {
+      "official": "Nachweisformular für das Ermäßigungsticket",
+      "plain": {
+        "en": "A form that proves student status, used instead of the Immatrikulationsbescheinigung. The university must stamp it, and it also must not be older than two months.",
+        "tr": "Immatrikulationsbescheinigung yerine kullanılabilen, öğrenci olduğunu kanıtlayan bir form. Üniversitenin mühürlemesi gerekir; bu da en fazla 2 aylık olmalı.",
+        "de": "Ein Formular als Nachweis des Studierendenstatus, das anstelle der Immatrikulationsbescheinigung verwendet wird. Es muss von der Hochschule gestempelt sein und darf ebenfalls nicht älter als zwei Monate sein."
+      }
+    },
+    {
+      "official": "Hochschul-Login (Shibboleth-Verifizierung)",
+      "plain": {
+        "en": "Many universities let students verify their status by logging in with their university account instead of uploading a document. According to MVG's list of universities (version of 25 February 2025), this applies to TUM and LMU.",
+        "tr": "Birçok üniversitede belge yüklemek yerine üniversite hesabınla giriş yaparak öğrenci olduğunu doğrulayabilirsin. MVG'nin üniversite listesine (25.02.2025 sürümü) göre bu, TUM ve LMU için geçerli.",
+        "de": "Viele Hochschulen ermöglichen den Nachweis über den Hochschul-Login anstatt eines Dokument-Uploads. Laut MVG-Hochschulliste (Stand 25.02.2025) gilt das für die TUM und die LMU."
+      }
+    },
+    {
+      "official": "SEPA-Lastschriftmandat (Bankverbindung/IBAN)",
+      "plain": {
+        "en": "Payment for the ticket is collected monthly by SEPA direct debit from a bank account. The debit always happens on the first day of the month.",
+        "tr": "Bilet ücreti her ay SEPA otomatik ödemeyle hesabından çekilir. Çekim her ayın 1'inde yapılır.",
+        "de": "Die Ticketkosten werden monatlich per SEPA-Lastschrift vom Bankkonto abgebucht. Die Abbuchung erfolgt immer zum Monatsersten."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": 10,
+    "text": {
+      "en": "Ordering and cancelling follow the same cutoff: the 10th calendar day of the month. Order by the 10th and the ticket starts that same month. Cancel by the 10th and the ticket still runs through that month, then stops from the next month on. Miss the 10th, and the change shifts one month later.",
+      "tr": "Sipariş ve iptal için aynı sınır geçerli: ayın 10. takvim günü. 10'una kadar sipariş verirsen bilet o ay başlar. 10'una kadar iptal edersen bilet o ayın sonuna kadar geçerli kalır ve sonraki aydan itibaren durur. 10'unu kaçırırsan işlem bir ay kayar.",
+      "de": "Für Bestellung und Kündigung gilt derselbe Stichtag: der 10. Kalendertag des Monats. Bestellt bis zum 10., beginnt das Ticket noch im selben Monat. Gekündigt bis zum 10., läuft das Ticket den Monat noch zu Ende und endet ab dem Folgemonat. Nach dem 10. verschiebt sich beides um einen Monat."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "Thinking the Studierendenausweis (student ID card) is enough on its own. MVG does not accept it as proof.",
+      "tr": "Öğrenci kartının (Studierendenausweis) tek başına yeteceğini sanmak. MVG bunu kanıt olarak kabul etmiyor.",
+      "de": "Den Studierendenausweis für ausreichend halten. MVG akzeptiert ihn nicht als Nachweis."
+    },
+    {
+      "en": "Uploading an Immatrikulationsbescheinigung or Nachweisformular that is older than two months. It gets rejected.",
+      "tr": "2 aydan eski bir Immatrikulationsbescheinigung ya da Nachweisformular yüklemek. Kabul edilmiyor.",
+      "de": "Eine Immatrikulationsbescheinigung oder ein Nachweisformular hochladen, das älter als zwei Monate ist. Das wird abgelehnt."
+    },
+    {
+      "en": "Assuming the old MVV-Semesterticket / IsarCard Semester system still applies. It has been suspended since winter semester 2023/24.",
+      "tr": "Eski MVV-Semesterticket / IsarCard Semester sisteminin hâlâ geçerli olduğunu sanmak. Bu sistem 2023/24 kış döneminden beri askıda.",
+      "de": "Annehmen, das alte MVV-Semesterticket bzw. die IsarCard Semester gelte noch. Dieses System ist seit dem Wintersemester 2023/24 ausgesetzt."
+    },
+    {
+      "en": "Forgetting to renew the proof of student status. The ticket is billed monthly, but students have to prove their status again after 6 months (roughly once per semester).",
+      "tr": "Öğrenci belgesini yenilemeyi unutmak. Bilet aylık faturalanıyor, ama 6 ay sonra (yaklaşık her dönem) öğrenci olduğunu yeniden kanıtlaman gerekiyor.",
+      "de": "Die Erneuerung des Studierendennachweises vergessen. Das Ticket wird monatlich abgerechnet, Studierende müssen ihren Status aber nach 6 Monaten (etwa einmal pro Semester) erneut nachweisen."
+    },
+    {
+      "en": "Missing the 10th-of-the-month cutoff for ordering or cancelling. The ticket then starts or stops one month later than planned.",
+      "tr": "Sipariş ya da iptal için ayın 10'u sınırını kaçırmak. Bilet planladığından bir ay sonra başlar ya da biter.",
+      "de": "Die Frist zum 10. des Monats für Bestellung oder Kündigung verpassen. Das Ticket beginnt oder endet dann einen Monat später als geplant."
+    },
+    {
+      "en": "Ordering without a SEPA direct debit mandate in place. The monthly amount is collected by direct debit, so an account with an IBAN is needed for the order.",
+      "tr": "SEPA otomatik ödeme talimatı hazır olmadan sipariş vermek. Aylık tutar otomatik ödemeyle çekildiği için IBAN'lı bir hesap gerekiyor.",
+      "de": "Zu bestellen, ohne ein SEPA-Lastschriftmandat zu haben. Der Monatsbetrag wird per Lastschrift eingezogen, dafür wird ein Konto mit IBAN benötigt."
+    }
+  ],
+  "booking_url": "https://www.mvg.de/kundenportal.html",
+  "appointment": {
+    "mode": "no_appointment",
+    "walk_in": null,
+    "phone": null,
+    "slot_release": null,
+    "note": {
+      "en": "No appointment: the ticket is ordered online through the MVG customer portal.",
+      "tr": "Randevu yok: bilet MVG müşteri portalı üzerinden çevrimiçi sipariş edilir.",
+      "de": "Kein Termin: Das Ticket wird online über das MVG-Kundenportal bestellt."
+    },
+    "sources": [
+      "https://www.mvg.de/abos-tickets/abos/ermaessigungsticket.html",
+      "https://www.mvg.de/abos-tickets/abos/ermaessigungsticket/hilfe-ermaessigungsticket/ermaessigungsticket-gueltigkeit.html"
+    ]
+  },
+  "prerequisites": [
+    "immatrikulation"
+  ],
+  "typical_duration_days": null,
+  "sources": [
+    "https://www.mvg.de/abos-tickets/abos/ermaessigungsticket.html",
+    "https://www.mvg.de/abos-tickets/abos/ermaessigungsticket/hilfe-ermaessigungsticket/ermaessigungsticket-shibboleth.html",
+    "https://www.mvg.de/abos-tickets/abos/ermaessigungsticket/hilfe-ermaessigungsticket/ermaessigungsticket-gueltigkeit.html",
+    "https://www.tum.de/en/studies/during-your-studies/mobility-at-campus",
+    "https://www.lmu.de/de/workspace-fuer-studierende/1x1-des-studiums/semesterticket/",
+    "https://www.mvg.de/abos-tickets/abos/hilfe-abo-allgemein/kuendigung.html",
+    "https://www.mvg.de/kundenportal/hilfe-kundenportal/bestellung-vertragsbeginn-laufender-monat.html",
+    "https://www.mvg.de/kundenportal/hilfe-kundenportal/bestellung-zahlung.html"
+  ],
+  "last_verified": "2026-10-06"
+}

@@ -1,0 +1,10 @@
+{
+  "_comment": "Munich First 90 marka işareti ('90'). Kaynak: tasarım sorumlusunun 'Brand Identity 2.pdf' dosyası (19.10.2026). PDF'teki 1448x1086 raster logodan ölçülerek geometrik vektöre çevrildi: 9 ve 0, ortak gövdeli iki stadyum (r=26.5, merkezler x=26.5 ve 70.5), 9'un sol alt çentiği, üç iç boşluk. Renk: üst kısım (y<44.6, 9'un üst boşluğunun tabanı) düz, alt kısım dikey gradyan. Tek kaynak: src/components/brand-logo*.tsx ve scripts/make-icon.mjs buradan okur.",
+  "viewBox": "0 0 97 100",
+  "width": 97,
+  "height": 100,
+  "path": "M48.5 11.73A26.5 26.5 0 0 0 0 26.5L0 49.7A8 8 0 0 0 8 57.7L35.45 57.7L35.45 76.25A8.9 8.9 0 0 1 17.65 76.25L17.65 68.2L0 68.2L0 73.5A26.5 26.5 0 0 0 48.5 88.27A26.5 26.5 0 0 0 97 73.5L97 26.5A26.5 26.5 0 0 0 48.5 11.73ZM17.65 44.6L17.65 24.9A8.9 8.9 0 0 1 35.45 24.9L35.45 44.6ZM60.7 25.25A9.25 9.25 0 0 1 79.2 25.25L79.2 75.85A9.25 9.25 0 0 1 60.7 75.85Z",
+  "split": 44.6,
+  "light": { "tile": "#FDF9EE", "top": "#0B234B", "from": "#2C72CA", "to": "#87B7EB" },
+  "dark": { "tile": "#0A2149", "top": "#1254AA", "from": "#5291DE", "to": "#A9CFF7" }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "haftpflichtversicherung",
+  "city": "munich",
+  "phase": "pre_arrival",
+  "official_title": "Haftpflichtversicherung",
+  "official_title_check": { "kind": "unverified", "source": null },
+  "title": {
+    "en": "Personal Liability Insurance",
+    "tr": "Kişisel sorumluluk sigortası (Haftpflichtversicherung)",
+    "de": "Haftpflichtversicherung"
+  },
+  "summary": {
+    "en": "Covers damage you accidentally cause to other people or their things. It isn't required by law for students, but international student guides in Munich recommend it.",
+    "tr": "Başkasına ya da başkasının eşyasına yanlışlıkla verdiğin zararı karşılayan sigorta. Öğrenciler için yasal bir zorunluluk değil, ama Münih'teki uluslararası öğrenci rehberleri yaptırmanı öneriyor.",
+    "de": "Sie zahlt, wenn du aus Versehen jemanden oder etwas beschädigst. Für Studierende ist sie nicht gesetzlich vorgeschrieben, aber Infoseiten für internationale Studierende in München empfehlen sie."
+  },
+  "authority": null,
+  "documents": [
+    {
+      "official": "Nachweis der Haftpflichtversicherung",
+      "plain": {
+        "en": "A confirmation from your insurer that you have personal liability insurance. LMU's pre-departure checklist lists proof of it as \"not required, but recommended\".",
+        "tr": "Sigorta şirketinden, kişisel sorumluluk sigortan olduğunu gösteren bir belge. LMU'nun gelmeden önceki kontrol listesi bunu \"zorunlu değil, ama önerilir\" diye geçiyor.",
+        "de": "Eine Bestätigung deiner Versicherung, dass eine Haftpflichtversicherung besteht. In der Checkliste der LMU für die Zeit vor der Anreise steht der Nachweis als „nicht erforderlich, aber empfohlen“."
+      }
+    }
+  ],
+  "deadline_rule": null,
+  "common_mistakes": [
+    {
+      "en": "Confusing this with the mandatory health insurance (Krankenversicherung). Personal liability insurance is optional; only health insurance is compulsory for students.",
+      "tr": "Bunu zorunlu sağlık sigortasıyla (Krankenversicherung) karıştırmak. Sorumluluk sigortası isteğe bağlı; öğrenciler için zorunlu olan yalnız sağlık sigortası.",
+      "de": "Sie mit der Krankenversicherung verwechseln. Die Haftpflichtversicherung ist freiwillig, nur die Krankenversicherung ist für Studierende Pflicht."
+    },
+    {
+      "en": "Treating proof of liability insurance as a requirement. LMU's pre-departure checklist lists it as \"not required, but recommended\".",
+      "tr": "Sorumluluk sigortası belgesini zorunlu sanmak. LMU'nun gelmeden önceki kontrol listesi onu \"zorunlu değil, ama önerilir\" diye geçiyor.",
+      "de": "Den Nachweis der Haftpflichtversicherung für verpflichtend halten. In der LMU-Checkliste für die Zeit vor der Anreise steht er als „nicht erforderlich, aber empfohlen“."
+    },
+    {
+      "en": "Taking out coverage only for the arrival trip instead of the whole stay. LMU's guide recommends liability insurance for the duration of your stay in Germany.",
+      "tr": "Sigortayı yalnız geliş yolculuğu için yapıp bütün kalış için yapmamak. LMU'nun rehberi sorumluluk sigortasını Almanya'da kaldığın süre boyunca öneriyor.",
+      "de": "Die Versicherung nur für die Anreise statt für den gesamten Aufenthalt abschließen. Der LMU-Leitfaden empfiehlt die Haftpflichtversicherung für die Dauer des Aufenthalts in Deutschland."
+    }
+  ],
+  "booking_url": null,
+  "appointment": {
+    "mode": "no_appointment",
+    "walk_in": null,
+    "phone": null,
+    "slot_release": null,
+    "note": {
+      "en": "No appointment with an authority: this is an optional contract with a private insurer.",
+      "tr": "Bir makama gitmen gerekmiyor: bu, özel bir sigorta şirketiyle yapılan isteğe bağlı bir sözleşme.",
+      "de": "Kein Behördentermin: Es handelt sich um einen freiwilligen Vertrag mit einer privaten Versicherung."
+    },
+    "sources": [
+      "https://www.global.tum.de/en/global/exchangestudents/general-information-for-international-students/preparing-your-stay/",
+      "https://www.lmu.de/en/workspace-for-students/international-student-guide/checklists/index.html"
+    ]
+  },
+  "prerequisites": [],
+  "typical_duration_days": null,
+  "sources": [
+    "https://www.global.tum.de/en/global/exchangestudents/general-information-for-international-students/preparing-your-stay/",
+    "https://www.lmu.de/en/workspace-for-students/international-student-guide/checklists/index.html",
+    "https://www.lmu.de/en/workspace-for-students/international-student-guide/health-and-safety/"
+  ],
+  "last_verified": "2026-10-06"
+}

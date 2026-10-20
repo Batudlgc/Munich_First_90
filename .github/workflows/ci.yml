@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24.19.0'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # expo-env.d.ts .gitignore'da (Expo onu `expo start`ta üretir); temiz
+      # klonda yok ve tsc CSS modüllerini tanımıyordu. Aynı tek satır burada yazılır.
+      - name: Expo type references
+        run: echo '/// <reference types="expo/types" />' > expo-env.d.ts
+
+      - name: Type check
+        run: npx tsc --noEmit
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Validate step data
+        run: npm run validate-steps
+
+      - name: Test
+        run: npm test
+
+  # LLM proxy (Cloudflare Worker) — ayrı paket, kendi bağımlılıkları (APP.md §4, B2).
+  proxy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: proxy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24.19.0'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            proxy/package-lock.json
+
+      # Testler ../src/lib/scope.ts'i derliyor; Vite o dosya için kök
+      # tsconfig.json'u okur, o da kök node_modules'taki expo/tsconfig.base'i ister.
+      - name: Install root dependencies
+        working-directory: .
+        run: npm ci
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npx tsc --noEmit
+
+      - name: Test
+        run: npm test
+
+      - name: No API key in repo
+        working-directory: .
+        run: |
+          # Desen APP.md §6'daki ile aynı; köşeli parantez bu satırın kendisini eşleştirmesin diye.
+          # -I: ikili dosyalar (PNG) taranmaz — ekran görüntüsünün rastgele baytları
+          # desene denk geliyordu (UI-A3, a3-damga-ani-azalt.png); anahtar metin dosyasında olur.
+          # .claude/skills: dış kaynaklı, skills-lock.json'da hash'e sabitli skill metinleri
+          # (İngilizce bileşik kelimelerde yanlış alarm); elle düzeltmek hash'i bozar.
+          if git grep -nIE "s[k]-|ap[i][_-]?key" -- . ':!APP.md' ':!.claude/skills'; then
+            echo "Olası anahtar izi bulundu (APP.md §6)"; exit 1
+          fi

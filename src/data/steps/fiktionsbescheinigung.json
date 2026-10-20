@@ -1,0 +1,119 @@
+{
+  "id": "fiktionsbescheinigung",
+  "city": "munich",
+  "phase": "conditional",
+  "official_title": "Fiktionsbescheinigung",
+  "official_title_check": { "kind": "verified", "source": "https://stadt.muenchen.de/infos/sze-faq.html" },
+  "title": {
+    "en": "Interim residence certificate",
+    "tr": "Geçici oturum belgesi (Fiktionsbescheinigung)",
+    "de": "Vorläufige Aufenthaltsbescheinigung"
+  },
+  "summary": {
+    "en": "A document showing you can keep staying in Germany while your application for a new or extended residence permit (Aufenthaltstitel) is being processed. It says nothing about the outcome; it only covers the wait.",
+    "tr": "Yeni ya da uzatılmış oturum izni (Aufenthaltstitel) başvurun incelenirken Almanya'da kalmaya devam edebildiğini gösteren belge. Başvurunun sonucuyla ilgisi yok; yalnız bekleme süresini kapsıyor.",
+    "de": "Sie bestätigt, dass du in Deutschland bleiben darfst, solange dein Antrag auf einen neuen oder verlängerten Aufenthaltstitel bearbeitet wird. Über den Antrag selbst sagt sie nichts – sie überbrückt nur die Wartezeit."
+  },
+  "authority": {
+    "official": "Kreisverwaltungsreferat (KVR) München – Servicestelle für Zuwanderung und Einbürgerung (SZE), Ruppertstraße 19, 80337 München",
+    "plain": {
+      "en": "The Servicestelle für Zuwanderung und Einbürgerung (SZE) at the Kreisverwaltungsreferat (KVR) processes residence permit applications and issues the Fiktionsbescheinigung in Munich. It works by appointment only.",
+      "tr": "Kreisverwaltungsreferat'a (KVR) bağlı Servicestelle für Zuwanderung und Einbürgerung (SZE), Münih'te oturum izni başvurularını yürütür ve Fiktionsbescheinigung'u düzenler. Yalnız randevuyla çalışır.",
+      "de": "Die Servicestelle für Zuwanderung und Einbürgerung (SZE) im Kreisverwaltungsreferat (KVR) bearbeitet Anträge auf einen Aufenthaltstitel und stellt die Fiktionsbescheinigung in München aus. Der Kontakt erfolgt nur nach Terminvereinbarung."
+    }
+  },
+  "documents": [
+    {
+      "official": "Vollständig ausgefülltes und unterschriebenes Antragsformular",
+      "plain": {
+        "en": "The official application form for the residence permit procedure. It is filled in completely and signed by hand by the applicant or their legal representative.",
+        "tr": "Oturum izni işlemi için resmi başvuru formu. Eksiksiz doldurulur ve başvuran kişi ya da yasal temsilcisi elle imzalar.",
+        "de": "Das offizielle Antragsformular für das Aufenthaltsverfahren. Es wird vollständig ausgefüllt und von der antragstellenden Person oder ihrer gesetzlichen Vertretung eigenhändig unterschrieben."
+      }
+    },
+    {
+      "official": "Gültiger Reisepass",
+      "plain": {
+        "en": "A valid passport is required. According to the city, a limited residence permit ends at the latest when the passport's validity ends.",
+        "tr": "Geçerli bir pasaport. Şehrin sayfasına göre süreli bir oturum izni, en geç pasaportunun süresi bittiğinde sona eriyor.",
+        "de": "Ein gültiger Reisepass wird benötigt. Laut Stadt endet ein befristeter Aufenthaltstitel spätestens mit der Gültigkeit des Reisepasses."
+      }
+    },
+    {
+      "official": "Aktuelles biometrisches Passfoto",
+      "plain": {
+        "en": "A recent biometric passport photo is submitted with the application, meeting the standard requirements for official passport photos.",
+        "tr": "Başvuruyla birlikte, resmi vesikalık kurallarına uyan güncel bir biyometrik fotoğraf verilir.",
+        "de": "Mit dem Antrag wird ein aktuelles biometrisches Passfoto eingereicht, das den üblichen Anforderungen an amtliche Passfotos entspricht."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": null,
+    "text": {
+      "en": "Under Section 81 AufenthG, the application for an extension or a different residence permit is made before the current permit expires. When filed on time, the previous permit is deemed to continue until the authority decides. Section 81 names no number of days for this; what matters is the expiry of the previous permit.",
+      "tr": "AufenthG'nin 81. maddesine göre uzatma ya da başka bir oturum izni başvurusu, mevcut izin bitmeden yapılır. Zamanında başvurulduysa eski izin, makam karar verene kadar geçerli sayılır. 81. madde bunun için gün sayısı vermiyor; belirleyici olan eski iznin bitiş tarihi.",
+      "de": "Nach § 81 AufenthG wird der Antrag auf Verlängerung oder auf einen anderen Aufenthaltstitel vor Ablauf des bisherigen Titels gestellt. Bei rechtzeitiger Antragstellung gilt der bisherige Titel bis zur Entscheidung der Behörde als fortbestehend. Eine Tageszahl nennt § 81 hierfür nicht; maßgeblich ist der Ablauf des bisherigen Titels."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "Sending the application form incomplete or unsigned. This makes processing take longer.",
+      "tr": "Başvuru formunu eksik ya da imzasız göndermek. Bu, işlemi uzatır.",
+      "de": "Das Antragsformular unvollständig oder ohne Unterschrift einreichen. Das verlängert die Bearbeitungszeit."
+    },
+    {
+      "en": "Confusing the Fortgeltungsfiktion (Section 81(4) AufenthG) with the Erlaubnisfiktion (Section 81(3) AufenthG). Unlike the Fortgeltungsfiktion, the Erlaubnisfiktion does not allow re-entry into Germany after a trip abroad. It only confirms the stay within the country.",
+      "tr": "Fortgeltungsfiktion (AufenthG § 81 Abs. 4) ile Erlaubnisfiktion'u (AufenthG § 81 Abs. 3) karıştırmak. Fortgeltungsfiktion'dan farklı olarak Erlaubnisfiktion, yurt dışından dönüşte Almanya'ya yeniden giriş hakkı vermez; yalnız ülke içinde kalışı belgeler.",
+      "de": "Die Fortgeltungsfiktion (§ 81 Abs. 4 AufenthG) mit der Erlaubnisfiktion (§ 81 Abs. 3 AufenthG) verwechseln. Anders als die Fortgeltungsfiktion berechtigt die Erlaubnisfiktion nach einer Auslandsreise nicht zur Wiedereinreise nach Deutschland. Sie bestätigt nur den Aufenthalt im Inland."
+    },
+    {
+      "en": "Assuming documents won't be checked. Submitted documents are checked for authenticity, for example through electronic comparison with other authorities, and cases of forgery are reported to the police.",
+      "tr": "Belgelerin kontrol edilmeyeceğini düşünmek. Belgelerin gerçekliği inceleniyor, örneğin başka makamlarla elektronik olarak karşılaştırılıyor; sahte belgeler polise bildiriliyor.",
+      "de": "Davon ausgehen, dass Unterlagen nicht geprüft werden. Eingereichte Unterlagen werden auf ihre Echtheit geprüft, etwa durch elektronischen Datenabgleich mit anderen Behörden. Fälschungsfälle werden konsequent zur Anzeige gebracht."
+    },
+    {
+      "en": "Overlooking that a limited residence permit ends at the latest when the passport's validity ends (according to the city).",
+      "tr": "Süreli bir oturum izninin en geç pasaportun süresi bittiğinde sona erdiğini gözden kaçırmak (şehrin sayfasına göre).",
+      "de": "Übersehen, dass ein befristeter Aufenthaltstitel laut Stadt spätestens mit der Gültigkeit des Reisepasses endet."
+    },
+    {
+      "en": "Treating the Fiktionsbescheinigung as a separate procedure. It is issued in connection with a pending application for a residence permit (Aufenthaltstitel).",
+      "tr": "Fiktionsbescheinigung'u ayrı bir işlem sanmak. Belge, devam eden bir oturum izni (Aufenthaltstitel) başvurusuna bağlı olarak verilir.",
+      "de": "Die Fiktionsbescheinigung für ein eigenständiges Verfahren halten. Sie wird im Zusammenhang mit einem laufenden Antrag auf einen Aufenthaltstitel ausgestellt."
+    }
+  ],
+  "booking_url": "https://stadt.muenchen.de/infos/sze-online.html",
+  "appointment": {
+    "mode": "application_first",
+    "walk_in": false,
+    "phone": {
+      "number": "+49 89 233-96010",
+      "hours": null
+    },
+    "slot_release": {
+      "en": "Emergency appointments exist only for documented emergencies (no sufficiently valid residence permit; the SZE decides whether an emergency exists) and only for the same day. They are released Mon, Wed and Fri at 06:30 and Tue and Thu at 07:30. If no appointment is available online, the city refers to its service phone line. Appointments with the SZE are always free of charge.",
+      "tr": "Acil randevular yalnız belgelenmiş acil durumlar için ve yalnız aynı gün için veriliyor. Acil durum, yeterince geçerli bir oturum izninin olmaması demek; buna SZE karar veriyor. Randevular Pazartesi, Çarşamba ve Cuma 06:30'da, Salı ve Perşembe 07:30'da açılıyor. Çevrimiçi randevu kalmadıysa şehir servis telefonuna yönlendiriyor. SZE randevuları her zaman ücretsiz.",
+      "de": "Notfalltermine gibt es nur für nachgewiesene Notfälle (kein ausreichend gültiger Aufenthaltstitel; die SZE prüft, ob ein Notfall vorliegt) und nur kurzfristig für denselben Tag. Sie werden Mo, Mi und Fr um 06:30 Uhr sowie Di und Do um 07:30 Uhr freigeschaltet. Gibt es online keinen Termin, verweist die Stadt auf das Servicetelefon. Die Terminvereinbarung bei der SZE ist immer kostenlos."
+    },
+    "note": {
+      "en": "The Fiktionsbescheinigung is linked to an application for a residence permit submitted through the SZE online services or by post. Same-day emergency appointments are only for documented emergencies. After an online application, the city shows a confirmation that can be saved as a PDF.",
+      "tr": "Fiktionsbescheinigung, SZE'ye çevrimiçi ya da postayla yapılan bir oturum izni başvurusuna bağlı. Aynı gün acil randevu yalnız belgelenmiş acil durumlar için var. Çevrimiçi başvurudan sonra şehir bir onay gösteriyor; bunu PDF olarak kaydedebilirsin.",
+      "de": "Die Fiktionsbescheinigung ist an einen Antrag auf einen Aufenthaltstitel gebunden, der über die Online-Services der SZE oder per Post gestellt wird. Notfalltermine am selben Tag gibt es nur für nachgewiesene Notfälle. Nach einem Online-Antrag zeigt die Stadt eine Bestätigung an, die als PDF gespeichert werden kann."
+    },
+    "sources": [
+      "https://stadt.muenchen.de/infos/sze-online.html",
+      "https://stadt.muenchen.de/service/info/servicestelle-fur-zuwanderung-und-einburgerung/10338844/",
+      "https://stadt.muenchen.de/service/info/hauptabteilung-v-servicestelle-fur-zuwanderung-und-einburgerung/1072028/"
+    ]
+  },
+  "prerequisites": [],
+  "typical_duration_days": null,
+  "sources": [
+    "https://stadt.muenchen.de/infos/sze-faq.html",
+    "https://stadt.muenchen.de/service/info/servicestelle-fur-zuwanderung-und-einburgerung/1086576/",
+    "https://www.gesetze-im-internet.de/aufenthg_2004/__81.html",
+    "https://stadt.muenchen.de/infos/sze-online.html"
+  ],
+  "last_verified": "2026-10-06"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "abmeldung",
+  "city": "munich",
+  "phase": "conditional",
+  "official_title": "Abmeldung des Wohnsitzes bei Wegzug aus Deutschland",
+  "official_title_check": { "kind": "unverified", "source": null },
+  "title": {
+    "en": "Leaving Germany",
+    "tr": "Almanya'dan çıkış bildirimi (Abmeldung)",
+    "de": "Abmeldung bei Wegzug aus Deutschland"
+  },
+  "summary": {
+    "en": "Leaving Germany for good? Then you don't register a new address: you de-register your current one at the Bürgerbüro.",
+    "tr": "Almanya'dan tamamen ayrılıyorsan yeni bir adres bildirmen gerekmiyor; Bürgerbüro'daki mevcut adres kaydını sildiriyorsun.",
+    "de": "Wer Deutschland endgültig verlässt, meldet keine neue Adresse an, sondern die bisherige beim Bürgerbüro ab."
+  },
+  "authority": {
+    "official": "Kreisverwaltungsreferat (KVR) München – Bürgerbüro",
+    "plain": {
+      "en": "The Bürgerbüro handles the Abmeldung. According to the city, it is done in writing by post; when moving abroad, it can also be done online.",
+      "tr": "Abmeldung'u Bürgerbüro yapıyor. Şehrin sayfasına göre bildirim yazılı olarak, postayla gönderiliyor; yurt dışına taşınıyorsan çevrimiçi de yapılabiliyor.",
+      "de": "Das Bürgerbüro ist für die Abmeldung zuständig. Laut Stadt erfolgt sie schriftlich per Post, beim Wegzug ins Ausland auch online."
+    }
+  },
+  "documents": [
+    {
+      "official": "Personalausweis oder Reisepass in Kopie",
+      "plain": {
+        "en": "A copy of your ID card or passport, sent together with the de-registration form.",
+        "tr": "Kimlik kartının ya da pasaportunun fotokopisi. Çıkış formuyla birlikte gönderirsin.",
+        "de": "Eine Kopie deines Personalausweises oder Reisepasses, zusammen mit dem Abmeldeformular."
+      }
+    },
+    {
+      "official": "Abmeldungsformular",
+      "plain": {
+        "en": "The official de-registration form (Abmeldungsformular). It can be downloaded or bought at a stationery shop; spouses, registered partners and family members living together can use one shared form (a second form is needed for more than four people).",
+        "tr": "Resmi çıkış formu (Abmeldungsformular). İnternetten indirebilir ya da kırtasiyeden alabilirsin. Aynı evde yaşayan eşler, kayıtlı partnerler ve aile üyeleri tek form doldurabiliyor; dörtten fazla kişi varsa ikinci bir form gerekiyor.",
+        "de": "Das offizielle Abmeldeformular. Es ist zum Download erhältlich oder im Schreibwarenhandel zu kaufen; Ehegatten, eingetragene Lebenspartner und Familienangehörige können für die gemeinsame Wohnung ein Formblatt nutzen (bei mehr als vier Personen ist ein zusätzliches nötig)."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": 14,
+    "text": {
+      "en": "De-register within 14 days of moving out; it may also be submitted up to 7 days before you move out. This deadline is counted from moving out, separately from the Ummeldung deadline.",
+      "tr": "Abmeldung, evden çıktıktan sonraki 14 gün içinde yapılıyor; istersen çıkıştan en fazla 7 gün önce de gönderebilirsin. Süre çıkış tarihinden başlıyor ve Ummeldung süresinden ayrı.",
+      "de": "Die Abmeldung erfolgt innerhalb von 14 Tagen nach dem Auszug; sie kann auch bis zu 7 Tage vor dem Auszug eingereicht werden. Diese Frist läuft ab dem Auszug, getrennt von der Ummeldefrist."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "Leaving Germany without submitting the Abmeldung. Missing it can lead to a fine (Ordnungswidrigkeit).",
+      "tr": "Abmeldung yapmadan Almanya'dan ayrılmak. Bu, para cezası gerektiren bir kabahat (Ordnungswidrigkeit) sayılabilir.",
+      "de": "Ohne Abmeldung aus Deutschland ausreisen. Das kann als Ordnungswidrigkeit mit einem Bußgeld geahndet werden."
+    },
+    {
+      "en": "Confusing this 14-day window (counted from moving out, with a 7-day-early option) with the separate Ummeldung deadline, which counts from moving in.",
+      "tr": "Bu 14 günü Ummeldung süresiyle karıştırmak. Abmeldung'da süre evden çıktığın günden sayılır ve 7 gün önceden de bildirebilirsin; Ummeldung'da ise yeni eve taşındığın günden.",
+      "de": "Diese 14-Tage-Frist (ab dem Auszug, mit der Möglichkeit einer 7 Tage früheren Einreichung) mit der separaten Ummeldefrist verwechseln, die ab dem Einzug läuft."
+    }
+  ],
+  "booking_url": "https://stadt.muenchen.de/infos/terminvereinbarung-buergerbueros.html",
+  "appointment": {
+    "mode": "appointment_or_written",
+    "walk_in": null,
+    "phone": {
+      "number": "+49 89 233-96000",
+      "hours": {
+        "en": "Mon–Thu 07:30–15:30, Fri 07:30–13:00",
+        "tr": "Pzt–Per 07:30–15:30, Cum 07:30–13:00",
+        "de": "Mo–Do 07:30–15:30 Uhr, Fr 07:30–13:00 Uhr"
+      }
+    },
+    "slot_release": {
+      "en": "Depending on capacity, new appointments are released several times a day: about 30 minutes before the Bürgerbüros open, online appointments for the same day; in the morning, slots for the following week; in the afternoon, slots for the next day. Cancellations also free up appointments. If no appointment is free anywhere in the city in a documented emergency, an emergency appointment can be arranged by phone.",
+      "tr": "Randevular kapasiteye göre gün içinde birkaç kez açılıyor: Bürgerbüro'lar açılmadan yaklaşık 30 dakika önce aynı günün çevrimiçi randevuları, sabahları bir sonraki haftanın, öğleden sonra da ertesi günün randevuları. Son dakika iptalleri de yer açıyor. Belgelenmiş bir acil durumda şehrin hiçbir yerinde boş randevu kalmadıysa telefonla görüşüp acil randevu ayarlanabiliyor.",
+      "de": "Neue Termine werden je nach Kapazität mehrmals täglich freigeschaltet: etwa 30 Minuten vor Öffnung der Bürgerbüros Online-Termine für denselben Tag; vormittags Termine für die Folgewoche; nachmittags Termine für den Folgetag. Auch kurzfristige Absagen machen Termine frei. Sind in einem nachweisbaren Notfall stadtweit keine Termine frei, kann nach telefonischer Rücksprache ein Notfalltermin vereinbart werden."
+    },
+    "note": {
+      "en": "According to the city, the Abmeldung is done in writing by post with the completed and signed form and a copy of the ID card or passport; when moving abroad it can also be done online. The page does not describe a visit in person; visits to the Bürgerbüros generally require an appointment. Processing time: about three to four weeks.",
+      "tr": "Şehrin sayfasına göre Abmeldung yazılı yapılıyor: doldurup imzaladığın formu, kimliğinin ya da pasaportunun fotokopisiyle birlikte postayla gönderiyorsun. Yurt dışına taşınıyorsan çevrimiçi de yapabilirsin. Sayfada şahsen gitmekten söz edilmiyor; Bürgerbüro'ya zaten genelde randevuyla gidiliyor. İşlem yaklaşık üç ila dört hafta sürüyor.",
+      "de": "Laut Stadt erfolgt die Abmeldung schriftlich per Post mit dem ausgefüllten, unterschriebenen Formular und einer Kopie von Personalausweis oder Reisepass; beim Wegzug ins Ausland auch online. Einen Besuch vor Ort beschreibt die Seite nicht; Besuche in den Bürgerbüros erfolgen grundsätzlich mit Termin. Bearbeitungszeit: etwa drei bis vier Wochen."
+    },
+    "sources": [
+      "https://stadt.muenchen.de/service/info/wohnsitz-abmelden/1063486/n0/",
+      "https://stadt.muenchen.de/infos/terminvereinbarung-buergerbueros.html",
+      "https://stadt.muenchen.de/service/info/burgerburo/10327844/"
+    ]
+  },
+  "prerequisites": [
+    "anmeldung"
+  ],
+  "typical_duration_days": null,
+  "sources": [
+    "https://stadt.muenchen.de/service/info/wohnsitz-abmelden/1063486/n0/",
+    "https://stadt.muenchen.de/infos/terminvereinbarung-buergerbueros.html"
+  ],
+  "last_verified": "2026-10-06"
+}

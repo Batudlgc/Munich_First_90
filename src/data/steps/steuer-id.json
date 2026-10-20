@@ -1,0 +1,106 @@
+{
+  "id": "steuer-id",
+  "city": "munich",
+  "phase": "first_90_days",
+  "official_title": "Steuerliche Identifikationsnummer (Steuer-ID)",
+  "official_title_check": { "kind": "verified", "source": "https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/StID/stid.html" },
+  "title": {
+    "en": "Getting your Tax ID",
+    "tr": "Vergi kimlik numarası (Steuer-ID)",
+    "de": "Steuer-ID erhalten"
+  },
+  "summary": {
+    "en": "The tax ID (Steuer-ID) is an 11-digit number that stays the same for life; moving or marrying doesn't change it. The Bundeszentralamt für Steuern (BZSt) assigns it automatically when you first register in Germany and sends it by letter; according to the city of Munich, about 2–4 weeks after your first Anmeldung.",
+    "tr": "Vergi kimlik numarası (Steuer-ID), ömür boyu aynı kalan 11 haneli bir numara; taşınsan da evlensen de değişmiyor. Almanya'daki ilk kaydından sonra BZSt (Bundeszentralamt für Steuern) numarayı kendiliğinden veriyor ve mektupla gönderiyor. Münih şehrinin sayfasına göre bu, ilk Anmeldung'dan yaklaşık 2–4 hafta sonra oluyor.",
+    "de": "Die Steuer-ID ist eine elfstellige Nummer, die dir ein Leben lang bleibt – auch bei Umzug oder Heirat. Das Bundeszentralamt für Steuern (BZSt) vergibt sie automatisch bei deiner ersten Anmeldung in Deutschland und schickt sie per Brief, laut Stadt München etwa 2 bis 4 Wochen danach."
+  },
+  "authority": {
+    "official": "Bundeszentralamt für Steuern (BZSt)",
+    "plain": {
+      "en": "The Bundeszentralamt für Steuern (BZSt) is Germany's central tax authority. It assigns your Tax ID automatically and sends it by post. There is no counter and no appointment.",
+      "tr": "Bundeszentralamt für Steuern (BZSt), Almanya'nın merkezi vergi makamı. Vergi kimlik numaranı kendiliğinden verir ve postayla gönderir; gişe ya da randevu yok.",
+      "de": "Das Bundeszentralamt für Steuern (BZSt) ist die zentrale Steuerbehörde Deutschlands. Es teilt deine Steuer-ID automatisch zu und schickt sie per Post. Einen Schalter oder Termin gibt es nicht."
+    }
+  },
+  "documents": [
+    {
+      "official": "Gültiger Personalausweis oder Reisepass",
+      "plain": {
+        "en": "Your ID document: for the online form, the BZSt asks to have it ready for the correct spelling of your data. According to the BZSt FAQ, if no Tax ID has been communicated three months after registration, a copy of the ID document and the registration confirmation can also be sent to the BZSt.",
+        "tr": "Kimlik belgen. BZSt, çevrimiçi formda bilgilerin doğru yazılması için kimliğini yanında tutmanı istiyor. BZSt'nin SSS sayfasına göre kayıttan üç ay sonra hâlâ numara gelmediyse kimlik fotokopisini ve kayıt belgesini BZSt'ye ayrıca gönderebilirsin.",
+        "de": "Dein Ausweisdokument: Für das Online-Formular bittet das BZSt, es für die korrekte Schreibweise der Daten bereitzuhalten. Laut BZSt-FAQ können auch eine Kopie des Ausweisdokuments und der Meldebestätigung an das BZSt gesendet werden, wenn nach drei Monaten keine IdNr mitgeteilt wurde."
+      }
+    },
+    {
+      "official": "Meldebescheinigung",
+      "plain": {
+        "en": "The registration confirmation (Meldebescheinigung) from the Bürgerbüro. According to the BZSt FAQ, it is sent together with the ID copy if no Tax ID has been communicated after three months.",
+        "tr": "Bürgerbüro'dan aldığın kayıt belgesi (Meldebescheinigung). BZSt'nin SSS sayfasına göre üç ay sonra numara gelmediyse kimlik fotokopisiyle birlikte gönderilir.",
+        "de": "Die Meldebestätigung (Meldebescheinigung) des Bürgerbüros. Laut BZSt-FAQ wird sie zusammen mit der Ausweiskopie gesendet, wenn nach drei Monaten keine IdNr mitgeteilt wurde."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": null,
+    "text": {
+      "en": "There is no deadline for the Tax ID itself; it's created automatically after your Anmeldung. If the letter hasn't arrived within 3 months, it can be requested again using the BZSt's online form.",
+      "tr": "Vergi kimlik numarası için bir son başvuru tarihi yok; Anmeldung'dan sonra kendiliğinden oluşturuluyor. Mektup 3 ay içinde gelmezse BZSt'nin çevrimiçi formuyla yeniden isteyebilirsin.",
+      "de": "Für die Steuer-ID gibt es keine Frist: Sie wird nach der Anmeldung automatisch erstellt. Kommt der Brief nach 3 Monaten nicht an, kann er über das Online-Formular des BZSt erneut angefordert werden."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "The surname is missing from the mailbox. According to the BZSt, the surname must be on the mailbox for successful delivery of the letter.",
+      "tr": "Posta kutusunda soyadının yazmaması. BZSt'ye göre mektubun teslim edilebilmesi için soyadın posta kutusunda yazılı olmalı.",
+      "de": "Der Nachname fehlt am Briefkasten. Laut BZSt muss der Nachname für eine erfolgreiche Zustellung am Briefkasten angebracht sein."
+    },
+    {
+      "en": "Asking for the Tax ID by phone or email. According to the BZSt, this is not possible for data protection reasons; it can be requested again with the form, and it is usually also printed on the income tax assessment and the payroll tax certificate (Lohnsteuerbescheinigung).",
+      "tr": "Numarayı telefonla ya da e-postayla öğrenmeye çalışmak. BZSt'ye göre veri koruma nedeniyle bu mümkün değil. Numarayı formla yeniden isteyebilirsin; genelde gelir vergisi kararında (Einkommensteuerbescheid) ve Lohnsteuerbescheinigung'da da yazar.",
+      "de": "Die Steuer-ID telefonisch oder per E-Mail erfragen. Laut BZSt ist das aus datenschutzrechtlichen Gründen nicht möglich; sie lässt sich über das Formular erneut anfordern und steht in der Regel auch im Einkommensteuerbescheid und auf der Lohnsteuerbescheinigung."
+    },
+    {
+      "en": "Filling out the repeat-request form too early. According to the BZSt, it is meant for people who have not received the letter within three months after their first registration in Germany.",
+      "tr": "Tekrar talep formunu erken doldurmak. BZSt'ye göre form, Almanya'daki ilk kayıttan sonra üç ay içinde mektubu gelmeyenler için.",
+      "de": "Das Formular zur erneuten Mitteilung zu früh ausfüllen. Laut BZSt ist es für Personen gedacht, die innerhalb von drei Monaten nach der erstmaligen Anmeldung in Deutschland noch kein Schreiben erhalten haben."
+    },
+    {
+      "en": "Thinking a lost letter means a brand-new Tax ID is issued. The number itself stays the same for life; only the notification letter is sent again, not a new number.",
+      "tr": "Mektup kaybolunca yeni numara verileceğini sanmak. Numara ömür boyu aynı kalır; kaybolursa yalnız bildirim mektubu yeniden gönderilir, yeni numara verilmez.",
+      "de": "Glauben, ein verlorener Brief bringe eine neue Steuer-ID. Die Nummer selbst bleibt lebenslang gleich; bei Verlust wird nur das Mitteilungsschreiben erneut verschickt, keine neue Nummer."
+    }
+  ],
+  "booking_url": "https://www.bzst.de/SiteGlobals/Kontaktformulare/DE/IdNr/Mitteilung_IdNr/mitteilung_IdNr_node.html",
+  "appointment": {
+    "mode": "no_appointment",
+    "walk_in": null,
+    "phone": null,
+    "slot_release": null,
+    "note": {
+      "en": "No appointment: the BZSt sends the notification automatically by post after the Anmeldung. A repeat notification is requested with the online form; the BZSt currently states that processing can take four weeks, and the form is only designed for sending your own number to your current registered address.",
+      "tr": "Randevu yok: BZSt, Anmeldung'dan sonra bildirimi kendiliğinden postayla gönderir. Mektubu yeniden istemek için çevrimiçi bir form var; BZSt şu an bunun dört hafta sürebileceğini söylüyor. Form yalnız kendi numaranın güncel kayıtlı adresine gönderilmesi için.",
+      "de": "Kein Termin: Das BZSt versendet die Mitteilung nach der Anmeldung automatisch per Post. Die erneute Mitteilung wird über das Online-Formular angefordert; das BZSt nennt aktuell eine mögliche Bearbeitungsdauer von vier Wochen, und das Formular ist nur für die erneute Mitteilung der eigenen IdNr an die aktuelle Meldeanschrift gedacht."
+    },
+    "sources": [
+      "https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/StID/stid.html",
+      "https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/FAQ/faq_node.html",
+      "https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/FAQ/faq_Arbeitgeber_Arbeitnehmer.html",
+      "https://online.portal.bzst.de/SharedDocs/Leistungsbeschreibung/DE/erneute_mitteilung_der_ID-Nr.html",
+      "https://www.bzst.de/SiteGlobals/Kontaktformulare/DE/IdNr/Mitteilung_IdNr/mitteilung_IdNr_node.html"
+    ]
+  },
+  "prerequisites": [
+    "anmeldung"
+  ],
+  "typical_duration_days": 21,
+  "sources": [
+    "https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/StID/stid.html",
+    "https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/FAQ/faq_node.html",
+    "https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/FAQ/faq_Arbeitgeber_Arbeitnehmer.html",
+    "https://online.portal.bzst.de/SharedDocs/Leistungsbeschreibung/DE/erneute_mitteilung_der_ID-Nr.html",
+    "https://www.bzst.de/SiteGlobals/Kontaktformulare/DE/IdNr/Mitteilung_IdNr/mitteilung_IdNr_node.html",
+    "https://online.portal.bzst.de/SharedDocs/ExterneLinks/DE/Leistungsbeschreibung/elster_idnr.html",
+    "https://stadt.muenchen.de/service/info/wohnsitzanmeldung/1063475/n0/"
+  ],
+  "last_verified": "2026-10-06"
+}

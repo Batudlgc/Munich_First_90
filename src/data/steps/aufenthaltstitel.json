@@ -1,0 +1,182 @@
+{
+  "id": "aufenthaltstitel",
+  "city": "munich",
+  "phase": "first_90_days",
+  "official_title": "Aufenthaltserlaubnis zum Studium",
+  "official_title_check": { "kind": "verified", "source": "https://stadt.muenchen.de/service/info/studenten/1089339/" },
+  "title": {
+    "en": "Residence permit for studies",
+    "tr": "Oturum izni (Aufenthaltserlaubnis)",
+    "de": "Aufenthaltserlaubnis beantragen"
+  },
+  "summary": {
+    "en": "The residence permit you need to stay in Germany while you study. You apply for it at the foreigners' office after you arrive.",
+    "tr": "Okurken Almanya'da kalabilmen için gereken oturum izni. Almanya'ya geldikten sonra yabancılar dairesine başvuruyorsun.",
+    "de": "Die Aufenthaltserlaubnis, mit der du während des Studiums in Deutschland bleiben darfst. Du beantragst sie nach der Einreise bei der Ausländerbehörde."
+  },
+  "authority": {
+    "official": "Kreisverwaltungsreferat (KVR) München – Servicestelle für Zuwanderung und Einbürgerung, Ruppertstraße 19, 80337 München",
+    "plain": {
+      "en": "This city office decides on residence permits for international students and issues the permit. Visits are only possible with an appointment.",
+      "tr": "Bu belediye dairesi, uluslararası öğrencilerin oturum izni başvurularına karar veriyor ve izni düzenliyor. Oraya yalnız randevuyla gidilebiliyor.",
+      "de": "Diese städtische Stelle entscheidet über Aufenthaltserlaubnisse für internationale Studierende und stellt sie aus. Ein Besuch ist nur mit Termin möglich."
+    }
+  },
+  "documents": [
+    {
+      "official": "Antragsformular",
+      "plain": {
+        "en": "The application form for the residence permit. It must be filled in completely before you submit it, online or by post.",
+        "tr": "Oturum izni başvuru formu. Çevrimiçi ya da postayla göndermeden önce eksiksiz doldurman gerekiyor.",
+        "de": "Das Antragsformular für die Aufenthaltserlaubnis. Es muss vollständig ausgefüllt sein, bevor du es online oder per Post einreichst."
+      }
+    },
+    {
+      "official": "Gültiger Pass oder Passersatz",
+      "plain": {
+        "en": "Your valid passport, or a document that replaces a passport.",
+        "tr": "Geçerli pasaportun ya da pasaport yerine geçen bir belge.",
+        "de": "Dein gültiger Pass oder ein Ersatzdokument dafür."
+      }
+    },
+    {
+      "official": "Biometrisches Passfoto",
+      "plain": {
+        "en": "A current biometric passport photo. You submit it digitally from a certified photo studio or drugstore, or take it on site at a photo terminal for a fee.",
+        "tr": "Güncel biyometrik vesikalık fotoğraf. Sertifikalı bir fotoğrafçı ya da drogeri (Drogeriemarkt) fotoğrafı dijital olarak gönderebiliyor; dairedeki ücretli fotoğraf makinesinde de çektirebilirsin.",
+        "de": "Ein aktuelles biometrisches Passfoto. Du reichst es digital über ein zertifiziertes Fotostudio oder eine Drogerie ein, oder machst es vor Ort an einem Foto-Terminal gegen Gebühr."
+      }
+    },
+    {
+      "official": "Visum zur Einreise zum Zweck des Studiums",
+      "plain": {
+        "en": "The entry visa for study purposes, if your nationality requires one to enter Germany.",
+        "tr": "Uyruğun Almanya'ya girmek için vize gerektiriyorsa, öğrenim amaçlı giriş vizen.",
+        "de": "Das Visum zur Einreise zum Zweck des Studiums, falls dein Herkunftsland für die Einreise eines benötigt."
+      }
+    },
+    {
+      "official": "Zustimmung der Personensorgeberechtigten",
+      "plain": {
+        "en": "Informal written consent from your parents or legal guardians. Only required if you are a minor.",
+        "tr": "Anne babanın ya da yasal vasinin serbest yazılmış onayı. Yalnız reşit değilsen isteniyor.",
+        "de": "Formlose schriftliche Zustimmung der Eltern oder Erziehungsberechtigten. Nur bei Minderjährigen erforderlich."
+      }
+    },
+    {
+      "official": "Krankenversicherungsnachweis",
+      "plain": {
+        "en": "Proof of health insurance (insurance card) from a statutory health insurer. It must be valid for at least one year; travel insurance is not enough. Private insurance has extra conditions.",
+        "tr": "Yasal bir sağlık sigortasından sigorta kanıtı, yani sigorta kartı. Sigorta en az bir yıl geçerli olmalı; seyahat sigortası yetmiyor. Özel sigortada ek şartlar var.",
+        "de": "Nachweis deiner Krankenversicherung (Versicherungskarte) von einer gesetzlichen Krankenkasse. Die Versicherung muss mindestens ein Jahr gültig sein; eine Reisekrankenversicherung reicht nicht aus. Bei privater Versicherung gelten zusätzliche Bedingungen."
+      }
+    },
+    {
+      "official": "Nachweis der Lebensunterhaltssicherung (Sperrkonto, Verpflichtungserklärung, Stipendienbescheinigung oder notariell beglaubigte Elternerklärung)",
+      "plain": {
+        "en": "Proof that you can cover your living costs. Options: a blocked account (Sperrkonto) with at least 11,904 euros for a first application, a formal sponsor commitment (Verpflichtungserklärung), a scholarship certificate, or a notarized parental declaration with proof of the parents' income from the last three months.",
+        "tr": "Geçimini karşılayabildiğinin kanıtı. Seçenekler: ilk başvuruda en az 11.904 avro yatırılmış bir bloke hesap (Sperrkonto), resmi bir üstlenme beyanı (Verpflichtungserklärung), burs belgesi ya da anne babanın son üç aylık gelir belgeleriyle birlikte noter onaylı beyanı.",
+        "de": "Nachweis, dass dein Lebensunterhalt gesichert ist. Möglich sind: ein Sperrkonto mit mindestens 11.904 Euro bei der Ersterteilung, eine Verpflichtungserklärung, eine Stipendienbescheinigung oder eine notariell beglaubigte Erklärung der Eltern mit Einkommensnachweisen der letzten drei Monate."
+      }
+    },
+    {
+      "official": "Immatrikulationsbescheinigung oder bedingte Hochschulzulassung",
+      "plain": {
+        "en": "Proof that you are enrolled at your university, or a conditional admission letter if you are not enrolled yet.",
+        "tr": "Üniversiteye kayıtlı olduğunu gösteren belge; henüz kayıt olmadıysan şartlı kabul mektubu.",
+        "de": "Nachweis deiner Immatrikulation an der Hochschule, oder ein Bescheid über die bedingte Zulassung, falls du noch nicht eingeschrieben bist."
+      }
+    },
+    {
+      "official": "Leistungsnachweis",
+      "plain": {
+        "en": "A transcript showing your exam results so far. Required from the 4th semester onward when you apply to extend your permit.",
+        "tr": "Şimdiye kadarki sınav sonuçlarını gösteren belge. 4. dönemden itibaren uzatma başvurusunda istenir.",
+        "de": "Ein Nachweis über deine bisherigen Prüfungsleistungen. Ab dem 4. Semester bei der Verlängerung erforderlich."
+      }
+    },
+    {
+      "official": "Hochschulbescheinigung bei Überschreitung der Regelstudienzeit",
+      "plain": {
+        "en": "A certificate from your university confirming your progress, your chances of finishing, and your expected completion date. Required for an extension once you exceed the standard study duration (Regelstudienzeit).",
+        "tr": "Üniversitenden, öğreniminin düzenli ilerlediğini, bitirme ihtimalini ve tahmini bitiş tarihini gösteren bir belge. Normal öğrenim süresini (Regelstudienzeit) aştıysan uzatmada isteniyor.",
+        "de": "Eine Bescheinigung deiner Hochschule über ordnungsgemäßes Studium, Erfolgsaussichten und die voraussichtliche Studiendauer. Erforderlich für die Verlängerung, wenn du die Regelstudienzeit überschreitest."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": 90,
+    "text": {
+      "en": "For nationalities that may enter Germany without a visa, the application for the residence permit is made within 90 days of entry. After entry with a visa, the application is made before that visa or the current residence permit expires; there is no fixed number of days in that case.",
+      "tr": "Vizesiz girebilen uyruklarda başvuru, girişten sonraki 90 gün içinde yapılıyor. Vizeyle geldiysen başvuruyu vizen ya da mevcut oturum iznin bitmeden yapman gerekiyor; bunun için sabit bir gün sayısı yok.",
+      "de": "Bei visafreier Einreise wird der Antrag auf die Aufenthaltserlaubnis innerhalb von 90 Tagen nach der Einreise gestellt. Nach der Einreise mit einem Visum wird der Antrag vor Ablauf dieses Visums oder des aktuellen Aufenthaltstitels gestellt; dafür gibt es keine feste Tageszahl."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "Doing the Anmeldung (address registration) too late. It needs to be done before you apply for the residence permit.",
+      "tr": "Anmeldung'u (adres kaydı) geciktirmek. Oturum iznine başvurmadan önce adres kaydının tamamlanmış olması gerekir.",
+      "de": "Die Anmeldung des Wohnsitzes zu spät erledigen. Sie muss abgeschlossen sein, bevor du die Aufenthaltserlaubnis beantragst."
+    },
+    {
+      "en": "Funding the Sperrkonto (blocked account) with less than the required 11,904 euros.",
+      "tr": "Sperrkonto'ya (bloke hesap) gereken 11.904 avrodan az yatırmak.",
+      "de": "Das Sperrkonto mit weniger als den vorgeschriebenen 11.904 Euro einzahlen."
+    },
+    {
+      "en": "Submitting travel insurance instead of a full health insurance policy. Travel insurance is not accepted.",
+      "tr": "Tam kapsamlı sağlık sigortası yerine seyahat sigortası vermek. Seyahat sigortası kabul edilmiyor.",
+      "de": "Eine Reisekrankenversicherung statt einer vollwertigen Krankenversicherung einreichen. Sie wird nicht akzeptiert."
+    },
+    {
+      "en": "Applying too close to the visa or permit expiry date. Processing can take up to 12 months.",
+      "tr": "Vizenin ya da iznin bitmesine çok az kala başvurmak. İşlem 12 aya kadar sürebiliyor.",
+      "de": "Den Antrag zu kurz vor Ablauf des Visums oder Aufenthaltstitels stellen. Die Bearbeitung kann bis zu 12 Monate dauern."
+    },
+    {
+      "en": "Forgetting the Leistungsnachweis (transcript of grades) when extending the permit from the 4th semester onward.",
+      "tr": "4. dönemden itibaren uzatma başvurusunda sınav sonuçları belgesini (Leistungsnachweis) unutmak.",
+      "de": "Beim Verlängern ab dem 4. Semester den Leistungsnachweis vergessen."
+    },
+    {
+      "en": "Assuming only an Immatrikulationsbescheinigung counts. The city also names a conditional university admission (bedingte Hochschulzulassung) as proof; for conditional admission, however, issuing the permit is at the authority's discretion.",
+      "tr": "Kanıt olarak yalnız Immatrikulationsbescheinigung'un kabul edildiğini sanmak. Şehir şartlı kabulü (bedingte Hochschulzulassung) de kanıt sayıyor; ama şartlı kabulde izni verip vermemek makamın takdirinde.",
+      "de": "Annehmen, nur die Immatrikulationsbescheinigung zähle. Die Stadt nennt auch eine bedingte Hochschulzulassung als Nachweis; bei bedingter Zulassung steht die Erteilung jedoch im Ermessen der Servicestelle für Zuwanderung und Einbürgerung."
+    }
+  ],
+  "booking_url": "https://service.muenchen.de/intelliform/forms/01/02/02/kontaktabhaufenthaltfuerstudienzwecke/index",
+  "appointment": {
+    "mode": "application_first",
+    "walk_in": false,
+    "phone": {
+      "number": "+49 89 233-96010",
+      "hours": null
+    },
+    "slot_release": {
+      "en": "Emergency appointments exist only for documented emergencies (no sufficiently valid residence permit; the SZE decides whether an emergency exists) and only for the same day. They are released Mon, Wed and Fri at 06:30 and Tue and Thu at 07:30. If no appointment is available online, the city refers to its service phone line. Appointments with the SZE are always free of charge.",
+      "tr": "Acil randevular yalnız belgelenmiş acil durumlar için ve yalnız aynı gün için veriliyor. Acil durum, yeterince geçerli bir oturum izninin olmaması demek; buna SZE karar veriyor. Randevular Pazartesi, Çarşamba ve Cuma 06:30'da, Salı ve Perşembe 07:30'da açılıyor. Çevrimiçi randevu kalmadıysa şehir servis telefonuna yönlendiriyor. SZE randevuları her zaman ücretsiz.",
+      "de": "Notfalltermine gibt es nur für nachgewiesene Notfälle (kein ausreichend gültiger Aufenthaltstitel; die SZE prüft, ob ein Notfall vorliegt) und nur kurzfristig für denselben Tag. Sie werden Mo, Mi und Fr um 06:30 Uhr sowie Di und Do um 07:30 Uhr freigeschaltet. Gibt es online keinen Termin, verweist die Stadt auf das Servicetelefon. Die Terminvereinbarung bei der SZE ist immer kostenlos."
+    },
+    "note": {
+      "en": "According to the city, no appointment is needed to submit the application: students submit the form and documents online (contact form) or by post. The SZE then gets in touch; according to the city, appointments for an extension are only given after the application has been sent. The confirmation shown after an online application can be saved as a PDF. According to the city, processing can take up to 12 months. The application is submitted before the current visa or residence permit expires.",
+      "tr": "Şehrin sayfasına göre başvuru için randevu gerekmiyor: formu ve belgeleri çevrimiçi (iletişim formuyla) ya da postayla gönderiyorsun. Sonra SZE seninle iletişime geçiyor; uzatma randevusu da ancak başvuru gönderildikten sonra veriliyor. Çevrimiçi başvurudan sonra çıkan onayı PDF olarak kaydedebilirsin. İşlem 12 aya kadar sürebiliyor. Başvuruyu mevcut vizen ya da oturum iznin bitmeden yapman gerekiyor.",
+      "de": "Laut Stadt ist für die Antragstellung kein Termin nötig: Studierende reichen Formular und Unterlagen online (Kontaktformular) oder per Post ein. Die SZE meldet sich anschließend; laut Stadt gibt es Termine für eine Verlängerung erst, nachdem der Antrag zugesandt wurde. Die nach dem Online-Antrag angezeigte Bestätigung kann als PDF gespeichert werden. Laut Stadt kann die Bearbeitung bis zu 12 Monate dauern. Der Antrag wird vor Ablauf des aktuellen Visums oder Aufenthaltstitels gestellt."
+    },
+    "sources": [
+      "https://stadt.muenchen.de/service/info/studenten/1089339/",
+      "https://stadt.muenchen.de/infos/sze-online.html",
+      "https://stadt.muenchen.de/service/info/servicestelle-fur-zuwanderung-und-einburgerung/10338844/",
+      "https://stadt.muenchen.de/service/info/hauptabteilung-v-servicestelle-fur-zuwanderung-und-einburgerung/1072028/"
+    ]
+  },
+  "prerequisites": [
+    "anmeldung",
+    "krankenkasse"
+  ],
+  "typical_duration_days": null,
+  "sources": [
+    "https://stadt.muenchen.de/service/info/studenten/1089339/",
+    "https://www.bayernportal.de/dokumente/leistung/7888647521?behoerde=88887100385&gemeinde=666856454699&plz=80331"
+  ],
+  "last_verified": "2026-10-06"
+}

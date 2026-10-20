@@ -1,0 +1,154 @@
+[
+  {
+    "term": "Anmeldung",
+    "explanation": {
+      "tr": "Almanya'da yeni bir adrese taşınıldığında, bu adresin yetkili belediye dairesine (Bürgerbüro/Meldebehörde) bildirilmesi işlemi.",
+      "en": "Reporting a new address in Germany to the responsible municipal office (Bürgerbüro/Meldebehörde) after moving there.",
+      "de": "Die Meldung der neuen Wohnadresse bei der zuständigen Stelle der Stadt (Bürgerbüro/Meldebehörde) nach dem Einzug in Deutschland."
+    }
+  },
+  {
+    "term": "Abmeldung",
+    "explanation": {
+      "tr": "Bir adresten taşınırken veya Almanya'dan tamamen ayrılırken mevcut adres kaydının silinmesi işlemi.",
+      "en": "Cancelling the current address registration when moving out of an address or leaving Germany for good.",
+      "de": "Die Löschung der bisherigen Adresse aus dem Melderegister, wenn man auszieht oder Deutschland ganz verlässt."
+    }
+  },
+  {
+    "term": "Meldebescheinigung",
+    "explanation": {
+      "tr": "Anmeldung işleminin tamamlandığını gösteren resmi adres kaydı teyit belgesi.",
+      "en": "The official confirmation of address registration, showing that the Anmeldung has been completed.",
+      "de": "Amtliche Bestätigung der gemeldeten Adresse; sie zeigt, dass die Anmeldung abgeschlossen ist."
+    }
+  },
+  {
+    "term": "Wohnungsgeberbestätigung",
+    "explanation": {
+      "tr": "Ev sahibinin/kiraya verenin, kiracının o adrese taşındığını yazılı olarak onayladığı belge; Anmeldung için istenir.",
+      "en": "A document in which the landlord or the person letting the home confirms in writing that the tenant has moved in at that address; it is required for the Anmeldung.",
+      "de": "Schriftliche Bestätigung vom Vermieter oder Eigentümer, dass man an diese Adresse eingezogen ist; sie wird für die Anmeldung verlangt."
+    }
+  },
+  {
+    "term": "Steuer-ID (Steuerliche Identifikationsnummer)",
+    "explanation": {
+      "tr": "Bir kişiye Almanya'da ömür boyu değişmeyen, 11 haneli tekil vergi kimlik numarası; Anmeldung sonrası otomatik olarak BZSt tarafından posta ile gönderilir.",
+      "en": "A unique 11-digit tax identification number that stays the same for life in Germany; after the Anmeldung, the BZSt sends it automatically by post.",
+      "de": "Persönliche, 11-stellige Identifikationsnummer für Steuerzwecke, die sich in Deutschland ein Leben lang nicht ändert; nach der Anmeldung schickt das BZSt sie automatisch per Post."
+    }
+  },
+  {
+    "term": "Steuernummer",
+    "explanation": {
+      "tr": "Finanzamt'ın (vergi dairesi) verdiği ve duruma göre değişebilen ayrı bir vergi numarası; Steuer-ID ile aynı şey değildir.",
+      "en": "A separate tax number issued by the Finanzamt (tax office) that can change depending on the situation; it is not the same as the Steuer-ID.",
+      "de": "Eine separate Nummer vom Finanzamt, die sich je nach Situation ändern kann; sie ist nicht dasselbe wie die Steuer-ID."
+    }
+  },
+  {
+    "term": "Krankenkasse",
+    "explanation": {
+      "tr": "Yasal (gesetzliche) sağlık sigortası kurumu; üniversiteye kayıttan önce sigorta kaydının tamamlanmış olması genelde istenir.",
+      "en": "A statutory (gesetzliche) health insurance provider; a completed insurance registration is usually required before university enrollment.",
+      "de": "Anbieter der gesetzlichen Krankenversicherung; vor der Einschreibung an der Hochschule wird meist verlangt, dass die Versicherung schon abgeschlossen ist."
+    }
+  },
+  {
+    "term": "Immatrikulation",
+    "explanation": {
+      "tr": "Bir üniversiteye resmi kayıt/kaydolma işlemi.",
+      "en": "Official enrollment at a university.",
+      "de": "Die offizielle Einschreibung an einer Hochschule."
+    }
+  },
+  {
+    "term": "Aufenthaltstitel / Aufenthaltserlaubnis",
+    "explanation": {
+      "tr": "Aufenthaltstitel, Almanya'da kalma izinlerinin genel adıdır (vize, Aufenthaltserlaubnis, Niederlassungserlaubnis vb.). AB dışından gelenlere belirli bir süre ve amaçla (ör. öğrenim) verilen oturum izni, bunlardan Aufenthaltserlaubnis'tir.",
+      "en": "Aufenthaltstitel is the umbrella term for permits to stay in Germany (visa, Aufenthaltserlaubnis, Niederlassungserlaubnis and others). The residence permit given to people from outside the EU for a set period and purpose (e.g. studies) is the Aufenthaltserlaubnis.",
+      "de": "Aufenthaltstitel ist der Oberbegriff für die Erlaubnisse zum Aufenthalt in Deutschland (Visum, Aufenthaltserlaubnis, Niederlassungserlaubnis u. a.). Die Aufenthaltserlaubnis ist der Titel, den Menschen von außerhalb der EU für eine bestimmte Zeit und einen bestimmten Zweck (z. B. Studium) erhalten."
+    }
+  },
+  {
+    "term": "Fiktionsbescheinigung",
+    "explanation": {
+      "tr": "Oturum izni başvurusu işlemdeyken, kişinin ülkede yasal olarak kalmaya devam ettiğini gösteren geçici belge.",
+      "en": "A temporary document showing that a person continues to stay in the country legally while their residence permit application is being processed.",
+      "de": "Vorläufiges Dokument, das zeigt, dass man sich weiter rechtmäßig im Land aufhält, solange der Antrag auf den Aufenthaltstitel bearbeitet wird."
+    }
+  },
+  {
+    "term": "Sperrkonto",
+    "explanation": {
+      "tr": "Öğrenci vizesi/oturum izni başvurusunda maddi yeterliliği göstermek için kullanılan, aylık düzenli miktarlarla çekim yapılabilen bloke banka hesabı.",
+      "en": "A blocked bank account used to show sufficient funds in a student visa or residence permit application; money can be withdrawn from it in regular monthly amounts.",
+      "de": "Gesperrtes Bankkonto, mit dem man beim Antrag auf ein Studienvisum oder einen Aufenthaltstitel ausreichende finanzielle Mittel nachweist; Geld lässt sich davon in regelmäßigen monatlichen Beträgen abheben."
+    }
+  },
+  {
+    "term": "Ausländerbehörde",
+    "explanation": {
+      "tr": "Yabancıların oturum izni gibi işlemleriyle ilgilenen yerel yabancılar dairesi; Münih'te bu görevi KVR bünyesindeki Servicestelle für Zuwanderung und Einbürgerung (SZE) yürütür.",
+      "en": "The local immigration office that handles matters such as residence permits for foreign nationals; in Munich, the Servicestelle für Zuwanderung und Einbürgerung (SZE) within the KVR does this.",
+      "de": "Die örtliche Behörde für Angelegenheiten von Menschen ohne deutsche Staatsangehörigkeit, etwa den Aufenthaltstitel; in München übernimmt das die Servicestelle für Zuwanderung und Einbürgerung (SZE) im KVR."
+    }
+  },
+  {
+    "term": "Kreisverwaltungsreferat (KVR)",
+    "explanation": {
+      "tr": "Münih'te adres kaydı, sürücü belgesi ve yabancılar işleri gibi birçok idari hizmeti yürüten büyükşehir belediye dairesi.",
+      "en": "The Munich city department that runs many administrative services, such as address registration, driving licences and immigration matters.",
+      "de": "Referat der Stadt München, das viele Verwaltungsaufgaben übernimmt, etwa die Anmeldung der Adresse, Führerscheine und Ausländerangelegenheiten."
+    }
+  },
+  {
+    "term": "Bürgerbüro",
+    "explanation": {
+      "tr": "Adres kaydı gibi günlük vatandaşlık işlemlerinin yapıldığı yerel belediye hizmet ofisi.",
+      "en": "A local municipal service office for everyday citizen services such as address registration.",
+      "de": "Örtliche Servicestelle der Stadt für alltägliche Bürgerangelegenheiten wie die Anmeldung der Adresse."
+    }
+  },
+  {
+    "term": "Rundfunkbeitrag",
+    "explanation": {
+      "tr": "Almanya'da kamu yayıncılığı için ödenen zorunlu katkı payı; her konut için bir kez ödenir, evde kaç kişi yaşarsa yaşasın.",
+      "en": "The mandatory public broadcasting fee in Germany, paid once per home regardless of how many people live there.",
+      "de": "Gesetzlicher Beitrag für den öffentlich-rechtlichen Rundfunk in Deutschland, einmal pro Wohnung zu zahlen – unabhängig davon, wie viele Personen dort leben."
+    }
+  },
+  {
+    "term": "SCHUFA",
+    "explanation": {
+      "tr": "Almanya'da kişilerin kredi/ödeme güvenilirliğini değerlendiren özel bir kredi bilgi kurumu; kiralık ev başvurularında sıkça istenir.",
+      "en": "A private credit agency in Germany that rates people's creditworthiness and payment reliability; it is often requested in rental applications.",
+      "de": "Private Auskunftei in Deutschland, die die Kreditwürdigkeit und Zahlungszuverlässigkeit von Personen bewertet; bei Bewerbungen um eine Mietwohnung wird sie oft verlangt."
+    }
+  },
+  {
+    "term": "Werkstudent",
+    "explanation": {
+      "tr": "Öğrenci statüsü sürerken belirli haftalık saat sınırları içinde çalışan kişi; genelde sosyal sigorta prim avantajı sağlayan bir çalışma biçimi.",
+      "en": "A person who works within certain weekly hour limits while keeping student status; a form of employment that usually comes with an advantage on social insurance contributions.",
+      "de": "Jemand, der neben dem Studium innerhalb bestimmter Stundengrenzen pro Woche arbeitet und dabei den Studierendenstatus behält; diese Beschäftigungsform bringt meist Vorteile bei den Sozialversicherungsbeiträgen."
+    }
+  },
+  {
+    "term": "Arbeitstagekonto",
+    "explanation": {
+      "tr": "AB dışı öğrencilerin bir takvim yılı içinde çalışabileceği tam/yarım gün sayısını takip eden hesap; bu sınırın aşılması yetkili makamların onayına tabidir.",
+      "en": "A record of the number of full or half days that non-EU students may work in a calendar year; going beyond this limit is subject to approval by the responsible authorities.",
+      "de": "Übersicht über die ganzen und halben Tage, die Studierende aus Nicht-EU-Staaten in einem Kalenderjahr arbeiten dürfen; über diese Grenze hinaus geht es nur mit Zustimmung der zuständigen Behörden."
+    }
+  },
+  {
+    "term": "Führerschein-Umschreibung",
+    "explanation": {
+      "tr": "Yabancı bir sürücü belgesinin Almanya'da geçerli bir sürücü belgesine dönüştürülmesi işlemi.",
+      "en": "Converting a foreign driving licence into a driving licence that is valid in Germany.",
+      "de": "Umtausch eines ausländischen Führerscheins in einen Führerschein, der in Deutschland gilt."
+    }
+  }
+]

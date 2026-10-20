@@ -1,0 +1,113 @@
+{
+  "id": "krankenkasse",
+  "city": "munich",
+  "phase": "first_weeks",
+  "official_title": "Krankenversicherung (gesetzliche Krankenkasse)",
+  "official_title_check": { "kind": "verified", "source": "https://www.lmu.de/de/workspace-fuer-studierende/1x1-des-studiums/krankenversicherung/" },
+  "title": {
+    "en": "Health insurance registration",
+    "tr": "Sağlık sigortası (Krankenkasse)",
+    "de": "Krankenversicherung anmelden"
+  },
+  "summary": {
+    "en": "You can't enrol at a German university without health insurance. Most international students join a statutory health insurance fund (gesetzliche Krankenkasse), which then reports it to the university electronically.",
+    "tr": "Almanya'da üniversiteye kaydolmak için sağlık sigortası şart. Çoğu uluslararası öğrenci bir yasal sağlık sigortasına (gesetzliche Krankenkasse) üye oluyor; sigorta da bunu üniversiteye elektronik olarak bildiriyor.",
+    "de": "Ohne Krankenversicherung keine Immatrikulation an einer deutschen Hochschule. Die meisten internationalen Studierenden gehen in eine gesetzliche Krankenkasse, die das dann elektronisch an die Hochschule meldet."
+  },
+  "authority": null,
+  "documents": [
+    {
+      "official": "Versicherungsbescheinigung",
+      "plain": {
+        "en": "This certificate is issued exclusively by a statutory health insurer (gesetzliche Krankenkasse) and confirms your insurance status. The university needs it for enrollment (Immatrikulation); the fund usually sends it to the university electronically.",
+        "tr": "Bu belgeyi yalnız yasal bir sağlık sigortası (gesetzliche Krankenkasse) düzenleyebiliyor; sigorta durumunu onaylıyor. Üniversite kayıt (Immatrikulation) için bunu istiyor; sigorta genelde belgeyi üniversiteye elektronik olarak kendisi gönderiyor.",
+        "de": "Diese Bescheinigung wird ausschließlich von einer gesetzlichen Krankenkasse ausgestellt und bestätigt deinen Versicherungsstatus. Die Hochschule braucht sie für die Immatrikulation; die Krankenkasse übermittelt sie in der Regel elektronisch an die Hochschule."
+      }
+    },
+    {
+      "official": "Europäische Krankenversicherungskarte (EHIC)",
+      "plain": {
+        "en": "People insured in an EU or EEA state use this card from their home insurer when they request the certificate from a German statutory health insurer.",
+        "tr": "AB ya da AEA ülkesinde sigortalıysan, Alman yasal sigortasından belge isterken kendi ülkendeki sigortanın bu kartını kullanırsın.",
+        "de": "Wer in einem EU- oder EWR-Staat versichert ist, nutzt diese Karte der Heimatkrankenkasse, wenn die Bescheinigung bei einer deutschen gesetzlichen Krankenkasse beantragt wird."
+      }
+    },
+    {
+      "official": "Provisorische Ersatzbescheinigung für die EHIC (PEB)",
+      "plain": {
+        "en": "If your EHIC card has not arrived yet or is missing, your home insurer can issue this temporary substitute certificate instead.",
+        "tr": "EHIC kartın henüz gelmediyse ya da elinde yoksa, kendi ülkendeki sigorta bunun yerine geçici bir belge verebilir.",
+        "de": "Falls deine EHIC-Karte noch nicht angekommen ist oder fehlt, stellt deine Heimatkrankenkasse stattdessen diese vorübergehende Ersatzbescheinigung aus."
+      }
+    },
+    {
+      "official": "Mitgliedsbescheinigung",
+      "plain": {
+        "en": "This confirmation of membership from your statutory health insurer proves you are insured. Other offices, such as the immigration office, can also ask for it.",
+        "tr": "Yasal sağlık sigortanın verdiği üyelik belgesi; sigortalı olduğunu gösterir. Yabancılar dairesi gibi başka kurumlar da isteyebilir.",
+        "de": "Diese Mitgliedsbescheinigung deiner gesetzlichen Krankenkasse bestätigt deine Versicherung. Auch andere Stellen, etwa die Ausländerbehörde, können sie verlangen."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": null,
+    "text": {
+      "en": "There is no fixed number of days for this step, but the insurance confirmation must be ready before you apply to enroll at university. If you also need a residence permit, the insurance must stay valid for at least one year; travel insurance is not accepted for that.",
+      "tr": "Bu adım için sabit bir gün sayısı yok, ama sigorta belgesinin üniversite kayıt başvurusundan önce hazır olması gerekiyor. Oturum izni de gerekiyorsa sigorta en az bir yıl geçerli olmalı; seyahat sigortası bunun için kabul edilmiyor.",
+      "de": "Für diesen Schritt gibt es keine feste Frist in Tagen, aber die Versicherungsbescheinigung muss vor dem Immatrikulationsantrag vorliegen. Für einen Aufenthaltstitel muss die Versicherung außerdem mindestens ein Jahr gültig sein; eine Reiseversicherung reicht dafür nicht."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "Assuming a private insurance policy alone is enough for enrollment. The proof for the university is issued only by a statutory health insurer (gesetzliche Krankenkasse), also for privately insured people.",
+      "tr": "Üniversite kaydı için özel bir poliçenin tek başına yeteceğini sanmak. Üniversiteye giden belgeyi yalnız yasal bir sağlık sigortası (gesetzliche Krankenkasse) düzenler, özel sigortalılar için de.",
+      "de": "Davon ausgehen, dass für die Immatrikulation allein eine private Police genügt. Der Nachweis für die Hochschule wird ausschließlich von einer gesetzlichen Krankenkasse ausgestellt, auch bei privat Versicherten."
+    },
+    {
+      "en": "Requesting the Versicherungsbescheinigung only after submitting the enrollment application, instead of before.",
+      "tr": "Sigorta belgesini kayıt başvurusundan önce değil, sonra istemek.",
+      "de": "Die Versicherungsbescheinigung erst nach dem Immatrikulationsantrag beantragen, statt vorher."
+    },
+    {
+      "en": "Assuming travel insurance is enough. For the residence permit application it is not (the insurance must be valid for at least one year), and the enrollment proof comes only from a statutory health insurer.",
+      "tr": "Seyahat sigortasının yeteceğini sanmak. Oturum izni için yetmez (sigorta en az bir yıl geçerli olmalı); kayıt için gereken belge de yalnız yasal bir sağlık sigortasından gelir.",
+      "de": "Davon ausgehen, dass eine Reiseversicherung reicht. Für den Aufenthaltstitel genügt sie nicht (die Versicherung muss mindestens ein Jahr gültig sein), und der Nachweis für die Immatrikulation kommt nur von einer gesetzlichen Krankenkasse."
+    },
+    {
+      "en": "Switching health insurers or insurance type without requesting an updated certificate for the university.",
+      "tr": "Sigortayı ya da sigorta türünü değiştirip üniversite için yeni belge istememek.",
+      "de": "Beim Wechsel der Krankenkasse oder der Versicherungsart keine aktualisierte Bescheinigung für die Hochschule anfordern."
+    },
+    {
+      "en": "Paying insurance contributions late. If the insurer reports payment arrears, re-registration (Rückmeldung) can be blocked until the debt is cleared.",
+      "tr": "Sigorta primlerini geç ödemek. Sigorta borç bildirirse, borç kapanana kadar dönem kaydını yenileyemeyebilirsin (Rückmeldung).",
+      "de": "Beiträge zu spät zahlen. Meldet die Krankenkasse Beitragsrückstände, kann die Rückmeldung bis zum Ausgleich der Schulden verhindert werden."
+    }
+  ],
+  "booking_url": null,
+  "appointment": {
+    "mode": "no_appointment",
+    "walk_in": null,
+    "phone": null,
+    "slot_release": null,
+    "note": {
+      "en": "No appointment with an authority: membership is arranged with a statutory health insurance fund, which reports the insurance status to the university electronically. How to apply depends on the fund.",
+      "tr": "Bir makama gitmen gerekmiyor: üyeliği yasal bir sağlık sigortasında yapıyorsun; sigorta durumunu üniversiteye elektronik olarak sigortan bildiriyor. Nasıl başvurulacağı sigortadan sigortaya değişiyor.",
+      "de": "Kein Behördentermin: Die Mitgliedschaft läuft über eine gesetzliche Krankenkasse, die den Versicherungsstatus elektronisch an die Hochschule meldet. Der Antragsweg hängt von der Krankenkasse ab."
+    },
+    "sources": [
+      "https://www.tk.de/techniker/versicherung/gut-versichert-in-jeder-lebenslage/versichert-als-studierende/krankenversicherung-und-studium/ausland-krankenversicherung-studium-deutschland-bescheinigung-2007432",
+      "https://www.aok.de/pk/leistungen/studium-beruf/studierendenservice/"
+    ]
+  },
+  "prerequisites": [],
+  "typical_duration_days": null,
+  "sources": [
+    "https://www.tk.de/techniker/versicherung/gut-versichert-in-jeder-lebenslage/versichert-als-studierende/krankenversicherung-und-studium/ausland-krankenversicherung-studium-deutschland-bescheinigung-2007432",
+    "https://www.aok.de/pk/leistungen/studium-beruf/studierendenservice/",
+    "https://stadt.muenchen.de/service/info/studenten/1089339/",
+    "https://www.bayernportal.de/dokumente/leistung/7888647521",
+    "https://www.lmu.de/de/workspace-fuer-studierende/1x1-des-studiums/krankenversicherung/"
+  ],
+  "last_verified": "2026-10-06"
+}

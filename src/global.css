@@ -1,0 +1,33 @@
+:root {
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  /* Odak halkası: marka mavisi, açık ve koyu temada ayrı ton (theme.ts accent). */
+  --focus-ring: #0051c2;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-ring: #3d95ff;
+  }
+}
+
+/*
+ * Klavye odağı görünür olmalı (WCAG 2.4.7). React Native Web, dokunulabilir
+ * öğelerin varsayılan odak çizgisini kaldırıyor; yalnız klavyeyle gelinen odakta
+ * (:focus-visible) mavi bir halka geri getiriliyor — fareyle tıklamada çıkmaz.
+ */
+:focus-visible {
+  outline: 2px solid var(--focus-ring) !important;
+  outline-offset: 2px;
+}
+
+/*
+ * Metin kutusu: kendi 1px mürekkep çerçevesi var; odak halkası 2px dışarıda
+ * çizilince iki ayrı çerçeve (arasında boşluk) görünüyordu (critique 7. tur).
+ * Halka çerçevenin üstüne biner: tek, kalın, mavi bir kenar.
+ */
+textarea:focus-visible,
+input:focus-visible {
+  outline-offset: -1px;
+}

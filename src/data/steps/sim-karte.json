@@ -1,0 +1,94 @@
+{
+  "id": "sim-karte",
+  "city": "munich",
+  "phase": "first_weeks",
+  "official_title": "SIM-Karte / Mobilfunkvertrag (Prepaid oder Vertrag)",
+  "official_title_check": { "kind": "descriptive", "source": null },
+  "title": {
+    "en": "Getting a SIM card",
+    "tr": "SIM kart alma",
+    "de": "SIM-Karte besorgen"
+  },
+  "summary": {
+    "en": "For a prepaid SIM, the provider has to check your name and date of birth against an ID before activating it (§ 172 TKG). For contract SIMs they also have to take your name, address and date of birth first. That rule comes from the Telecommunications Act (TKG), not from the provider.",
+    "tr": "Ön ödemeli SIM kartta operatör, hattı açmadan önce adını ve doğum tarihini bir kimlik belgesiyle kontrol etmek zorunda (TKG § 172). Faturalı hatta da açılıştan önce ad, adres ve doğum tarihi alınıyor. Bu kural operatörün değil, Telekomünikasyon Kanunu'nun (TKG).",
+    "de": "Bei Prepaid-SIMs muss der Anbieter vor der Freischaltung Name und Geburtsdatum mit einem Ausweis prüfen (§ 172 TKG). Bei Vertrags-SIMs muss er vorher Name, Anschrift und Geburtsdatum erfassen. Das schreibt das Telekommunikationsgesetz (TKG) vor, nicht der Anbieter."
+  },
+  "authority": null,
+  "documents": [
+    {
+      "official": "Personalausweis, Reisepass oder anderer amtlicher Lichtbildausweis",
+      "plain": {
+        "en": "An official photo ID is presented for identity verification before activation of a prepaid SIM card. Under § 172 TKG this can be a national ID card, a passport, another valid official photo ID, or a residence permit (Aufenthaltstitel).",
+        "tr": "Ön ödemeli hattın açılmasından önceki kimlik kontrolünde resmi, fotoğraflı bir kimlik gösterirsin. TKG § 172'ye göre bu; kimlik kartı, pasaport, geçerli başka bir resmi fotoğraflı kimlik ya da oturum izni (Aufenthaltstitel) olabilir.",
+        "de": "Für die Identitätsprüfung vor der Freischaltung einer Prepaid-SIM-Karte wird ein amtlicher Lichtbildausweis vorgelegt. Nach § 172 TKG kommen dafür Personalausweis, Reisepass, ein sonstiger gültiger amtlicher Ausweis mit Lichtbild oder ein Aufenthaltstitel in Frage."
+      }
+    },
+    {
+      "official": "Video-Ident-Verfahren",
+      "plain": {
+        "en": "Identity can be confirmed remotely by video call with the provider. This is one of the other procedures that the Bundesnetzagentur has defined as suitable under § 172 TKG.",
+        "tr": "Kimlik kontrolü operatörle görüntülü görüşmeyle uzaktan da yapılabilir. Bu, Bundesnetzagentur'un TKG § 172 kapsamında uygun saydığı yöntemlerden biri.",
+        "de": "Die Identitätsprüfung kann per Videoanruf mit dem Anbieter aus der Ferne erfolgen. Das ist eines der anderen Verfahren, die die Bundesnetzagentur nach § 172 TKG als geeignet festgelegt hat."
+      }
+    },
+    {
+      "official": "Post-Ident-Verfahren",
+      "plain": {
+        "en": "Identity can also be confirmed in person with a third party such as a post office branch, by presenting the official photo ID there.",
+        "tr": "Kontrol, kimliğini postane şubesi gibi bir üçüncü tarafta şahsen göstererek de yapılabilir.",
+        "de": "Die Identitätsprüfung kann auch persönlich bei einem Dritten, etwa in einer Postfiliale, erfolgen; dort wird der amtliche Lichtbildausweis vorgelegt."
+      }
+    }
+  ],
+  "deadline_rule": null,
+  "common_mistakes": [
+    {
+      "en": "Assuming a prepaid SIM card works right after purchase. Under § 172 TKG, activation only happens once the identity check is complete.",
+      "tr": "Ön ödemeli SIM kartın aldığın anda çalışacağını sanmak. TKG § 172'ye göre hat, kimlik kontrolü bittikten sonra açılır.",
+      "de": "Davon ausgehen, dass eine Prepaid-SIM-Karte direkt nach dem Kauf funktioniert. Nach § 172 TKG erfolgt die Freischaltung erst nach abgeschlossener Identitätsprüfung."
+    },
+    {
+      "en": "Expecting the simplified pandemic-era Video-Ident exemption. That temporary exemption ended on 30 April 2023; since 1 May 2023 the original December 2021 rules apply in full again.",
+      "tr": "Pandemideki kolaylaştırılmış Video-Ident istisnasının hâlâ geçerli olduğunu sanmak. Bu geçici istisna 30 Nisan 2023'te bitti; 1 Mayıs 2023'ten beri Aralık 2021'deki asıl kurallar yeniden tam olarak uygulanıyor.",
+      "de": "Von der vereinfachten Video-Ident-Ausnahme aus der Pandemiezeit ausgehen. Diese befristete Ausnahme endete am 30. April 2023; seit dem 1. Mai 2023 gelten die ursprünglichen Regeln vom Dezember 2021 wieder uneingeschränkt."
+    },
+    {
+      "en": "Using an expired ID document. § 172 TKG requires a valid ID document for the check.",
+      "tr": "Süresi geçmiş bir kimlikle denemek. TKG § 172, kontrol için geçerli bir kimlik belgesi istiyor.",
+      "de": "Ein abgelaufenes Ausweisdokument verwenden. § 172 TKG verlangt für die Prüfung ein gültiges Ausweisdokument."
+    },
+    {
+      "en": "Expecting a contract SIM to work with just an ID, like a prepaid one. For a contract, the provider also records your address (§ 172 TKG), and providers usually check your creditworthiness with credit agencies such as SCHUFA before signing.",
+      "tr": "Faturalı hattın da ön ödemeli hat gibi yalnız kimlikle açılacağını sanmak. Faturalı hatta operatör adresini de kaydeder (TKG § 172) ve sözleşmeden önce genelde SCHUFA gibi kurumlar üzerinden kredi kontrolü (Bonitätsprüfung) yapar.",
+      "de": "Erwarten, dass ein Vertrag wie eine Prepaid-Karte nur mit Ausweis funktioniert. Beim Vertrag erfasst der Anbieter auch die Anschrift (§ 172 TKG), und vor Vertragsabschluss prüfen Anbieter in der Regel die Bonität bei Auskunfteien wie der SCHUFA."
+    }
+  ],
+  "booking_url": null,
+  "appointment": {
+    "mode": "no_appointment",
+    "walk_in": null,
+    "phone": null,
+    "slot_release": null,
+    "note": {
+      "en": "No appointment with an authority: identity is verified through the provider's procedure, for example Video-Ident or Post-Ident.",
+      "tr": "Makam randevusu yok: kimliğin operatörün yöntemiyle doğrulanır (ör. Video-Ident ya da Post-Ident).",
+      "de": "Kein Behördentermin: Die Identität wird über das Verfahren des Anbieters geprüft, zum Beispiel per Video-Ident oder Post-Ident."
+    },
+    "sources": [
+      "https://www.gesetze-im-internet.de/tkg_2021/__172.html",
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/OeffentlicheSicherheit/IdentverfahrenPrepaid/start.html",
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/OeffentlicheSicherheit/IdentverfahrenPrepaid/artikel.html"
+    ]
+  },
+  "prerequisites": [],
+  "typical_duration_days": null,
+  "sources": [
+    "https://www.gesetze-im-internet.de/tkg_2021/__172.html",
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/OeffentlicheSicherheit/IdentverfahrenPrepaid/start.html",
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/OeffentlicheSicherheit/IdentverfahrenPrepaid/artikel.html",
+    "https://www.lmu.de/en/about-lmu/working-at-lmu/additional-services/lmu-gateway/new-international-scientists/phase-2-first-steps-after-arrival/",
+    "https://www.finanztip.de/handyvertrag/handyvertrag-trotz-schufa/"
+  ],
+  "last_verified": "2026-10-06"
+}

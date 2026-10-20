@@ -1,0 +1,124 @@
+{
+  "id": "werkstudent-arbeitserlaubnis",
+  "city": "munich",
+  "phase": "conditional",
+  "official_title": "Arbeiten während des Studiums: Arbeitstagekonto für internationale Studierende (Drittstaatsangehörige)",
+  "official_title_check": { "kind": "unverified", "source": null },
+  "title": {
+    "en": "Working while studying (140-day limit)",
+    "tr": "Öğrenciyken çalışma sınırı (140 gün)",
+    "de": "Arbeiten im Studium (140-Tage-Regel)"
+  },
+  "summary": {
+    "en": "For students from outside the EU/EEA, the city of Munich gives a limit of 140 full days (or 280 half days) of work per calendar year without approval from the employment agency. Anything beyond that needs approval in advance.",
+    "tr": "AB/AEA dışından gelen öğrenciler, Münih şehrinin sayfasına göre iş ajansının onayı olmadan yılda 140 tam gün (ya da 280 yarım gün) çalışabiliyor. Daha fazlası için önceden onay gerekiyor.",
+    "de": "Für Studierende aus Nicht-EU/EWR-Staaten nennt die Stadt München eine Grenze von 140 ganzen (oder 280 halben) Arbeitstagen pro Kalenderjahr ohne Zustimmung der Arbeitsagentur. Für mehr brauchst du vorher eine Genehmigung."
+  },
+  "authority": {
+    "official": "Ausländerbehörde (München: Kreisverwaltungsreferat – Servicestelle für Zuwanderung und Einbürgerung), ggf. zusätzlich Bundesagentur für Arbeit",
+    "plain": {
+      "en": "This office decides whether you get permission to work beyond the day limit. It also asks the Bundesagentur für Arbeit (Federal Employment Agency) for approval.",
+      "tr": "Bu makam, gün sınırının üstünde çalışmana izin verilip verilmeyeceğine karar verir. Bunun için Bundesagentur für Arbeit'tan (Federal İş Kurumu) da onay ister.",
+      "de": "Diese Stelle entscheidet, ob du über die Tagesgrenze hinaus arbeiten darfst. Sie holt dafür auch die Zustimmung der Bundesagentur für Arbeit ein."
+    }
+  },
+  "documents": [
+    {
+      "official": "Aufenthaltserlaubnis nach § 16b AufenthG",
+      "plain": {
+        "en": "Your residence permit for study purposes. It refers to the legal 140-day rule (§ 16b para. 3 AufenthG) that limits the amount of work.",
+        "tr": "Öğrenim amaçlı oturum iznin. Üzerinde, çalışma süreni sınırlayan yasal 140 gün kuralına (§ 16b Abs. 3 AufenthG) atıf var.",
+        "de": "Dein Aufenthaltstitel zu Studienzwecken. Er verweist auf die gesetzliche 140-Tage-Regelung (§ 16b Abs. 3 AufenthG), die deine Arbeitszeit begrenzt."
+      }
+    },
+    {
+      "official": "Zustimmung der Ausländerbehörde bei Überschreitung des Arbeitstagekontos (140 volle / 280 halbe Tage)",
+      "plain": {
+        "en": "Written approval from the immigration office (Ausländerbehörde) to work beyond 140 full days / 280 half days. It is only granted in cases of special financial hardship, and must be requested before the extra work starts.",
+        "tr": "140 tam günden ya da 280 yarım günden fazla çalışmak için Ausländerbehörde'den alınan yazılı izin. Yalnız özel bir maddi sıkıntı durumunda verilir ve ek işe başlamadan önce istenmelidir.",
+        "de": "Schriftliche Genehmigung der Ausländerbehörde, um mehr als 140 volle Tage oder 280 halbe Tage zu arbeiten. Sie wird nur bei besonderer finanzieller Not erteilt und muss vor Beginn der zusätzlichen Beschäftigung beantragt werden."
+      }
+    },
+    {
+      "official": "Zustimmung der Bundesagentur für Arbeit bei Überschreitung des Arbeitstagekontos",
+      "plain": {
+        "en": "Approval from the Federal Employment Agency (Bundesagentur für Arbeit). The immigration office requests this approval as part of deciding on a request to work beyond the day limit.",
+        "tr": "Federal İş Kurumu'nun (Bundesagentur für Arbeit) onayı. Ausländerbehörde, gün sınırını aşma talebine karar verirken bu onayı ister.",
+        "de": "Zustimmung der Bundesagentur für Arbeit. Die Ausländerbehörde holt diese Zustimmung ein, bevor sie über eine Überschreitung der Tagesgrenze entscheidet."
+      }
+    },
+    {
+      "official": "Nachweis, dass eine Tätigkeit als Pflichtpraktikum in der Studien-/Prüfungsordnung vorgeschrieben ist (Ausnahme von der 140-Tage-Regel)",
+      "plain": {
+        "en": "Proof that an internship is a required part of your degree program, set out in the study or examination regulations (Studien-/Prüfungsordnung). This kind of internship does not count toward the 140-day limit.",
+        "tr": "Stajın, ders ya da sınav yönetmeliğine (Studien-/Prüfungsordnung) göre zorunlu olduğunu gösteren belge. Böyle bir staj 140 güne sayılmaz.",
+        "de": "Nachweis, dass ein Praktikum laut Studien- oder Prüfungsordnung ein Pflichtteil des Studiums ist. Ein solches Pflichtpraktikum wird nicht auf die 140-Tage-Regelung angerechnet."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": null,
+    "text": {
+      "en": "The 140 full days / 280 half days are counted per calendar year, not per residence permit. Only days you actually work count; paid or unpaid leave and sick days do not. If you reach the limit before the year ends, the count starts again only in January of the next year. According to the city, the residence permit always contains its own provisions on taking up work, which may differ from the statutory rules.",
+      "tr": "140 tam gün / 280 yarım gün takvim yılına göre sayılır, oturum iznine göre değil. Yalnız gerçekten çalıştığın günler sayılır; ücretli ya da ücretsiz izin ve hastalık günleri sayılmaz. Sınıra yıl bitmeden ulaşırsan sayaç ancak sonraki yılın Ocak ayında yeniden başlar. Şehre göre oturum izninde her zaman kendi çalışma hükümleri yazar ve bunlar yasal kuraldan farklı olabilir.",
+      "de": "Die 140 vollen Tage bzw. 280 halben Tage werden pro Kalenderjahr gezählt, nicht pro Aufenthaltstitel. Es zählen nur Tage, an denen tatsächlich gearbeitet wird; bezahlter oder unbezahlter Urlaub und Krankheitstage zählen nicht. Ist die Grenze vor Jahresende erreicht, beginnt die Zählung erst wieder im Januar des Folgejahres. Laut Stadt enthält der Aufenthaltstitel stets eigene Regelungen zur Arbeitsaufnahme, die von den gesetzlichen Bestimmungen abweichen können."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "Mixing up the full-day and half-day count: a day with up to 4 hours of work counts as a half day, more than 4 hours counts as a full day.",
+      "tr": "Tam gün ile yarım günü karıştırmak: bir günde en fazla 4 saat çalışmak yarım gün, 4 saatten fazlası tam gün sayılır.",
+      "de": "Volle und halbe Tage verwechseln: Bis zu 4 Stunden Arbeit an einem Tag zählen als halber Tag, mehr als 4 Stunden als voller Tag."
+    },
+    {
+      "en": "Assuming every internship counts toward the 140 days. A mandatory internship required by the study or examination regulations (Pflichtpraktikum) does not count; a voluntary internship does count, whether paid or unpaid.",
+      "tr": "Her stajın 140 güne sayıldığını sanmak. Ders ya da sınav yönetmeliğinin zorunlu tuttuğu staj (Pflichtpraktikum) sayılmaz; gönüllü staj ise ücretli olsun olmasın sayılır.",
+      "de": "Annehmen, dass jedes Praktikum auf die 140 Tage angerechnet wird. Ein durch die Studien- oder Prüfungsordnung vorgeschriebenes Pflichtpraktikum zählt nicht; ein freiwilliges Praktikum zählt dagegen, egal ob bezahlt oder unbezahlt."
+    },
+    {
+      "en": "Thinking that work as a student assistant (studentische Hilfskraft) at a university or research institution counts toward the 140 days. It does not, and needs no separate approval.",
+      "tr": "Üniversitede ya da bilimsel bir kurumda öğrenci yardımcısı (studentische Hilfskraft) olarak çalışmanın 140 güne sayıldığını sanmak. Sayılmaz, ayrı izin de gerekmez.",
+      "de": "Annehmen, dass eine Tätigkeit als studentische Hilfskraft an einer Hochschule oder wissenschaftlichen Einrichtung auf die 140 Tage angerechnet wird. Das ist nicht der Fall, eine gesonderte Genehmigung ist dafür auch nicht nötig."
+    },
+    {
+      "en": "Continuing to work past the limit without approval. Approval must be requested before the extra work starts, and is only given in cases of special financial hardship.",
+      "tr": "Sınırı aşıp izinsiz çalışmaya devam etmek. İzin, ek işe başlamadan önce istenmeli ve yalnız özel bir maddi sıkıntı durumunda veriliyor.",
+      "de": "Ohne Genehmigung über die Grenze hinaus weiterarbeiten. Die Genehmigung muss vor Beginn der zusätzlichen Beschäftigung beantragt werden und wird nur bei besonderer finanzieller Not erteilt."
+    },
+    {
+      "en": "Expecting the day count to reset when the residence permit is renewed. It resets only with the new calendar year (January); tracking the used days is the responsibility of the student and the employer, not the authorities.",
+      "tr": "Oturum izni uzayınca gün sayacının sıfırlanacağını sanmak. Sayaç yalnız yeni takvim yılında (Ocak) sıfırlanır. Kullandığın günleri takip etmek makamların değil, senin ve işverenin işi.",
+      "de": "Erwarten, dass sich der Tage-Zähler mit der Verlängerung des Aufenthaltstitels zurücksetzt. Er beginnt erst mit dem neuen Kalenderjahr (Januar) neu. Die Kontrolle der bereits genutzten Tage liegt bei den Studierenden und Arbeitgebenden selbst, nicht bei den Behörden."
+    }
+  ],
+  "booking_url": null,
+  "appointment": {
+    "mode": "application_first",
+    "walk_in": false,
+    "phone": {
+      "number": "+49 89 233-96010",
+      "hours": null
+    },
+    "slot_release": null,
+    "note": {
+      "en": "Within the 140 full / 280 half days no appointment is needed. A permit for additional work is applied for at the Ausländerbehörde (SZE) before the extra work starts; the SZE does not accept visits without an appointment.",
+      "tr": "140 tam / 280 yarım gün içinde kaldığın sürece randevu gerekmez. Ek çalışma izni, iş başlamadan önce Ausländerbehörde'den (SZE) istenir; SZE randevusuz gelenleri kabul etmiyor.",
+      "de": "Innerhalb der 140 vollen bzw. 280 halben Tage ist kein Termin nötig. Die Erlaubnis für eine zusätzliche Beschäftigung wird vor deren Beginn bei der Ausländerbehörde (SZE) beantragt; die SZE nimmt keine Vorsprachen ohne Termin an."
+    },
+    "sources": [
+      "https://stadt.muenchen.de/infos/studium-arbeiten-aufenthaltsrecht.html",
+      "https://stadt.muenchen.de/service/info/servicestelle-fur-zuwanderung-und-einburgerung/10338844/",
+      "https://stadt.muenchen.de/service/info/hauptabteilung-v-servicestelle-fur-zuwanderung-und-einburgerung/1072028/"
+    ]
+  },
+  "prerequisites": [
+    "aufenthaltstitel"
+  ],
+  "typical_duration_days": null,
+  "sources": [
+    "https://stadt.muenchen.de/infos/studium-arbeiten-aufenthaltsrecht.html",
+    "https://www.bamf.de/DE/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Arbeit/Sonstige/sonstige-node.html",
+    "https://www.bamf.de/DE/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Bildung/Studium/studium-node.html"
+  ],
+  "last_verified": "2026-10-06"
+}

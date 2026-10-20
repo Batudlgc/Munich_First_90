@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "lib": ["es2022"],
+    "types": ["@cloudflare/workers-types", "@cloudflare/vitest-pool-workers/types"],
+    "strict": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "paths": {
+      // src/lib/scope.ts `Lang` tipini '@/lib/language'dan alıyor; o dosya React
+      // bağımlı. Proxy yalnız tipe ihtiyaç duyduğu için aynı tipi taşıyan küçük
+      // bir dosyaya yönlendiriliyor (import type → paketlemede tamamen siliniyor).
+      "@/lib/language": ["./src/lang.ts"]
+    }
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts", "eval/**/*.ts", "vitest.config.ts"]
+}

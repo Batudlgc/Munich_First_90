@@ -1,0 +1,67 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+dist-web*/
+web-build/
+expo-env.d.ts
+
+# scripts/screenshot.sh çıktısı (ad-hoc görsel doğrulama, versiyonlanmaz).
+# İstisna: UI v2'nin önce/sonra kanıtı (docs/durum/UI-V2.md bağlantı veriyor).
+docs/screenshots/*
+!docs/screenshots/ui-v2/
+# docs/store/screenshots/ (scripts/store-shots.mjs çıktısı) BİLEREK versiyonlanır:
+# App Store Connect'e yüklenecek son set (UI v2), Batu Mac'ten doğrudan alır.
+# Ekranlar değişince betik yeniden çalıştırılıp set birlikte güncellenir (~7 MB).
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+example
+
+# generated native folders
+/ios
+/android
+
+# Claude Code oturum durumu (proje içeriği değil)
+.claude/scheduled_tasks.lock
+.claude/worktrees/
+
+# Wrangler yerel durumu (proxy/)
+.wrangler/
+.dev.vars*
+
+# impeccable: platform binary launcher tarafından indirilir (repoya girmez); hook'lar kişisel
+.claude/skills/impeccable/scripts/bin/
+.claude/settings.local.json
+
+# Playwright MCP çıktı klasörü (snapshot/ekran görüntüsü)
+.playwright-mcp/

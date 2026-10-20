@@ -1,0 +1,24 @@
+// Cloudflare Worker yapılandırması — "Sor" ekranının tek sunucu bileşeni (APP.md §4).
+// API anahtarı burada DEĞİL: `wrangler secret put LLM_API_KEY` ile Cloudflare'de durur.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "pratik-proxy",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-15",
+  // Loglama kapalı: soru metni saklanmaz, loglanmaz (CLAUDE.md "Teknik kısıtlar").
+  "observability": { "enabled": false },
+  "durable_objects": {
+    "bindings": [{ "name": "USAGE", "class_name": "UsageCounter" }]
+  },
+  // Ücretsiz planda yalnız SQLite tabanlı Durable Object kullanılabiliyor.
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["UsageCounter"] }],
+  "vars": {
+    "LLM_BASE_URL": "https://api.eu.mistral.ai/v1",
+    "LLM_MODEL": "mistral-small-2603",
+    "ALLOWED_ORIGINS": "https://munichfirst90.com,https://www.munichfirst90.com,https://app.dalliagac.com,https://pratik-app-zkou.vercel.app,http://localhost:8081",
+    "DAILY_IP_LIMIT": "20",
+    "DAILY_TOKEN_BUDGET": "300000",
+    "MAX_OUTPUT_TOKENS": "500",
+    "DAILY_EVENT_LIMIT": "60"
+  }
+}

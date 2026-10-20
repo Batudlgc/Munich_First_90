@@ -1,0 +1,206 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bürokrasi Adımı Listesi",
+  "description": "Münih ilk 90 gün bürokrasi asistanı için adım verisi. KATMAN KURALI: resmi terimler (form, belge, makam, yasal terim adları) HİÇBİR DİLE çevrilmez — öğrencinin Amt'ta söylemesi gereken kelime odur; bunlar \"official\" alanlarında Almanca durur. Çevrilen tek katman AÇIKLAMADIR (\"plain\"): bu adım ne, bu belge ne işe yarar, süre kuralı ne demek. Her alanın kaynağı sources[] içinde olmalı; erişilemeyen alan null bırakılır, uydurulmaz.",
+  "type": "array",
+  "definitions": {
+    "localizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en", "tr", "de"],
+      "description": "Üç dilli açıklama katmanı. Üçü de dolu olmalı (validate-steps.mjs boş bırakılanı HATA sayar). Resmi terim geçtiğinde Almanca aslı parantez içinde korunur: \"landlord's confirmation of move-in (Wohnungsgeberbestätigung)\".",
+      "properties": {
+        "en": { "type": "string" },
+        "tr": { "type": "string" },
+        "de": { "type": "string" }
+      }
+    }
+  },
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "city",
+      "phase",
+      "official_title",
+      "official_title_check",
+      "title",
+      "summary",
+      "authority",
+      "documents",
+      "deadline_rule",
+      "common_mistakes",
+      "booking_url",
+      "appointment",
+      "prerequisites",
+      "typical_duration_days",
+      "sources",
+      "last_verified"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "Benzersiz, küçük harf, tire ile ayrılmış kimlik (ör. anmeldung)"
+      },
+      "city": {
+        "type": "string",
+        "description": "Adımın geçerli olduğu şehir (şimdilik yalnız \"munich\"). Çok şehirli sürüme geçince filtreleme anahtarı olur."
+      },
+      "phase": {
+        "type": "string",
+        "enum": ["pre_arrival", "first_weeks", "first_90_days", "conditional"],
+        "description": "Adımın zaman fazı — sıralamanın önkoşuldan önce gelen birincil ekseni. pre_arrival: Almanya'ya gelmeden önce yapılır (vize/başvuru şartı). first_weeks: varıştan sonraki ilk ~2 hafta, yasal süresi olan işler. first_90_days: ilk 90 gün içinde, sürenin daha esnek olduğu işler. conditional: herkese gerekmez, yalnız durumu oluşursa. Bir adımın önkoşulu kendisinden sonraki bir fazda olamaz (validate-steps.mjs bunu denetler)."
+      },
+      "official_title": {
+        "type": "string",
+        "description": "İşlemin resmi Almanca adı, ÇEVRİLMEZ. Öğrencinin randevu sisteminde arayacağı ve Amt'ta söyleyeceği ad budur (ör. \"Anmeldung des Wohnsitzes (Wohnsitzanmeldung)\")."
+      },
+      "official_title_check": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "source"],
+        "description": "official_title gerçekten resmî bir terim mi (Batu, 06.10.2026)? verified: terim `source` adresinde (makam, form ya da resmî site; adımın kendi kaynaklarından biri) geçiyor. descriptive: resmî terim değil, açıklayıcı ad (ör. \"Bankkonto eröffnen\") — arayüzde Almanca alt satır ve \"Resmi adı\" alanı gösterilmez. unverified: kaynakta birebir bulunamadı, içerik tahminle değiştirilmedi; validate-steps uyarı verir.",
+        "properties": {
+          "kind": { "type": "string", "enum": ["verified", "descriptive", "unverified"] },
+          "source": { "type": ["string", "null"] }
+        }
+      },
+      "title": {
+        "$ref": "#/definitions/localizedText",
+        "description": "Listede ve gezinme başlığında görünen KISA ad. Resmi ad değil, insanın anladığı ad."
+      },
+      "summary": {
+        "$ref": "#/definitions/localizedText",
+        "description": "Bu adımın ne olduğunu tek-iki cümlede anlatan giriş. B1 okuma seviyesi."
+      },
+      "authority": {
+        "type": ["object", "null"],
+        "additionalProperties": false,
+        "required": ["official", "plain"],
+        "description": "Sorumlu makam. Kaynak makam adı vermiyorsa null.",
+        "properties": {
+          "official": {
+            "type": "string",
+            "description": "Makamın resmi Almanca adı, ÇEVRİLMEZ (ör. \"Kreisverwaltungsreferat (KVR) München – Bürgerbüro\")."
+          },
+          "plain": {
+            "$ref": "#/definitions/localizedText",
+            "description": "Bu makam ne yapar, neden buraya gidiliyor — açıklama katmanı."
+          }
+        }
+      },
+      "documents": {
+        "type": "array",
+        "description": "Bu adımda genelde istenen belgeler. Belge ADI Almanca kalır; ne olduğu çevrilir.",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["official", "plain"],
+          "properties": {
+            "official": {
+              "type": "string",
+              "description": "Belgenin resmi Almanca adı, ÇEVRİLMEZ (ör. \"Wohnungsgeberbestätigung des Vermieters\")."
+            },
+            "plain": {
+              "$ref": "#/definitions/localizedText",
+              "description": "Bu belge nedir, kimden alınır, içinde ne yazar — açıklama katmanı."
+            }
+          }
+        }
+      },
+      "deadline_rule": {
+        "type": ["object", "null"],
+        "additionalProperties": false,
+        "required": ["days", "text"],
+        "description": "Yasal süre kuralı. Kaynakta süre kuralı yoksa null.",
+        "properties": {
+          "days": {
+            "type": ["number", "null"],
+            "description": "Yasal sürenin gün sayısı (ör. Anmeldung için 14). Kaynak sayı vermiyorsa null — tahmin edilmez."
+          },
+          "text": {
+            "$ref": "#/definitions/localizedText",
+            "description": "Sürenin sade anlatımı: ne zaman başlar, neye göre sayılır. RDG gereği nötr ve prosedürel."
+          }
+        }
+      },
+      "common_mistakes": {
+        "type": "array",
+        "description": "Bu adımda sık karşılaşılan sorunlar — her biri üç dilli açıklama. Kaynağı olmayan madde yazılmaz.",
+        "items": { "$ref": "#/definitions/localizedText" }
+      },
+      "booking_url": {
+        "type": ["string", "null"],
+        "description": "Randevu/başvuru sayfasının resmi URL'si. Randevu katmanındaki \"portal\" budur; appointment içinde ayrıca tekrarlanmaz."
+      },
+      "appointment": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mode", "walk_in", "phone", "slot_release", "note", "sources"],
+        "description": "RANDEVU BİLGİ KATMANI (APP.md §2A, blok A4). Asıl acı adımı bilmek değil, randevu bulmak — bu alan o bilgiyi taşır. Portal adresi booking_url'dedir. Her adımda zorunlu; randevu gerekmeyen adımda mode=\"no_appointment\" olur ve note gerekçeyi söyler (\"gerekçeli null\"). validate-steps.mjs ayrıca denetler: no_appointment ise note dolu; diğer modlarda booking_url ya da phone dolu.",
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": ["appointment", "appointment_or_written", "application_first", "no_appointment"],
+            "description": "Makama giriş yolu. appointment: kullanıcı kendisi randevu alır, işlem yüz yüze. appointment_or_written: randevuyla ya da yazılı (posta/form) yapılabilir. application_first: önce çevrimiçi/yazılı başvuru; gerekirse makam kendisi davet eder, kullanıcı doğrudan randevu alamaz. no_appointment: randevu sistemi yok (çevrimiçi form, özel sağlayıcı, otomatik gönderim) — gerekçe note'ta."
+          },
+          "walk_in": {
+            "type": ["boolean", "null"],
+            "description": "Randevusuz gidilebilir mi. true/false yalnız kaynak açıkça söylüyorsa; söylemiyorsa null (tahmin edilmez)."
+          },
+          "phone": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "required": ["number", "hours"],
+            "description": "Randevu/bilgi için resmi telefon hattı. Yoksa null.",
+            "properties": {
+              "number": {
+                "type": "string",
+                "description": "Uluslararası biçimde, ör. \"+49 89 233-96000\"."
+              },
+              "hours": {
+                "anyOf": [{ "$ref": "#/definitions/localizedText" }, { "type": "null" }],
+                "description": "Hattın ulaşılabilir olduğu saatler; kaynak vermiyorsa null."
+              }
+            }
+          },
+          "slot_release": {
+            "anyOf": [{ "$ref": "#/definitions/localizedText" }, { "type": "null" }],
+            "description": "Yeni randevuların ne zaman açıldığı (gün/saat) ve acil randevu yolu. Kaynak söylemiyorsa null."
+          },
+          "note": {
+            "anyOf": [{ "$ref": "#/definitions/localizedText" }, { "type": "null" }],
+            "description": "Randevuyla ilgili kısa prosedür notu. mode=no_appointment iken ZORUNLU: randevunun neden gerekmediği."
+          },
+          "sources": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 1,
+            "description": "Bu alanın dayandığı kaynak URL'leri. Adımın genel sources[] listesinden ayrı tutulur: randevu bilgisi en hızlı bayatlayan kısım."
+          }
+        }
+      },
+      "prerequisites": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Bu adımdan önce İDARİ OLARAK tamamlanmış olması gereken diğer adımların id'leri. \"Pratikte kolaylaştırır\" seviyesindeki ilişkiler buraya YAZILMAZ; onlar common_mistakes içinde not edilir."
+      },
+      "typical_duration_days": {
+        "type": ["number", "null"],
+        "description": "Başvuru/işlem yapıldıktan sonra sonucun (belge, numara, kart, onay) kullanıcının eline geçmesine kadar geçen TİPİK gün sayısı. Randevu bekleme süresi buna dahil değildir. Resmi kaynak bir aralık veriyorsa üst sınır değil, tipik/ortalama değer yazılır. Kaynak söylemiyorsa null."
+      },
+      "sources": {
+        "type": "array",
+        "items": { "type": "string" },
+        "minItems": 1,
+        "description": "Bu adımdaki her alanın dayandığı resmi kaynak URL'leri; en az 1 tane zorunlu. Sadeleştirilmiş metin bu kaynaklardan TÜRETİLİR — kaynakta olmayan bilgi eklenmez."
+      },
+      "last_verified": {
+        "type": ["string", "null"],
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+        "description": "Bu adımın kaynaklarının resmi sayfadan en son GERÇEKTEN doğrulandığı tarih (ISO, YYYY-AA-GG). Doğrulanmadıysa null. Çeviri eklemek doğrulama SAYILMAZ — bu tarih yalnızca Almanca kaynak yeniden okunduğunda güncellenir. Uydurma tarih yazılmaz; validate-steps.mjs 90 günden eskisine uyarı basar."
+      }
+    }
+  }
+}

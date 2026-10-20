@@ -1,0 +1,108 @@
+{
+  "id": "schufa",
+  "city": "munich",
+  "phase": "conditional",
+  "official_title": "SCHUFA-BonitätsAuskunft / SCHUFA-BonitätsCheck (für Vermieter)",
+  "official_title_check": { "kind": "unverified", "source": null },
+  "title": {
+    "en": "SCHUFA credit report (for landlords)",
+    "tr": "SCHUFA kredi raporu (ev sahibi için)",
+    "de": "SCHUFA-Auskunft für Vermieter"
+  },
+  "summary": {
+    "en": "Landlords in Munich often want a SCHUFA report, which shows your payment history, before they sign a lease. You order it online (SCHUFA-BonitätsCheck), get a PDF, and add it to your rental application.",
+    "tr": "Münih'te ev sahipleri sözleşmeden önce genelde ödeme geçmişini gösteren bir SCHUFA raporu istiyor. Raporu (SCHUFA-BonitätsCheck) internetten sipariş edip PDF olarak alıyor ve kira başvurusuna ekliyorsun.",
+    "de": "Vermieter in München wollen vor dem Mietvertrag oft eine SCHUFA-Auskunft sehen. Du bestellst sie online (SCHUFA-BonitätsCheck), bekommst ein PDF und legst es deiner Wohnungsbewerbung bei."
+  },
+  "authority": {
+    "official": "SCHUFA Holding AG",
+    "plain": {
+      "en": "SCHUFA is Germany's main credit bureau. It stores payment history data and issues the report landlords use to assess whether you can pay rent reliably.",
+      "tr": "SCHUFA, Almanya'nın en büyük kredi kayıt kuruluşu. Ödeme geçmişini kaydediyor ve ev sahiplerinin, kiranı düzenli ödeyip ödeyemeyeceğine bakmak için kullandığı raporu hazırlıyor.",
+      "de": "Die SCHUFA ist Deutschlands größte Wirtschaftsauskunftei. Sie speichert Zahlungsdaten und stellt den Bericht aus, mit dem Vermieter deine Kreditwürdigkeit prüfen."
+    }
+  },
+  "documents": [
+    {
+      "official": "Online-Bestellung über meineschufa.de (SCHUFA-BonitätsCheck 29,95€ einmalig oder meineSCHUFA kompakt 4,95€/monatlich)",
+      "plain": {
+        "en": "You order the report on meineschufa.de. The one-time SCHUFA-BonitätsCheck costs 29.95 euros; the meineSCHUFA kompakt subscription costs 4.95 euros per month.",
+        "tr": "Raporu meineschufa.de üzerinden sipariş edersin. Tek seferlik SCHUFA-BonitätsCheck 29,95 avro; meineSCHUFA kompakt aboneliği ayda 4,95 avrodur.",
+        "de": "Du bestellst den Bericht auf meineschufa.de. Der einmalige SCHUFA-BonitätsCheck kostet 29,95 Euro, das Abo meineSCHUFA kompakt 4,95 Euro im Monat."
+      }
+    },
+    {
+      "official": "Persönlicher Verifizierungscode zur Identitätsprüfung, 60 Tage gültig",
+      "plain": {
+        "en": "After ordering, you get a personal verification code to confirm your identity. It stays valid for 60 days.",
+        "tr": "Siparişten sonra kimliğini doğrulamak için kişisel bir kod gelir. Kod 60 gün geçerli.",
+        "de": "Nach der Bestellung erhältst du einen persönlichen Verifizierungscode zur Identitätsprüfung. Er ist 60 Tage gültig."
+      }
+    },
+    {
+      "official": "Für die kostenlose Datenkopie nach Art. 15 DSGVO: Identitätsnachweis via eAusweis, eID oder PIN-Brief",
+      "plain": {
+        "en": "This free copy of your stored data (data protection right, Art. 15 GDPR) can be requested by post or through a digital SCHUFA account with identity proof via eAusweis, eID or a PIN letter. SCHUFA describes it as sensitive data meant only for your own information.",
+        "tr": "Ücretsiz veri kopyası (Art. 15 DSGVO'daki bilgi alma hakkı) postayla ya da dijital bir SCHUFA hesabından istenebilir; hesapta kimliği eAusweis, eID ya da PIN mektubuyla doğrularsın. SCHUFA bunu yalnız kendi bilgin için olan hassas veri olarak tanımlıyor.",
+        "de": "Die kostenlose Datenkopie (Auskunftsrecht nach Art. 15 DSGVO) kann postalisch oder über ein digitales SCHUFA-Konto mit Identitätsnachweis per eAusweis, eID oder PIN-Brief angefordert werden. Die SCHUFA beschreibt sie als sensible Daten, die nur der eigenen Information dienen."
+      }
+    },
+    {
+      "official": "Persönliche Angaben (Name, Adresse, Geburtsdatum) im Online-Antragsformular",
+      "plain": {
+        "en": "You fill in your name, address and date of birth in the online form.",
+        "tr": "Online formda adını, adresini ve doğum tarihini yazarsın.",
+        "de": "Im Online-Formular gibst du Name, Adresse und Geburtsdatum an."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": null,
+    "text": {
+      "en": "The free data copy (Art. 15 GDPR) must legally arrive within one month; by post it usually takes 5 to 7 days. The paid BonitätsCheck is available as a PDF within minutes.",
+      "tr": "Ücretsiz veri kopyası (Art. 15 DSGVO) yasal olarak en geç bir ay içinde gelmeli; postayla genelde 5-7 gün sürüyor. Ücretli BonitätsCheck ise birkaç dakikada PDF olarak hazır.",
+      "de": "Die kostenlose Datenkopie (Art. 15 DSGVO) muss laut Gesetz innerhalb eines Monats vorliegen, per Post dauert es meist 5 bis 7 Tage. Der kostenpflichtige BonitätsCheck steht innerhalb von Minuten als PDF bereit."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "Sending the free data copy (Art. 15 GDPR) to a landlord. SCHUFA describes it as sensitive data for your own information only, and it includes your score. The paid SCHUFA-BonitätsCheck is the document intended for passing on; the landlord version shows no scores.",
+      "tr": "Ücretsiz veri kopyasını (Art. 15 DSGVO) ev sahibine göndermek. SCHUFA bunu yalnız kendi bilgin için olan hassas veri olarak tanımlıyor ve içinde skorun da var. Başkasına vermek için hazırlanan belge ücretli SCHUFA-BonitätsCheck; ev sahibine giden sürümde skor görünmüyor.",
+      "de": "Die kostenlose Datenkopie (Art. 15 DSGVO) an den Vermieter schicken. Die SCHUFA beschreibt sie als sensible Daten nur zur eigenen Information, und sie enthält deinen Score. Zur Weitergabe ist der kostenpflichtige SCHUFA-BonitätsCheck gedacht; in der Auskunft für den Vermieter werden keine Scores ausgewiesen."
+    },
+    {
+      "en": "Missing the 60-day validity window of the personal verification code needed to confirm identity.",
+      "tr": "Kimlik doğrulama kodunun 60 günlük süresini kaçırmak.",
+      "de": "Die 60-tägige Gültigkeit des persönlichen Verifizierungscodes zur Identitätsprüfung verpassen."
+    },
+    {
+      "en": "Ordering the free data copy when you need a document fast. It can legally take up to a month, while the paid BonitätsCheck is available as a PDF within minutes.",
+      "tr": "Acele belge lazımken ücretsiz veri kopyasını sipariş etmek. Bu yasal olarak bir aya kadar sürebilir; ücretli BonitätsCheck ise birkaç dakikada PDF olarak hazır.",
+      "de": "Die kostenlose Datenkopie bestellen, wenn es schnell gehen muss. Sie kann laut Gesetz bis zu einem Monat dauern, während der kostenpflichtige BonitätsCheck innerhalb von Minuten als PDF bereitsteht."
+    }
+  ],
+  "booking_url": "https://www.meineschufa.de/loesungen/schufa-auskunft",
+  "appointment": {
+    "mode": "no_appointment",
+    "walk_in": null,
+    "phone": null,
+    "slot_release": null,
+    "note": {
+      "en": "No appointment: the report (SCHUFA-BonitätsCheck) is ordered online and delivered as a PDF.",
+      "tr": "Randevu yok: rapor (SCHUFA-BonitätsCheck) internetten sipariş edilir ve PDF olarak gelir.",
+      "de": "Kein Termin: Die Auskunft (SCHUFA-BonitätsCheck) wird online bestellt und als PDF bereitgestellt."
+    },
+    "sources": [
+      "https://www.meineschufa.de/service/datenkopie",
+      "https://www.meineschufa.de/loesungen/schufa-auskunft"
+    ]
+  },
+  "prerequisites": [],
+  "typical_duration_days": 1,
+  "sources": [
+    "https://www.meineschufa.de/service/datenkopie",
+    "https://www.meineschufa.de/loesungen/schufa-auskunft",
+    "https://www.schufa.de/en/newsroom/schufa/schufa-data-copy-according-art-15-gdpr/index.jsp"
+  ],
+  "last_verified": "2026-10-06"
+}

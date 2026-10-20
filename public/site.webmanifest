@@ -1,0 +1,14 @@
+{
+  "name": "Munich First 90",
+  "short_name": "First 90",
+  "description": "Your first 90 days in Munich: Anmeldung, insurance, bank and residence permit in the right order. TR · EN · DE",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDFAF2",
+  "theme_color": "#FDFAF2",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

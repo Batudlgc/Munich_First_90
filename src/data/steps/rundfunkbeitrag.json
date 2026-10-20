@@ -1,0 +1,133 @@
+{
+  "id": "rundfunkbeitrag",
+  "city": "munich",
+  "phase": "first_weeks",
+  "official_title": "Rundfunkbeitrag anmelden",
+  "official_title_check": { "kind": "verified", "source": "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/formulare/anmelden" },
+  "title": {
+    "en": "Registering for the Rundfunkbeitrag",
+    "tr": "Rundfunkbeitrag kaydı",
+    "de": "Rundfunkbeitrag anmelden"
+  },
+  "summary": {
+    "en": "Germany's mandatory fee for public broadcasting. It's paid once per home, however many people live there. It's currently 18.36 euros a month, paid three months at a time (55.08 euros).",
+    "tr": "Almanya'da kamu yayıncılığı için ödenen zorunlu ücret. Evde kaç kişi yaşarsa yaşasın ev başına bir kez ödeniyor. Şu an ayda 18,36 avro; üç ayda bir ödeniyor (55,08 avro).",
+    "de": "Der Pflichtbeitrag für den öffentlich-rechtlichen Rundfunk. Er fällt einmal pro Wohnung an, egal wie viele dort wohnen. Aktuell 18,36 Euro im Monat, gezahlt für drei Monate auf einmal (55,08 Euro)."
+  },
+  "authority": {
+    "official": "ARD ZDF Deutschlandradio Beitragsservice",
+    "plain": {
+      "en": "The Beitragsservice is a joint office of ARD, ZDF and Deutschlandradio, based in Cologne. It handles Rundfunkbeitrag registration, billing and collection for all of Germany.",
+      "tr": "Beitragsservice, ARD, ZDF ve Deutschlandradio'nun Köln'deki ortak kuruluşu. Rundfunkbeitrag kaydını, faturalarını ve tahsilatı o yürütüyor.",
+      "de": "Der Beitragsservice ist eine gemeinsame Einrichtung von ARD, ZDF und Deutschlandradio mit Sitz in Köln. Er kümmert sich um Anmeldung, Abrechnung und Einzug des Rundfunkbeitrags."
+    }
+  },
+  "documents": [
+    {
+      "official": "Vor- und Familienname",
+      "plain": {
+        "en": "Your first and last name.",
+        "tr": "Adın ve soyadın.",
+        "de": "Vor- und Nachname."
+      }
+    },
+    {
+      "official": "Geburtsdatum",
+      "plain": {
+        "en": "Your date of birth.",
+        "tr": "Doğum tarihin.",
+        "de": "Dein Geburtsdatum."
+      }
+    },
+    {
+      "official": "Gegenwärtige Wohnanschrift (Straße, Hausnummer, Postleitzahl)",
+      "plain": {
+        "en": "Your current home address: street, house number and postcode.",
+        "tr": "Güncel adresin: sokak, kapı numarası ve posta kodu.",
+        "de": "Deine aktuelle Wohnadresse: Straße, Hausnummer und Postleitzahl."
+      }
+    },
+    {
+      "official": "Datum des Beginns des Innehabens der Wohnung",
+      "plain": {
+        "en": "The date you moved into your current home. According to the Rundfunkbeitragsstaatsvertrag, the fee obligation starts on the first day of the month in which the home is first occupied.",
+        "tr": "Bu eve taşındığın tarih. Rundfunkbeitragsstaatsvertrag'a göre ödeme yükümlülüğü, eve taşındığın ayın ilk gününden başlar.",
+        "de": "Das Datum deines Einzugs. Laut Rundfunkbeitragsstaatsvertrag beginnt die Beitragspflicht am Ersten des Monats, in dem die Wohnung erstmals innegehabt wird."
+      }
+    },
+    {
+      "official": "Beitragsnummer (falls für die Wohnung bereits eine vergeben wurde)",
+      "plain": {
+        "en": "The 9-digit Beitragsnummer, if one already exists for this home, for example from a previous tenant or flatmate. Leave this blank if none exists yet.",
+        "tr": "Bu ev için daha önce verilmiş 9 haneli bir Beitragsnummer varsa (örneğin eski kiracıdan ya da ev arkadaşından), onu yazarsın. Yoksa alan boş kalır.",
+        "de": "Die neunstellige Beitragsnummer, falls für diese Wohnung bereits eine vergeben wurde, zum Beispiel von einem Vormieter oder einer Mitbewohnerin. Gibt es noch keine, bleibt das Feld leer."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": null,
+    "text": {
+      "en": "Moving in must be reported without unnecessary delay (\"unverzüglich\"), in writing, to the Beitragsservice. If the notification is not made within one month of the start of the fee obligation, this counts as a regulatory offense (Ordnungswidrigkeit) that can lead to a fine.",
+      "tr": "Taşındığını Beitragsservice'e gecikmeden (\"unverzüglich\") ve yazılı olarak bildirmen gerekiyor. Ödeme yükümlülüğü başladıktan sonra bir ay içinde bildirmezsen bu bir kabahat (Ordnungswidrigkeit) sayılıyor ve para cezası gelebiliyor.",
+      "de": "Der Einzug muss unverzüglich und schriftlich beim Beitragsservice angezeigt werden. Erfolgt die Anzeige nicht innerhalb eines Monats nach Beginn der Beitragspflicht, gilt das als Ordnungswidrigkeit und kann mit einer Geldbuße geahndet werden."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "Every flatmate registering separately. Only one Rundfunkbeitrag is owed per home, no matter how many people live there; one person registers for everyone.",
+      "tr": "Ev arkadaşlarının her birinin ayrı ayrı kayıt yaptırması. Bir evde kaç kişi yaşarsa yaşasın tek Rundfunkbeitrag ödeniyor; bir kişi herkes adına kayıt yaptırıyor.",
+      "de": "Sich in der WG einzeln anmelden. Pro Wohnung fällt nur ein Rundfunkbeitrag an, unabhängig von der Bewohnerzahl; eine Person meldet die Wohnung für alle an."
+    },
+    {
+      "en": "Assuming the Beitragsnummer can be handed over when moving out. It can't: the person who registered keeps their number, and whoever moves in next has to register the home again, separately.",
+      "tr": "Taşınırken Beitragsnummer'ı devredebileceğini sanmak. Devredilmiyor: kaydı yapan kişi numarasını yanında götürüyor, eve yeni gelen kişi evi baştan kaydettiriyor.",
+      "de": "Annehmen, die Beitragsnummer lasse sich beim Auszug übertragen. Das stimmt nicht: Die anmeldende Person behält ihre Nummer, die neue Person muss die Wohnung separat neu anmelden."
+    },
+    {
+      "en": "Assuming an exemption (Befreiung, e.g. for BAföG recipients) automatically covers everyone in the flat. It only covers the person who applied for it, not flatmates.",
+      "tr": "Muafiyetin (Befreiung, örn. BAföG alanlar için) evdeki herkesi kapsadığını sanmak. Muafiyet yalnız başvuran kişiyi kapsar, ev arkadaşlarını değil.",
+      "de": "Annehmen, eine Befreiung (z. B. bei BAföG-Bezug) gelte automatisch für alle Mitbewohnenden. Sie gilt nur für die antragstellende Person, nicht für die übrigen Bewohner."
+    },
+    {
+      "en": "Putting off the notification. Moving in must be reported without unnecessary delay; if it is not reported within one month, this counts as a regulatory offense (Ordnungswidrigkeit) with a possible fine.",
+      "tr": "Bildirimi ertelemek. Taşınmayı gecikmeden bildirmek gerekir; bir ay içinde bildirilmezse kabahat (Ordnungswidrigkeit) sayılır ve para cezası gelebilir.",
+      "de": "Die Anzeige hinauszögern. Der Einzug muss unverzüglich gemeldet werden; erfolgt die Meldung nicht innerhalb eines Monats, gilt das als Ordnungswidrigkeit mit möglicher Geldbuße."
+    },
+    {
+      "en": "Assuming a room in a student residence needs no registration. According to the Beitragsservice, a room in a student residence also counts as a home and is to be registered.",
+      "tr": "Öğrenci yurdundaki odanın kayıt gerektirmediğini sanmak. Beitragsservice'e göre yurt odası da konut sayılır ve kaydedilir.",
+      "de": "Annehmen, ein Zimmer im Studierendenwohnheim müsse nicht angemeldet werden. Laut Beitragsservice gilt auch ein Zimmer im Studierendenwohnheim als Wohnung und ist anzumelden."
+    },
+    {
+      "en": "Waiting for a letter after your Anmeldung. Registration offices pass on registration data to the broadcasters (Rundfunkbeitragsstaatsvertrag § 11), so a letter often comes, but the duty to register is yours. Waiting can make you miss the one-month period.",
+      "tr": "Anmeldung'dan sonra mektup gelmesini beklemek. Kayıt daireleri adres verilerini yayın kuruluşlarına iletir (Rundfunkbeitragsstaatsvertrag § 11), bu yüzden çoğu zaman bir mektup gelir; ama bildirme yükümlülüğü sende. Beklersen bir aylık süreyi kaçırabilirsin.",
+      "de": "Nach der Anmeldung auf einen Brief warten. Die Meldebehörden übermitteln Meldedaten an die Rundfunkanstalten (§ 11 Rundfunkbeitragsstaatsvertrag), deshalb kommt oft ein Schreiben; die Anzeigepflicht liegt aber bei dir. Wer wartet, kann die Monatsfrist verpassen."
+    }
+  ],
+  "booking_url": "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/formulare/anmelden",
+  "appointment": {
+    "mode": "no_appointment",
+    "walk_in": null,
+    "phone": null,
+    "slot_release": null,
+    "note": {
+      "en": "No appointment: registration is done with the Beitragsservice online form.",
+      "tr": "Randevu yok: kayıt Beitragsservice'in internetteki formuyla yapılır.",
+      "de": "Kein Termin: Die Anmeldung erfolgt über das Online-Formular des Beitragsservice."
+    },
+    "sources": [
+      "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/formulare/anmelden",
+      "https://www.rundfunkbeitrag.de/anmelden"
+    ]
+  },
+  "prerequisites": [],
+  "typical_duration_days": null,
+  "sources": [
+    "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/formulare/anmelden",
+    "https://www.rundfunkbeitrag.de/anmelden",
+    "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/neues-semester-neue-wohnung-das-wichtigste-zum-rundfunkbeitrag-fuer-studierende-und-auszubildende",
+    "https://www.rundfunkbeitrag.de/pxy/assets/4e51a426980e625defa738110a5aac106c558895/Rundfunkbeitragsstaatsvertrag.pdf",
+    "https://www.rundfunkbeitrag.de/der-rundfunkbeitrag/beitragsservice"
+  ],
+  "last_verified": "2026-10-06"
+}

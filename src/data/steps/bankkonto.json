@@ -1,0 +1,110 @@
+{
+  "id": "bankkonto",
+  "city": "munich",
+  "phase": "first_weeks",
+  "official_title": "Bankkonto eröffnen",
+  "official_title_check": { "kind": "descriptive", "source": null },
+  "title": {
+    "en": "Opening a bank account",
+    "tr": "Banka hesabı açma",
+    "de": "Bankkonto eröffnen"
+  },
+  "summary": {
+    "en": "In Germany, rent, deposits and other regular payments usually go by bank transfer, so you'll need a German bank account.",
+    "tr": "Almanya'da kira, depozito ve düzenli ödemeler genelde havaleyle yapılıyor. Bunun için bir Alman banka hesabına ihtiyacın var.",
+    "de": "Miete, Kaution und andere laufende Zahlungen laufen in Deutschland meist per Überweisung – dafür brauchst du ein deutsches Bankkonto."
+  },
+  "authority": null,
+  "documents": [
+    {
+      "official": "Gültiger Reisepass oder Personalausweis",
+      "plain": {
+        "en": "A valid passport or ID card to prove your identity.",
+        "tr": "Kimliğini göstermek için geçerli bir pasaport ya da kimlik kartı.",
+        "de": "Ein gültiger Reisepass oder Personalausweis zum Nachweis deiner Identität."
+      }
+    },
+    {
+      "official": "Meldebescheinigung oder Mietvertrag",
+      "plain": {
+        "en": "Your registration certificate (Meldebescheinigung) from the Bürgerbüro, or your rental contract (Mietvertrag), as proof of address.",
+        "tr": "Adresini kanıtlayan bir belge: Bürgerbüro'dan aldığın kayıt belgesi (Meldebescheinigung) ya da kira sözleşmen (Mietvertrag).",
+        "de": "Deine Meldebescheinigung vom Bürgerbüro oder dein Mietvertrag als Adressnachweis."
+      }
+    },
+    {
+      "official": "Studierendenausweis oder Zulassungsbescheid",
+      "plain": {
+        "en": "Proof that you are a student: your student ID card or your university admission letter (Zulassungsbescheid).",
+        "tr": "Öğrenci olduğunu gösteren bir belge: öğrenci kartın ya da üniversitenin kabul mektubu (Zulassungsbescheid).",
+        "de": "Ein Nachweis, dass du Studierender bist: dein Studierendenausweis oder dein Zulassungsbescheid."
+      }
+    },
+    {
+      "official": "Gehaltsabrechnung",
+      "plain": {
+        "en": "A payslip, if you already have a job in Germany. Some banks ask for it depending on the account type.",
+        "tr": "Almanya'da zaten çalışıyorsan maaş bordron (Gehaltsabrechnung). Bazı bankalar hesap türüne göre bunu isteyebiliyor.",
+        "de": "Eine Gehaltsabrechnung, falls du in Deutschland schon arbeitest. Manche Banken verlangen das je nach Kontotyp."
+      }
+    }
+  ],
+  "deadline_rule": null,
+  "common_mistakes": [
+    {
+      "en": "Choosing a bank without comparing fees for account maintenance, international transfers, and ATM withdrawals.",
+      "tr": "Hesap ücretini, yurt dışı havale ücretini ve ATM ücretlerini karşılaştırmadan banka seçmek.",
+      "de": "Eine Bank wählen, ohne die Gebühren für Kontoführung, Auslandsüberweisungen und Geldautomaten zu vergleichen."
+    },
+    {
+      "en": "Not checking whether the bank offers a fee exemption for students.",
+      "tr": "Bankanın öğrencilerden hesap ücreti alıp almadığına bakmamak.",
+      "de": "Nicht prüfen, ob die Bank für Studierende auf Kontoführungsgebühren verzichtet."
+    },
+    {
+      "en": "Not checking whether the bank charges extra for using its cash machines.",
+      "tr": "Bankanın kendi ATM'lerini kullanmak için ek ücret isteyip istemediğine bakmamak.",
+      "de": "Nicht prüfen, ob die Bank für die Nutzung ihrer Geldautomaten zusätzliche Gebühren verlangt."
+    },
+    {
+      "en": "Opening the account too late, which delays paying the first rent, the deposit, or the student services fee (Studierendenwerksbeitrag).",
+      "tr": "Hesabı geç açmak. İlk kira, depozito ya da öğrenci hizmetleri ücreti (Studierendenwerksbeitrag) bu yüzden gecikebiliyor.",
+      "de": "Das Konto zu spät eröffnen. Das verzögert die Zahlung von Miete, Kaution oder Studierendenwerksbeitrag."
+    },
+    {
+      "en": "Going to the bank without the Meldebescheinigung. Banks usually ask for the registration certificate from the Bürgerbüro; many banks accept the rental contract (Mietvertrag) instead.",
+      "tr": "Bankaya Meldebescheinigung olmadan gitmek. Bankalar genelde Bürgerbüro'nun kayıt belgesini istiyor; birçoğu yerine kira sözleşmesini (Mietvertrag) de kabul ediyor.",
+      "de": "Ohne Meldebescheinigung zur Bank zu gehen. Banken verlangen in der Regel die Bescheinigung vom Bürgerbüro; viele Banken akzeptieren stattdessen den Mietvertrag."
+    },
+    {
+      "en": "Not passing the new IBAN on to your Sperrkonto provider. With online Sperrkonto providers, the monthly amount is usually paid into this account.",
+      "tr": "Yeni IBAN'ını Sperrkonto sağlayıcına bildirmemek. Online Sperrkonto sağlayıcılarında aylık tutar genelde bu hesaba ödenir.",
+      "de": "Die neue IBAN nicht an den Sperrkonto-Anbieter weitergeben. Bei Online-Anbietern wird der Monatsbetrag in der Regel auf dieses Konto ausgezahlt."
+    }
+  ],
+  "booking_url": null,
+  "appointment": {
+    "mode": "no_appointment",
+    "walk_in": null,
+    "phone": null,
+    "slot_release": null,
+    "note": {
+      "en": "No appointment with an authority: the account is opened with a bank. Whether a bank appointment is needed depends on the bank.",
+      "tr": "Bir makama gitmen gerekmiyor: hesabı bir bankada açıyorsun. Banka randevusu gerekip gerekmediği bankadan bankaya değişiyor.",
+      "de": "Kein Behördentermin: Das Konto wird bei einer Bank eröffnet. Ob dafür ein Banktermin nötig ist, hängt von der Bank ab."
+    },
+    "sources": [
+      "https://www.make-it-in-germany.com/en/living-in-germany/money-insurance/bank-account",
+      "https://www.lmu.de/en/workspace-for-students/international-student-guide/opening-a-bank-account/"
+    ]
+  },
+  "prerequisites": [],
+  "typical_duration_days": null,
+  "sources": [
+    "https://www.make-it-in-germany.com/en/living-in-germany/money-insurance/bank-account",
+    "https://www.lmu.de/en/workspace-for-students/international-student-guide/opening-a-bank-account/",
+    "https://www.lmu.de/en/workspace-for-students/international-student-guide/checklists/",
+    "https://www.fintiba.com/de/germany/visa/financial-proof"
+  ],
+  "last_verified": "2026-10-06"
+}

@@ -1,0 +1,121 @@
+{
+  "id": "anmeldung",
+  "city": "munich",
+  "phase": "first_weeks",
+  "official_title": "Anmeldung des Wohnsitzes (Wohnsitzanmeldung)",
+  "official_title_check": { "kind": "verified", "source": "https://stadt.muenchen.de/service/info/wohnsitzanmeldung/1063475/n0/" },
+  "title": {
+    "en": "Registering your address",
+    "tr": "Adres kaydı (Anmeldung)",
+    "de": "Wohnsitz anmelden"
+  },
+  "summary": {
+    "en": "The Anmeldung is how you register your address with the city of Munich. A bank account, health insurance and most of the other steps ask for it, so it comes first.",
+    "tr": "Anmeldung, Münih'te oturduğun adresi şehre bildirmek demek. Banka hesabı, sağlık sigortası ve sonraki adımların çoğu bu kaydı istediği için ilk iş bu.",
+    "de": "Mit der Anmeldung meldest du deine Adresse bei der Stadt München. Bankkonto, Krankenversicherung und die meisten anderen Schritte setzen sie voraus – deshalb kommt sie zuerst."
+  },
+  "authority": {
+    "official": "Kreisverwaltungsreferat (KVR) München – Bürgerbüro",
+    "plain": {
+      "en": "The Bürgerbüro is the city office that registers your address. You go there in person for your appointment.",
+      "tr": "Bürgerbüro, adres kaydını yapan belediye dairesi. Randevu günü oraya kendin gidiyorsun.",
+      "de": "Das Bürgerbüro ist die städtische Stelle, die deine Adresse registriert. Zum Termin gehst du persönlich dorthin."
+    }
+  },
+  "documents": [
+    {
+      "official": "Gültiger Personalausweis oder Reisepass für jede anzumeldende Person",
+      "plain": {
+        "en": "A valid ID document for every person being registered. \"Personalausweis\" means the German ID card. If you are not an EU citizen, bring your passport: under § 3 AufenthG, foreign nationals in Germany need a recognised and valid passport.",
+        "tr": "Kayda girecek her kişi için geçerli bir kimlik belgesi. Formda geçen \"Personalausweis\", Alman kimlik kartı demek. AB vatandaşı değilsen pasaportunu götür: AufenthG § 3'e göre Almanya'daki yabancıların tanınmış ve geçerli bir pasaportu olmalı.",
+        "de": "Ein gültiges Ausweisdokument für jede Person, die angemeldet wird. Ohne EU-Staatsangehörigkeit bringst du deinen Reisepass mit: Nach § 3 AufenthG brauchen Ausländer in Deutschland einen anerkannten und gültigen Pass."
+      }
+    },
+    {
+      "official": "Wohnungsgeberbestätigung des Vermieters/Eigentümers",
+      "plain": {
+        "en": "The landlord's confirmation of move-in (Wohnungsgeberbestätigung). It states your address, name and move-in date.",
+        "tr": "Ev sahibinden alacağın taşınma onayı (Wohnungsgeberbestätigung). Üzerinde adresin, adın ve taşınma tarihin yazar.",
+        "de": "Die Bestätigung des Vermieters über deinen Einzug (Wohnungsgeberbestätigung). Sie enthält Adresse, Name und Einzugsdatum."
+      }
+    },
+    {
+      "official": "Vollmacht",
+      "plain": {
+        "en": "A power of attorney (Vollmacht), only needed if someone else registers on your behalf. That person also brings their own ID.",
+        "tr": "Vekaletname (Vollmacht). Yalnız başka biri senin yerine kaydı yaptıracaksa gerekir; o kişi kendi kimliğini de getirir.",
+        "de": "Eine Vollmacht, falls eine andere Person die Anmeldung für dich erledigt. Diese Person bringt außerdem ihren eigenen Ausweis mit."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": 14,
+    "text": {
+      "en": "The address must be registered within 14 days of the move-in date. This deadline comes from German federal law (Bundesmeldegesetz).",
+      "tr": "Yeni adresini taşındığın günden itibaren 14 gün içinde bildirmen gerekiyor. Bu süre Federal Kayıt Kanunu'nda (Bundesmeldegesetz) belirlenmiş.",
+      "de": "Für die Anmeldung gelten 14 Tage ab dem Einzug. Grundlage ist das Bundesmeldegesetz (BMG)."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "The landlord's confirmation of move-in (Wohnungsgeberbestätigung) is missing or incomplete. According to the city, a self-written confirmation is only sufficient if it contains all required details; if the confirmation is not (yet) available, the city lists a separate declaration (Erklärung zur fehlenden Wohnungsgeberbestätigung).",
+      "tr": "Wohnungsgeberbestätigung'u eksik götürmek ya da hiç götürmemek. Şehir, ev sahibinin kendi yazdığı bir onayı da kabul ediyor; yeter ki gerekli bütün bilgiler üzerinde olsun. Onay henüz elinde değilse şehrin bunun için ayrı bir beyan formu var (Erklärung zur fehlenden Wohnungsgeberbestätigung).",
+      "de": "Die Wohnungsgeberbestätigung fehlt oder ist unvollständig. Laut Stadt reicht eine selbst verfasste Bestätigung nur, wenn sie alle notwendigen Angaben enthält; liegt sie (noch) nicht vor, nennt die Stadt eine „Erklärung zur fehlenden Wohnungsgeberbestätigung“."
+    },
+    {
+      "en": "A registration with a move-in date in the future is not possible: the move-in must already have taken place, and the registration date matches the real move-in date.",
+      "tr": "Henüz taşınmadığın bir tarih için kayıt yaptırmaya çalışmak. Önce taşınmış olman gerekiyor; kayıt tarihi, gerçek taşınma tarihin.",
+      "de": "Eine Anmeldung mit einem Einzugsdatum in der Zukunft ist rechtlich nicht möglich: Der Einzug muss bereits erfolgt sein, das Anmeldedatum entspricht dem tatsächlichen Einzugsdatum."
+    },
+    {
+      "en": "Booking the appointment too late and missing the 14-day deadline. If no slot is free, the city advises checking again regularly, because new slots are released several times a day.",
+      "tr": "Randevuyu geç alıp 14 günlük süreyi kaçırmak. Boş randevu yoksa şehir sık sık tekrar bakmayı öneriyor, çünkü gün içinde birkaç kez yeni randevu açılıyor.",
+      "de": "Den Termin zu spät buchen und die 14-Tage-Frist verpassen. Ist kein Termin frei, empfiehlt die Stadt, regelmäßig erneut nachzuschauen, da mehrmals täglich Termine freigeschaltet werden."
+    },
+    {
+      "en": "Not every person being registered brings a valid ID, or someone from outside the EU brings their national ID card instead of a passport. Each person on the registration needs their own valid document at the appointment; for non-EU citizens, that is the passport.",
+      "tr": "Kayda girecek herkesin kimliğini götürmemek ya da AB dışından gelip pasaport yerine kendi ülkenin kimlik kartıyla gitmek. Kayıttaki her kişinin randevuda kendi geçerli belgesi olmalı; AB vatandaşı değilsen bu belge pasaportun.",
+      "de": "Nicht alle anzumeldenden Personen bringen einen gültigen Ausweis mit, oder jemand ohne EU-Staatsangehörigkeit bringt den Ausweis des Heimatlandes statt des Reisepasses. Jede Person auf der Anmeldung braucht beim Termin ihr eigenes gültiges Dokument; ohne EU-Staatsangehörigkeit ist das der Reisepass."
+    }
+  ],
+  "booking_url": "https://stadt.muenchen.de/buergerservice/terminvereinbarung.html#/services/1063475",
+  "appointment": {
+    "mode": "appointment",
+    "walk_in": null,
+    "phone": {
+      "number": "+49 89 233-96000",
+      "hours": {
+        "en": "Mon–Thu 07:30–15:30, Fri 07:30–13:00",
+        "tr": "Pzt–Per 07:30–15:30, Cum 07:30–13:00",
+        "de": "Mo–Do 07:30–15:30 Uhr, Fr 07:30–13:00 Uhr"
+      }
+    },
+    "slot_release": {
+      "en": "Depending on capacity, new appointments are released several times a day: about 30 minutes before the Bürgerbüros open, online appointments for the same day; in the morning, slots for the following week; in the afternoon, slots for the next day. Cancellations also free up appointments. If no appointment is free anywhere in the city in a documented emergency, an emergency appointment can be arranged by phone.",
+      "tr": "Randevular kapasiteye göre gün içinde birkaç kez açılıyor: Bürgerbüro'lar açılmadan yaklaşık 30 dakika önce aynı günün çevrimiçi randevuları, sabahları bir sonraki haftanın, öğleden sonra da ertesi günün randevuları. Son dakika iptalleri de yer açıyor. Belgelenmiş bir acil durumda şehrin hiçbir yerinde boş randevu kalmadıysa telefonla görüşüp acil randevu ayarlanabiliyor.",
+      "de": "Neue Termine werden je nach Kapazität mehrmals täglich freigeschaltet: etwa 30 Minuten vor Öffnung der Bürgerbüros Online-Termine für denselben Tag; vormittags Termine für die Folgewoche; nachmittags Termine für den Folgetag. Auch kurzfristige Absagen machen Termine frei. Sind in einem nachweisbaren Notfall stadtweit keine Termine frei, kann nach telefonischer Rücksprache ein Notfalltermin vereinbart werden."
+    },
+    "note": {
+      "en": "Online registration (elektronische Wohnsitzanmeldung) works without an appointment, but only for a main residence. According to wohnsitzanmeldung.gov.de, it requires a German ID card (Personalausweis) or an eID card with the online ID function, the AusweisApp (easiest on a smartphone) and a user account (e.g. BundID); a residence permit card (eAT) is not named there as a usable card. Without these, this step is done in person at a Bürgerbüro with an appointment.",
+      "tr": "Çevrimiçi kayıt (elektronische Wohnsitzanmeldung) randevusuz yapılıyor, ama yalnız ana ikametgâh için geçerli. wohnsitzanmeldung.gov.de'ye göre bunun için üç şey gerekiyor: çevrimiçi kimlik özelliği açık bir Alman kimlik kartı (Personalausweis) ya da eID-Karte, AusweisApp (en kolayı telefonda) ve bir kullanıcı hesabı (ör. BundID). Elektronik oturum kartı (eAT) bu kartlar arasında sayılmıyor. Bunlar yoksa kayıt, randevuyla Bürgerbüro'da yüz yüze yapılıyor.",
+      "de": "Die elektronische Wohnsitzanmeldung funktioniert ohne Termin, aber nur für den Hauptwohnsitz. Laut wohnsitzanmeldung.gov.de werden ein Personalausweis oder eine eID-Karte mit Online-Ausweisfunktion, die AusweisApp (am einfachsten per Smartphone) und ein Nutzerkonto (z. B. BundID) benötigt; ein elektronischer Aufenthaltstitel (eAT) wird dort nicht als nutzbare Karte genannt. Ohne diese Voraussetzungen erfolgt dieser Schritt persönlich mit Termin im Bürgerbüro."
+    },
+    "sources": [
+      "https://stadt.muenchen.de/infos/terminvereinbarung-buergerbueros.html",
+      "https://stadt.muenchen.de/service/info/burgerburo/10327844/",
+      "https://wohnsitzanmeldung.gov.de/faq-servicekonto-und-ausweis",
+      "https://stadt.muenchen.de/service/info/wohnsitzanmeldung/1063475/n0/"
+    ]
+  },
+  "prerequisites": [],
+  "typical_duration_days": null,
+  "sources": [
+    "https://stadt.muenchen.de/service/info/wohnsitzanmeldung/1063475/n0/",
+    "https://stadt.muenchen.de/infos/terminvereinbarung-buergerbueros.html",
+    "https://stadt.muenchen.de/service/info/burgerburo-ruppertstrasse/10331875/",
+    "https://stadt.muenchen.de/buergerservice/wohnen-meldewesen/meldewesen.html",
+    "https://wohnsitzanmeldung.gov.de/",
+    "https://www.gesetze-im-internet.de/aufenthg_2004/__3.html"
+  ],
+  "last_verified": "2026-10-06"
+}

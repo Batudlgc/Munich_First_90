@@ -1,0 +1,146 @@
+{
+  "id": "immatrikulation",
+  "city": "munich",
+  "phase": "first_90_days",
+  "official_title": "Immatrikulation (Einschreibung an der Universität)",
+  "official_title_check": { "kind": "verified", "source": "https://www.tum.de/studium/bewerbung/infoportal-einschreibung/immatrikulation" },
+  "title": {
+    "en": "University enrollment (Immatrikulation)",
+    "tr": "Üniversiteye kayıt (Immatrikulation)",
+    "de": "Immatrikulation (Einschreibung)"
+  },
+  "summary": {
+    "en": "The last step that makes you an officially enrolled student. You hand in your documents and pay the semester fee: by post at LMU, through TUMonline at TUM. Enrolment isn't complete until your health insurance has been reported to the university.",
+    "tr": "Üniversiteye resmen kayıtlı öğrenci olduğun son adım. Belgelerini teslim edip dönem ücretini ödüyorsun: LMU'da postayla, TUM'da TUMonline üzerinden. Sağlık sigortan üniversiteye bildirilmeden kayıt tamamlanmıyor.",
+    "de": "Mit der Immatrikulation bist du offiziell eingeschriebener Student. Du reichst deine Unterlagen ein und zahlst den Semesterbeitrag – bei der LMU per Post, bei der TUM über TUMonline. Fertig ist sie erst, wenn deine Krankenversicherung an die Hochschule gemeldet ist."
+  },
+  "authority": null,
+  "documents": [
+    {
+      "official": "Immatrikulationsantrag",
+      "plain": {
+        "en": "The enrollment application. At LMU you fill it out online, print it, sign it by hand and send it by post with the other documents. At TUM the enrollment runs through the TUMonline portal.",
+        "tr": "Kayıt başvurusu. LMU'da internetten doldurup yazdırıyor, elle imzalıyor ve diğer belgelerle postayla gönderiyorsun. TUM'da kayıt TUMonline portalından yapılıyor.",
+        "de": "Der Einschreibungsantrag. An der LMU füllst du ihn online aus, druckst ihn aus, unterschreibst ihn und schickst ihn mit den anderen Unterlagen per Post. An der TUM läuft die Einschreibung über das Portal TUMonline."
+      }
+    },
+    {
+      "official": "Zulassungsbescheid",
+      "plain": {
+        "en": "Your official admission letter from the university. It confirms your accepted study place and states the enrollment deadline.",
+        "tr": "Üniversitenin resmi kabul mektubu. Kabul edildiğin bölümü onaylar ve kayıt için son tarihi yazar.",
+        "de": "Der offizielle Zulassungsbrief der Universität. Er bestätigt deinen angenommenen Studienplatz und nennt die Frist für die Einschreibung."
+      }
+    },
+    {
+      "official": "Reisepass bzw. Personalausweis",
+      "plain": {
+        "en": "A copy of your valid passport or ID card, used to confirm your identity.",
+        "tr": "Kimliğini doğrulamak için geçerli pasaportunun ya da kimlik kartının kopyası.",
+        "de": "Eine Kopie deines gültigen Reisepasses oder Personalausweises zum Nachweis deiner Identität."
+      }
+    },
+    {
+      "official": "Meldung der gesetzlichen Krankenkasse (elektronisches Meldeverfahren)",
+      "plain": {
+        "en": "Digital confirmation that a German statutory health insurer has reported your insurance status to the university. Without it, enrollment cannot be completed.",
+        "tr": "Sigortanın üniversiteye dijital olarak gönderdiği bildirim; Alman yasal sağlık sigortasında olduğunu gösterir. Bu bildirim gelmeden kayıt tamamlanmaz.",
+        "de": "Die digitale Bestätigung einer gesetzlichen Krankenkasse über deinen Versicherungsstatus, die direkt an die Universität übermittelt wird. Ohne diese Meldung wird die Immatrikulation nicht abgeschlossen."
+      }
+    },
+    {
+      "official": "Hochschulzugangsberechtigung",
+      "plain": {
+        "en": "Proof that you are qualified to study at a German university, usually your school diploma or an earlier degree certificate. TUM wants it uploaded in TUMonline with the seal and signature of the issuing body, or with a digital seal, verification link or QR code for online verification; a document without either is not sufficient. LMU asks for a certified copy (beglaubigte Kopie).",
+        "tr": "Almanya'da üniversite okuyabileceğini gösteren belge; genelde lise diploman ya da önceki üniversite diploman. TUM bunu TUMonline'a yüklemeni istiyor: ya düzenleyen kurumun mührü ve imzasıyla ya da dijital mühür, doğrulama linki veya QR kodla. İkisi de olmayan belge yetmez. LMU onaylı kopya (beglaubigte Kopie) istiyor.",
+        "de": "Der Nachweis, dass du zum Studium an einer deutschen Hochschule berechtigt bist, meist dein Schulabschluss oder ein früheres Studienabschlusszeugnis. Die TUM verlangt den Upload in TUMonline mit Siegel und Unterschrift der ausstellenden Stelle oder mit digitalem Siegel, Verifizierungslink bzw. QR-Code zur Online-Verifizierung; ein Dokument ohne beides reicht nicht aus. Die LMU verlangt eine beglaubigte Kopie."
+      }
+    },
+    {
+      "official": "Deutschzeugnis (Sprachnachweis)",
+      "plain": {
+        "en": "Proof of your German language skills. LMU asks for it as an uncertified copy; it is not required for an English-taught master's or doctoral program. TUM states that language certificates should not be uploaded for enrollment.",
+        "tr": "Almanca bildiğini gösteren belge. LMU bunu onaysız kopya olarak istiyor; İngilizce yüksek lisans ya da doktora programlarında istemiyor. TUM, kayıt için dil belgesi yüklenmemesini söylüyor.",
+        "de": "Der Nachweis deiner Deutschkenntnisse. Die LMU verlangt ihn als unbeglaubigte Kopie; bei einem englischsprachigen Master- oder Promotionsstudiengang entfällt er. Die TUM weist darauf hin, dass für die Einschreibung keine Sprachnachweise hochzuladen sind."
+      }
+    },
+    {
+      "official": "Studienverlaufsbescheinigung",
+      "plain": {
+        "en": "A certificate showing your academic record at a previous university. LMU asks for it if you have already studied at another university.",
+        "tr": "Önceki üniversitendeki öğrenim geçmişini gösteren belge. Daha önce başka bir üniversitede okuduysan LMU bunu istiyor.",
+        "de": "Eine Bescheinigung über deinen bisherigen Studienverlauf an einer anderen Hochschule. Die LMU verlangt sie, wenn du schon an einer anderen Hochschule studiert hast."
+      }
+    },
+    {
+      "official": "Überweisung des Semesterbeitrags",
+      "plain": {
+        "en": "The bank transfer of your semester fee. At LMU, enrollment is completed only after the payment has been received.",
+        "tr": "Dönem ücretinin havalesi. LMU'da kayıt, ödeme ulaştıktan sonra tamamlanır.",
+        "de": "Die Überweisung deines Semesterbeitrags. An der LMU ist die Immatrikulation erst nach Zahlungseingang abgeschlossen."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": null,
+    "text": {
+      "en": "Deadlines vary by university. LMU: documents and fee must be received within the period stated in your Zulassungsbescheid, and the semester fee is to be transferred within 8 days of the payment request. TUM: the enrollment deadline is 5 weeks after the start of lectures.",
+      "tr": "Son tarihler üniversiteye göre değişir. LMU: belgeler ve ücret, Zulassungsbescheid'de yazan süre içinde ulaşmalı; dönem ücreti, ödeme talebinden sonraki 8 gün içinde havale edilir. TUM: kayıt için son tarih, derslerin başlamasından 5 hafta sonra.",
+      "de": "Die Fristen unterscheiden sich je Universität. LMU: Unterlagen und Beitrag müssen innerhalb der im Zulassungsbescheid genannten Frist eingehen, der Semesterbeitrag ist innerhalb von 8 Tagen nach der Zahlungsaufforderung zu überweisen. TUM: Die Frist für die Immatrikulation endet 5 Wochen nach Vorlesungsbeginn."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "Trying to complete enrollment before the health insurer's electronic confirmation has reached the university. Without it, enrollment cannot go through.",
+      "tr": "Sigortanın elektronik bildirimi üniversiteye ulaşmadan kaydı bitirmeye çalışmak. Bildirim olmadan kayıt olmuyor.",
+      "de": "Die Immatrikulation abschließen wollen, bevor die elektronische Meldung der Krankenkasse bei der Universität eingegangen ist. Ohne sie ist keine Immatrikulation möglich."
+    },
+    {
+      "en": "Submitting degree certificates that do not meet the form requirements. TUM states that a document without seal and signature, digital seal or online verification option is not sufficient.",
+      "tr": "Biçim şartlarına uymayan diploma göndermek. TUM'a göre mühür ve imza, dijital mühür ya da çevrimiçi doğrulama imkânı olmayan belge yetmiyor.",
+      "de": "Abschlussdokumente einreichen, die die Formvorgaben nicht erfüllen. Die TUM weist darauf hin, dass ein Dokument ohne Siegel und Unterschrift, ohne digitales Siegel und ohne Online-Verifizierung nicht ausreicht."
+    },
+    {
+      "en": "Missing the semester fee payment deadline. LMU asks for the transfer within 8 days of the payment request; enrollment is completed only after the payment has been received, and until then no enrollment certificate is issued.",
+      "tr": "Dönem ücretinin süresini kaçırmak. LMU havaleyi ödeme talebinden sonraki 8 gün içinde istiyor; kayıt ödeme ulaşınca tamamlanıyor ve o zamana kadar kayıt belgesi (Immatrikulationsbescheinigung) verilmiyor.",
+      "de": "Die Frist für den Semesterbeitrag verpassen. Die LMU verlangt die Überweisung innerhalb von 8 Tagen nach der Zahlungsaufforderung; die Immatrikulation ist erst nach Zahlungseingang abgeschlossen, bis dahin gibt es keine Immatrikulationsbescheinigung."
+    },
+    {
+      "en": "Mixing up the two universities' procedures. LMU wants documents sent by post, while TUM requires them uploaded through TUMonline.",
+      "tr": "İki üniversitenin sürecini karıştırmak. LMU belgeleri postayla istiyor, TUM ise TUMonline'a yüklemeni.",
+      "de": "Die Verfahren der beiden Universitäten verwechseln. Die LMU verlangt die Unterlagen per Post, die TUM verlangt den Upload über TUMonline."
+    },
+    {
+      "en": "Uploading unnecessary extra documents such as a CV, motivation letter or language certificate. TUM explicitly asks not to upload these for enrollment.",
+      "tr": "CV, motivasyon mektubu ya da dil belgesi gibi gerekmeyen ek belgeleri yüklemek. TUM bunların kayıt için yüklenmemesini açıkça istiyor.",
+      "de": "Unnötige Zusatzunterlagen wie Lebenslauf, Motivationsschreiben oder Sprachnachweis hochladen. Die TUM bittet ausdrücklich darum, diese für die Einschreibung nicht hochzuladen."
+    }
+  ],
+  "booking_url": null,
+  "appointment": {
+    "mode": "no_appointment",
+    "walk_in": null,
+    "phone": null,
+    "slot_release": null,
+    "note": {
+      "en": "No appointment: documents are sent to the university, by post at LMU and through the TUMonline portal at TUM.",
+      "tr": "Randevu yok: belgeler doğrudan üniversiteye gidiyor. LMU'da postayla, TUM'da TUMonline portalından.",
+      "de": "Kein Termin: Die Unterlagen gehen an die Hochschule, an der LMU per Post, an der TUM über das Portal TUMonline."
+    },
+    "sources": [
+      "https://www.lmu.de/de/studium/internationale-vollzeit-studierende/immatrikulation/",
+      "https://www.lmu.de/de/studium/1x1-fuer-studieninteressierte/immatrikulation/",
+      "https://www.tum.de/studium/bewerbung/infoportal-einschreibung/immatrikulation"
+    ]
+  },
+  "prerequisites": [
+    "krankenkasse"
+  ],
+  "typical_duration_days": null,
+  "sources": [
+    "https://www.lmu.de/de/studium/internationale-vollzeit-studierende/immatrikulation/",
+    "https://www.lmu.de/de/studium/1x1-fuer-studieninteressierte/immatrikulation/",
+    "https://www.tum.de/studium/bewerbung/infoportal-einschreibung/immatrikulation"
+  ],
+  "last_verified": "2026-10-06"
+}

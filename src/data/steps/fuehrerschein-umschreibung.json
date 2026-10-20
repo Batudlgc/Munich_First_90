@@ -1,0 +1,172 @@
+{
+  "id": "fuehrerschein-umschreibung",
+  "city": "munich",
+  "phase": "conditional",
+  "official_title": "Umschreibung eines ausländischen Führerscheins",
+  "official_title_check": { "kind": "verified", "source": "https://stadt.muenchen.de/buergerservice/verkehr-mobilitaet/fuehrerschein.html" },
+  "title": {
+    "en": "Converting a foreign driving licence",
+    "tr": "Sürücü belgesi dönüşümü (Umschreibung)",
+    "de": "Führerschein umschreiben"
+  },
+  "summary": {
+    "en": "A driving licence from outside the EU/EEA can be converted into a German one after you move here; for EU/EEA licences the city lists different rules. According to the city, you need your main residence registered in Munich. Here you'll find which documents are usually asked for and how long you can still drive on your foreign licence.",
+    "tr": "AB/AEA dışından aldığın ehliyeti, Almanya'ya taşındıktan sonra Alman ehliyetine çevirtebilirsin; AB/AEA ehliyetleri için şehir farklı kurallar sayıyor. Şehrin sayfasına göre Münih'te ana ikametgâh kaydın olmalı. Burada genelde hangi belgelerin istendiğini ve yabancı ehliyetle ne kadar süre araç kullanabileceğini bulabilirsin.",
+    "de": "Einen Führerschein von außerhalb der EU/des EWR kannst du nach dem Umzug in einen deutschen umschreiben lassen; für EU/EWR-Führerscheine nennt die Stadt andere Regeln. Laut Stadt brauchst du deinen Hauptwohnsitz in München. Hier steht, welche Unterlagen meist verlangt werden und wie lange du mit dem ausländischen Führerschein noch fahren darfst."
+  },
+  "authority": {
+    "official": "Kreisverwaltungsreferat (KVR) München – Führerscheinstelle",
+    "plain": {
+      "en": "The Führerscheinstelle (driving licence office) of Munich's Kreisverwaltungsreferat (KVR) handles the conversion of foreign driving licences.",
+      "tr": "Münih Kreisverwaltungsreferat'ına (KVR) bağlı Führerscheinstelle (ehliyet dairesi), yabancı ehliyetlerin Alman ehliyetine çevrilmesinden sorumlu.",
+      "de": "Die Führerscheinstelle des Kreisverwaltungsreferats (KVR) München ist für die Umschreibung ausländischer Führerscheine zuständig."
+    }
+  },
+  "documents": [
+    {
+      "official": "Personalausweis oder Reisepass",
+      "plain": {
+        "en": "A valid ID card or passport to confirm your identity.",
+        "tr": "Kimliğini doğrulamak için geçerli bir kimlik kartı ya da pasaport.",
+        "de": "Ein gültiger Ausweis oder Reisepass zur Identitätsprüfung."
+      }
+    },
+    {
+      "official": "Biometrisches Passfoto",
+      "plain": {
+        "en": "A biometric passport photo for your new German licence card.",
+        "tr": "Yeni Alman ehliyeti için biyometrik fotoğraf.",
+        "de": "Ein biometrisches Passfoto für die neue Führerscheinkarte."
+      }
+    },
+    {
+      "official": "Ausländischer Führerschein im Original",
+      "plain": {
+        "en": "Your original foreign driving licence, not a copy. According to the city, it must still be valid at the time of conversion.",
+        "tr": "Yabancı ehliyetinin aslı; fotokopisi kabul edilmiyor. Şehrin sayfasına göre ehliyetin, çevirme sırasında hâlâ geçerli olmalı.",
+        "de": "Der ausländische Führerschein im Original, keine Kopie. Laut Stadt muss er zum Zeitpunkt der Umschreibung noch gültig sein."
+      }
+    },
+    {
+      "official": "Übersetzung des ausländischen Führerscheins",
+      "plain": {
+        "en": "A German translation of your foreign licence. Automobile clubs and sworn translators (vereidigte Übersetzer) offer this service.",
+        "tr": "Yabancı ehliyetinin Almanca çevirisi. Bu hizmeti otomobil kulüpleri ve yeminli tercümanlar (vereidigte Übersetzer) veriyor.",
+        "de": "Eine deutsche Übersetzung des ausländischen Führerscheins. Automobilclubs und vereidigte Übersetzer bieten diesen Service an."
+      }
+    },
+    {
+      "official": "Nachweis über die Dauer des Besitzes des ausländischen Führerscheins",
+      "plain": {
+        "en": "Proof of how long you have already held the foreign licence. Not needed if the duration is evident from the licence itself.",
+        "tr": "Yabancı ehliyetine ne zamandan beri sahip olduğunu gösteren belge. Bu, ehliyetin üzerinden anlaşılıyorsa gerekmez.",
+        "de": "Ein Nachweis darüber, seit wann der ausländische Führerschein besteht. Nicht nötig, wenn sich die Dauer aus dem Führerschein selbst ergibt."
+      }
+    },
+    {
+      "official": "Nachweis über die bestandene Fahrerlaubnisprüfung",
+      "plain": {
+        "en": "Proof that the driving test was passed abroad, where it is required for the class applied for.",
+        "tr": "İstenen sınıf için gerekiyorsa, sürücü sınavını yurt dışında geçtiğini gösteren belge.",
+        "de": "Ein Nachweis über die bestandene Fahrerlaubnisprüfung, sofern diese für die beantragte Klasse notwendig ist."
+      }
+    },
+    {
+      "official": "Bestätigung über die erste Anmeldung in Deutschland (erweiterte Meldebescheinigung)",
+      "plain": {
+        "en": "Confirmation of the date of your first registration (Anmeldung) in Germany. Not needed if your first Anmeldung was in Munich and you have lived here since.",
+        "tr": "Almanya'daki ilk Anmeldung tarihini gösteren belge. İlk Anmeldung'un Münih'teyse ve o zamandan beri burada yaşıyorsan gerekmez.",
+        "de": "Eine Bestätigung des Datums der ersten Anmeldung in Deutschland. Entfällt, wenn die erste Anmeldung in München war und seitdem durchgehend hier gewohnt wurde."
+      }
+    },
+    {
+      "official": "Sehtest und Erste-Hilfe-Nachweis (Klassen A, A1, A2, AM, B, BE, L, T)",
+      "plain": {
+        "en": "An eyesight test and proof of first aid training, required for classes A, A1, A2, AM, B, BE, L and T. According to the city, the eyesight test must not be older than two years at the time of application; first aid training has no time limit.",
+        "tr": "Göz testi ve ilk yardım kursu belgesi; A, A1, A2, AM, B, BE, L ve T sınıfları için. Şehrin sayfasına göre göz testi başvuru sırasında iki yıldan eski olmamalı; ilk yardım kursu için süre sınırı yok.",
+        "de": "Ein Sehtest und ein Erste-Hilfe-Nachweis, für die Klassen A, A1, A2, AM, B, BE, L und T. Der Sehtest darf bei Antragstellung laut Stadt nicht älter als zwei Jahre sein; die Erste-Hilfe-Ausbildung ist zeitlich nicht begrenzt."
+      }
+    },
+    {
+      "official": "Augenärztliche Untersuchung, ärztliches Gutachten zur gesundheitlichen Eignung und Erste-Hilfe-Nachweis (Klassen C und CE)",
+      "plain": {
+        "en": "An eye specialist exam, a medical fitness certificate and proof of first aid training, required for classes C and CE (heavy goods vehicles). According to the city, the medical examination must not be older than one year and the eye exam not older than two years at the time of application.",
+        "tr": "Göz doktoru muayenesi, sağlık raporu ve ilk yardım kursu belgesi; C ve CE sınıfları (ağır vasıta) için. Şehrin sayfasına göre başvuru sırasında sağlık muayenesi bir yıldan, göz muayenesi iki yıldan eski olmamalı.",
+        "de": "Eine augenärztliche Untersuchung, ein ärztliches Gutachten zur gesundheitlichen Eignung und ein Erste-Hilfe-Nachweis, für die Klassen C und CE. Bei Antragstellung darf die ärztliche Untersuchung laut Stadt nicht älter als ein Jahr, die Untersuchung des Sehvermögens nicht älter als zwei Jahre sein."
+      }
+    },
+    {
+      "official": "Zusätzliche Nachweise bei Staaten, die nicht in Anlage 11 der Fahrerlaubnis-Verordnung stehen (z. B. Bestätigung der Fahrschule)",
+      "plain": {
+        "en": "For licences from states not listed in Anlage 11 of the Fahrerlaubnis-Verordnung, the city states that further proofs and steps are regularly required, in many cases a confirmation from a driving school.",
+        "tr": "Fahrerlaubnis-Verordnung'un Anlage 11 listesinde olmayan ülkelerin ehliyetleri için şehir, genelde ek belge ve ek adım gerektiğini, çoğu zaman da bir sürücü kursu onayı istendiğini söylüyor.",
+        "de": "Bei Führerscheinen aus Staaten, die nicht in Anlage 11 der Fahrerlaubnis-Verordnung aufgeführt sind, sind laut Stadt regelmäßig weitere Nachweise und zusätzliche Schritte erforderlich, in vielen Fällen eine Bestätigung der Fahrschule."
+      }
+    }
+  ],
+  "deadline_rule": {
+    "days": null,
+    "text": {
+      "en": "After your first registration (Anmeldung) in Germany, your foreign driving licence stays valid for six months. After that, you need the conversion (Umschreibung) to keep driving legally.",
+      "tr": "Almanya'daki ilk Anmeldung'undan sonra yabancı ehliyetinle 6 ay araç kullanabilirsin. Sonrasında araç kullanmaya devam etmek için ehliyetin Alman ehliyetine çevrilmiş (Umschreibung) olmalı.",
+      "de": "Ab der ersten Anmeldung in Deutschland gilt der ausländische Führerschein noch sechs Monate zum Fahren. Danach ist die Umschreibung nötig, um weiter fahren zu dürfen."
+    }
+  },
+  "common_mistakes": [
+    {
+      "en": "Not tracking the six-month deadline from your first Anmeldung in Germany. After that, the foreign licence is no longer valid for driving.",
+      "tr": "İlk Anmeldung'dan itibaren işleyen 6 aylık süreyi takip etmemek. Süre dolunca yabancı ehliyetle araç kullanılamaz.",
+      "de": "Die Sechs-Monats-Frist ab der ersten Anmeldung in Deutschland nicht beachten. Danach berechtigt der ausländische Führerschein nicht mehr zum Fahren."
+    },
+    {
+      "en": "Not checking whether the licence's country of issue is on the Anlage 11 list. Licences from Anlage 11 states can be converted without an exam, but according to the city, holding such a licence alone is no guarantee; for other non-EU/EEA states, a theory and a practical driving test are required.",
+      "tr": "Ehliyetin verildiği ülkenin Anlage 11 listesinde olup olmadığına bakmamak. Listedeki ülkelerin ehliyetleri sınavsız çevrilebiliyor, ama şehrin sayfasına göre bu tek başına garanti değil. AB/AEA dışındaki diğer ülkelerde teorik ve pratik sınav gerekiyor.",
+      "de": "Nicht prüfen, ob der Ausstellungsstaat in der Anlage 11 steht. Führerscheine aus Anlage-11-Staaten können prüfungsfrei umgeschrieben werden, der Besitz allein ist laut Stadt aber keine Garantie; bei anderen Staaten außerhalb von EU und EWR sind eine theoretische und eine praktische Prüfung nötig."
+    },
+    {
+      "en": "Forgetting the translation of the licence. According to the city, translations are offered, for example, by automobile clubs or publicly appointed and sworn translators (öffentlich bestellte und vereidigte Übersetzer).",
+      "tr": "Ehliyet çevirisini unutmak. Şehrin sayfasına göre çeviriyi örneğin otomobil kulüpleri ya da yeminli tercümanlar (öffentlich bestellte und vereidigte Übersetzer) yapıyor.",
+      "de": "Die Übersetzung des Führerscheins vergessen. Laut Stadt bieten zum Beispiel Automobilclubs oder öffentlich bestellte und vereidigte Übersetzer Übersetzungen an."
+    },
+    {
+      "en": "Going to the Führerscheinstelle in person without an appointment. The contact details state that visits are only possible by appointment.",
+      "tr": "Führerscheinstelle'ye randevusuz gitmek. İletişim bilgilerinde yalnız randevuyla gidilebildiği yazıyor.",
+      "de": "Ohne Termin zur Führerscheinstelle gehen. Laut Kontaktangaben geht das nur nach Terminvereinbarung."
+    },
+    {
+      "en": "Not planning for the processing time, which can take up to 14 weeks after all documents are submitted.",
+      "tr": "İşlem süresini hesaba katmamak. Bütün belgeler teslim edildikten sonra 14 haftaya kadar sürebiliyor.",
+      "de": "Die Bearbeitungszeit nicht einplanen. Nach vollständiger Einreichung der Unterlagen kann sie bis zu 14 Wochen dauern."
+    }
+  ],
+  "booking_url": "https://stadt.muenchen.de/buergerservice/terminvereinbarung.html#/services/1071896/locations/10308174",
+  "appointment": {
+    "mode": "appointment",
+    "walk_in": false,
+    "phone": {
+      "number": "+49 89 233-96090",
+      "hours": null
+    },
+    "slot_release": null,
+    "note": {
+      "en": "The Führerscheinstelle (Garmischer Straße 19–21) works by appointment only. Processing time: up to 14 weeks after complete submission, including production of the licence by the Bundesdruckerei.",
+      "tr": "Führerscheinstelle (Garmischer Straße 19–21) yalnız randevuyla çalışır. İşlem süresi: belgeler eksiksiz teslim edildikten sonra en fazla 14 hafta; ehliyetin Bundesdruckerei'de basılması da buna dahil.",
+      "de": "Die Führerscheinstelle (Garmischer Straße 19–21) arbeitet nur nach Terminvereinbarung. Bearbeitungszeit: bis zu 14 Wochen nach vollständiger Einreichung der Unterlagen, einschließlich der Herstellung des Führerscheins durch die Bundesdruckerei."
+    },
+    "sources": [
+      "https://stadt.muenchen.de/service/info/fuhrerscheinstelle/1071898/",
+      "https://stadt.muenchen.de/buergerservice/terminvereinbarung.html"
+    ]
+  },
+  "prerequisites": [
+    "anmeldung"
+  ],
+  "typical_duration_days": null,
+  "sources": [
+    "https://stadt.muenchen.de/buergerservice/verkehr-mobilitaet/fuehrerschein.html",
+    "https://stadt.muenchen.de/service/info/fuhrerscheinstelle/1071946/",
+    "https://www.bayernportal.de/dokumente/leistung/1666375629",
+    "https://stadt.muenchen.de/service/info/fuhrerscheinstelle/1071898/"
+  ],
+  "last_verified": "2026-10-06"
+}

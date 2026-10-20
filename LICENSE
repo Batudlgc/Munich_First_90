@@ -1,0 +1,19 @@
+Copyright (c) 2026 Batu Dallıağaç. All rights reserved.
+
+This software and its associated content — including the step data under
+src/data/, the glossary, and all translated text — are the property of the
+copyright holder. No permission is granted to copy, modify, distribute,
+sublicense, or create derivative works from any part of this repository
+without prior written permission.
+
+Third-party components remain under their own licenses. This project is built
+with Expo and React Native; those frameworks and their dependencies are
+licensed by their respective copyright holders and are not covered by this
+notice. Expo, React Native and React are trademarks of their respective
+owners, and this project is not affiliated with or endorsed by them.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. The information about German administrative procedures presented in
+this application is provided for general guidance only, is not legal advice,
+and may be incomplete or out of date. Always confirm requirements with the
+responsible authority.

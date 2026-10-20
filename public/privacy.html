@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy · Munich First 90 Days</title>
+<meta name="description" content="Privacy policy of Munich First 90 Days (web and iOS).">
+<style>
+  :root { --bg: #ffffff; --fg: #1c1c1e; --muted: #5f6368; --line: #e3e3e8; --link: #0a66c2; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111113; --fg: #f2f2f4; --muted: #a1a1a8; --line: #2c2c31; --link: #6cb4ff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 4px; }
+  h2 { font-size: 1.25rem; margin: 48px 0 8px; padding-top: 16px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1rem; margin: 24px 0 4px; }
+  p, li { overflow-wrap: anywhere; }
+  .muted { color: var(--muted); font-size: .9rem; }
+  a { color: var(--link); }
+  nav { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 0; }
+  nav a { display: inline-block; min-height: 44px; padding: 10px 14px; border: 1px solid var(--line);
+    border-radius: 10px; text-decoration: none; }
+</style>
+</head>
+<body>
+<main>
+<h1>Privacy</h1>
+<p class="muted">Munich First 90 Days — web (munichfirst90.com) and iOS app · Last updated: 6 October 2026 (channel label in anonymous usage counts; controller address)</p>
+<nav aria-label="Language">
+  <a href="#en" lang="en">English</a>
+  <a href="#de" lang="de">Deutsch</a>
+  <a href="#tr" lang="tr">Türkçe</a>
+</nav>
+
+<section id="en" lang="en">
+<h2>English</h2>
+
+<h3>Who is responsible</h3>
+<p>Batu Dallıağaç · <a href="mailto:dalliagacbatu@gmail.com">dalliagacbatu@gmail.com</a>. This is a private, non-commercial project. See also the <a href="/impressum">Impressum</a>.</p>
+
+<h3>What the app stores</h3>
+<p>The app has no account, no sign-in and no user database. It stores five things, and only on your own device (in the iOS app's local storage, or in your browser's <code>localStorage</code> on the web):</p>
+<ul>
+  <li>the IDs of the steps you marked as done (e.g. <code>anmeldung</code>) and the date you marked each one, which the step page shows on its "done" stamp,</li>
+  <li>your chosen language,</li>
+  <li>whether you have already seen the introduction screens,</li>
+  <li>whether you have given consent for the "Ask" feature (see below),</li>
+  <li>whether the iOS app has already asked you once for an App Store rating (so that it does not ask again).</li>
+</ul>
+<p>None of this is sent to us or to anyone else, with one exception: when you mark a step as done, the step's ID is counted anonymously (see "Anonymous usage counts"). Questions you send on the "Ask" screen also leave your device (see below). The app does not ask for your name, e-mail address, ID numbers, documents, photos, location or contacts, and it requests no device permissions.</p>
+
+<h3>Anonymous usage counts — no tracking, no cookies</h3>
+<p>The app contains no advertising, crash-reporting or third-party analytics software and sets no cookies. To learn whether the app is used at all, it sends two kinds of anonymous event to our own server (Cloudflare Workers, the same server as for "Ask"): "the app was opened" and "step X was marked as done" (only the step's ID, e.g. <code>anmeldung</code>; un-marking is not sent). Nothing is stored on your device for this, there is no user ID, and the events contain no question text, documents or other content.</p>
+<p>If the link you used to open the app carries a channel label (the <code>k</code> parameter, for example <code>?k=esn</code>; only labels from a fixed list are accepted), that label is sent together with the "the app was opened" event and counted only as a total per day and channel (for example "esn: 12 on 6 October"). The iOS app sends the label <code>ios</code>. The label is not stored on your device and is not linked to a person.</p>
+<p>Your IP address reaches the server technically. It is turned into a one-way, salted SHA-256 hash that changes every day; the hash is used only to count each visitor once per day (and to at most one channel label), and to cap the number of events per day; it is deleted the next day. The raw IP address is not stored. What remains permanently are plain counts: visitors per day, visitors per day and channel label, how many of them marked a step as done, and how often each step was marked. Because the hash changes daily, the same person on different days cannot be recognised. Legal basis: Art. 6(1)(f) GDPR (legitimate interest in knowing whether a non-commercial project is used). If you object, send an e-mail; the counts cannot be traced back to a person.</p>
+
+<h3>Web hosting</h3>
+<p>The web version is hosted by Vercel Inc. (USA). When you open a page, your browser necessarily transmits technical data to Vercel's servers — in particular your IP address, date and time, the requested address and your browser type. Vercel processes this data to deliver the page and to protect its infrastructure against abuse; this may take place outside the EU. We do not evaluate these logs and do not combine them with other data. Legal basis: Art. 6(1)(f) GDPR (legitimate interest in delivering the website securely). Vercel's own privacy policy: <a href="https://vercel.com/legal/privacy-policy">vercel.com/legal/privacy-policy</a>.</p>
+
+<h3>Links to other websites</h3>
+<p>The app links to external websites, mainly official services of the City of Munich and German authorities. When you follow such a link, you leave the app; those sites are run by third parties under their own privacy policies.</p>
+
+<h3>Question feature ("Ask") — only with your consent</h3>
+<p>The "Ask" screen answers procedural questions about the app's steps. The answers are generated by an AI model (Mistral AI), not by a person, and may contain errors. Nothing is sent before you give consent on that screen; the consent is stored only on your device.</p>
+<ul>
+  <li><strong>What is sent:</strong> the question text you type, the selected language and, if you ask from a step page, that step's ID (e.g. <code>anmeldung</code>). Completed steps and other data on your device are not sent. Please do not include personal details such as your name, address or document numbers.</li>
+  <li><strong>Our server:</strong> a small server of ours running on Cloudflare Workers (Cloudflare, Inc., USA) receives the question, adds the matching step content from the app and forwards it to the AI model. It does not store or log the question text; logging is switched off. It keeps only aggregate counters (number of questions and their outcome, token usage). Your IP address reaches the server technically; for the daily question limit it is turned into a one-way, salted SHA-256 hash that changes every day and is deleted the next day. The raw IP address is not stored.</li>
+  <li><strong>AI model:</strong> the question and the step content are processed by Mistral AI SAS (Paris, France) via its EU endpoint, with training on API calls switched off in our account settings: the data is not used to train models and may be retained for up to 30 days for abuse monitoring. Mistral AI's privacy policy: <a href="https://mistral.ai/terms">mistral.ai/terms</a>.</li>
+  <li><strong>Legal basis:</strong> your consent, Art. 6(1)(a) GDPR. Consent is optional; without it the rest of the app works unchanged. You can withdraw it at any time on the "Ask" screen ("Withdraw consent for Ask"); after that nothing is sent. Withdrawal does not affect questions already sent.</li>
+</ul>
+
+<h3>Your rights</h3>
+<p>Your data stays on your device, so you control it fully: clearing the browser's site data or deleting the iOS app removes it completely. There is no account to delete and no copy on our side. Under the GDPR you have the rights of access, rectification, erasure, restriction, objection and data portability, and the right to lodge a complaint with a data protection supervisory authority (in Bavaria: Bayerisches Landesamt für Datenschutzaufsicht). For questions, write to the e-mail address above.</p>
+
+<h3>Changes</h3>
+<p>If the app starts handling data differently, this page is updated before the change goes live, and the date above changes.</p>
+<p><a href="/impressum">Impressum / legal notice</a> · <a href="/support">Support</a></p>
+</section>
+
+<section id="de" lang="de">
+<h2>Deutsch</h2>
+
+<h3>Verantwortlich</h3>
+<p>Batu Dallıağaç · <a href="mailto:dalliagacbatu@gmail.com">dalliagacbatu@gmail.com</a>. Privates, nicht-kommerzielles Projekt. Siehe auch das <a href="/impressum">Impressum</a>.</p>
+
+<h3>Was die App speichert</h3>
+<p>Die App hat kein Konto, kein Login und keine Nutzerdatenbank. Sie speichert fünf Dinge, und zwar nur auf deinem eigenen Gerät (im lokalen Speicher der iOS-App bzw. im <code>localStorage</code> deines Browsers):</p>
+<ul>
+  <li>die IDs der Schritte, die du als erledigt markiert hast (z. B. <code>anmeldung</code>), und das Datum der Markierung, das die Schrittseite auf dem „Erledigt“-Stempel zeigt,</li>
+  <li>die gewählte Sprache,</li>
+  <li>ob du die Einführungsseiten schon gesehen hast,</li>
+  <li>ob du in die Fragefunktion eingewilligt hast (siehe unten),</li>
+  <li>ob die iOS-App dich schon einmal um eine Bewertung im App Store gebeten hat (damit sie nicht erneut fragt).</li>
+</ul>
+<p>Nichts davon wird an uns oder Dritte übertragen – mit einer Ausnahme: Wenn du einen Schritt als erledigt markierst, wird die ID des Schritts anonym mitgezählt (siehe „Anonyme Nutzungszahlen“). Außerdem verlassen Fragen, die du auf der Seite „Fragen“ absendest, dein Gerät (siehe unten). Die App fragt weder Namen, E-Mail-Adresse, Kennnummern, Dokumente, Fotos, Standort noch Kontakte ab und fordert keine Geräteberechtigungen an.</p>
+
+<h3>Anonyme Nutzungszahlen – kein Tracking, keine Cookies</h3>
+<p>Die App enthält keine Werbe-, Absturzbericht- oder Analyse-Software von Dritten und setzt keine Cookies. Um zu erfahren, ob die App überhaupt genutzt wird, sendet sie zwei Arten anonymer Ereignisse an unseren eigenen Server (Cloudflare Workers, derselbe Server wie bei „Fragen“): „App wurde geöffnet“ und „Schritt X wurde als erledigt markiert“ (nur die ID des Schritts, z. B. <code>anmeldung</code>; das Zurücknehmen wird nicht gesendet). Dafür wird nichts auf deinem Gerät gespeichert, es gibt keine Nutzer-ID, und die Ereignisse enthalten weder Fragetexte noch Dokumente oder andere Inhalte.</p>
+<p>Enthält der Link, über den du die App geöffnet hast, ein Kanal-Label (der Parameter <code>k</code>, z. B. <code>?k=esn</code>; es werden nur Labels aus einer festen Liste akzeptiert), wird dieses Label zusammen mit dem Ereignis „App wurde geöffnet“ gesendet und nur als Summe pro Tag und Kanal gezählt (z. B. „esn: 12 am 6. Oktober“). Die iOS-App sendet das Label <code>ios</code>. Das Label wird nicht auf deinem Gerät gespeichert und nicht mit einer Person verknüpft.</p>
+<p>Deine IP-Adresse erreicht den Server technisch. Sie wird in einen tagesweise wechselnden, einseitigen, gesalzenen SHA-256-Hash umgewandelt; der Hash dient nur dazu, jeden Besucher pro Tag einmal (und höchstens einem Kanal-Label) zuzuordnen und die Ereignisse pro Tag zu begrenzen, und wird am nächsten Tag gelöscht. Die rohe IP-Adresse wird nicht gespeichert. Dauerhaft bleiben nur reine Zahlen: Besucher pro Tag, Besucher pro Tag und Kanal-Label, wie viele davon einen Schritt als erledigt markiert haben und wie oft jeder Schritt markiert wurde. Da der Hash täglich wechselt, lässt sich dieselbe Person an verschiedenen Tagen nicht wiedererkennen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse, zu wissen, ob ein nicht-kommerzielles Projekt genutzt wird). Bei Widerspruch genügt eine E-Mail; die Zahlen lassen sich keiner Person zuordnen.</p>
+
+<h3>Hosting der Webversion</h3>
+<p>Die Webversion wird von Vercel Inc. (USA) gehostet. Beim Aufruf einer Seite übermittelt dein Browser zwangsläufig technische Daten an die Server von Vercel — insbesondere IP-Adresse, Datum und Uhrzeit, die aufgerufene Adresse und den Browsertyp. Vercel verarbeitet diese Daten, um die Seite auszuliefern und die Infrastruktur vor Missbrauch zu schützen; dies kann außerhalb der EU erfolgen. Wir werten diese Protokolle nicht aus und führen sie nicht mit anderen Daten zusammen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren Auslieferung der Website). Datenschutzerklärung von Vercel: <a href="https://vercel.com/legal/privacy-policy">vercel.com/legal/privacy-policy</a>.</p>
+
+<h3>Links zu anderen Websites</h3>
+<p>Die App verlinkt auf externe Websites, vor allem offizielle Angebote der Landeshauptstadt München und deutscher Behörden. Wer einem solchen Link folgt, verlässt die App; diese Seiten werden von Dritten mit eigenen Datenschutzerklärungen betrieben.</p>
+
+<h3>Fragefunktion („Fragen“) — nur mit Einwilligung</h3>
+<p>Die Seite „Fragen“ beantwortet Verfahrensfragen zu den Schritten der App. Die Antworten erstellt ein KI-Modell (Mistral AI), kein Mensch; sie können Fehler enthalten. Bevor du auf dieser Seite einwilligst, wird nichts übertragen; die Einwilligung wird nur auf deinem Gerät gespeichert.</p>
+<ul>
+  <li><strong>Was übertragen wird:</strong> der eingegebene Fragetext, die gewählte Sprache und – wenn du von einer Schrittseite aus fragst – die ID dieses Schritts (z. B. <code>anmeldung</code>). Erledigte Schritte und andere Daten auf deinem Gerät werden nicht übertragen. Gib bitte keine persönlichen Angaben wie Name, Adresse oder Dokumentnummern ein.</li>
+  <li><strong>Unser Server:</strong> ein kleiner eigener Server auf Cloudflare Workers (Cloudflare, Inc., USA) nimmt die Frage entgegen, ergänzt den passenden Schrittinhalt der App und leitet sie an das KI-Modell weiter. Er speichert und protokolliert den Fragetext nicht; die Protokollierung ist abgeschaltet. Er führt nur Gesamtzähler (Anzahl der Fragen und ihr Ergebnis, Token-Verbrauch). Deine IP-Adresse erreicht den Server technisch; für das tägliche Fragelimit wird sie in einen einseitigen, gesalzenen SHA-256-Hash umgewandelt, der sich täglich ändert und am Folgetag gelöscht wird. Die IP-Adresse selbst wird nicht gespeichert.</li>
+  <li><strong>KI-Modell:</strong> Frage und Schrittinhalt verarbeitet Mistral AI SAS (Paris, Frankreich) über den EU-Endpunkt wobei das Training mit API-Aufrufen in unseren Kontoeinstellungen deaktiviert ist: Die Daten werden nicht zum Training von Modellen genutzt und können zur Missbrauchskontrolle bis zu 30 Tage gespeichert werden. Datenschutzerklärung von Mistral AI: <a href="https://mistral.ai/terms">mistral.ai/terms</a>.</li>
+  <li><strong>Rechtsgrundlage:</strong> deine Einwilligung, Art. 6 Abs. 1 lit. a DSGVO. Die Einwilligung ist freiwillig; ohne sie funktioniert der Rest der App unverändert. Du kannst sie jederzeit auf der Seite „Fragen“ widerrufen („Einwilligung für ‚Fragen‘ widerrufen“); danach wird nichts mehr übertragen. Der Widerruf berührt bereits gesendete Fragen nicht.</li>
+</ul>
+
+<h3>Deine Rechte</h3>
+<p>Deine Daten bleiben auf deinem Gerät und damit unter deiner Kontrolle: Das Löschen der Website-Daten im Browser bzw. das Löschen der iOS-App entfernt sie vollständig. Es gibt kein Konto und keine Kopie bei uns. Nach der DSGVO hast du die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit sowie das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde (in Bayern: Bayerisches Landesamt für Datenschutzaufsicht). Fragen an die oben genannte E-Mail-Adresse.</p>
+
+<h3>Änderungen</h3>
+<p>Ändert sich der Umgang mit Daten, wird diese Seite vor der Änderung aktualisiert und das Datum oben angepasst.</p>
+<p><a href="/impressum">Impressum</a> · <a href="/support">Support</a></p>
+</section>
+
+<section id="tr" lang="tr">
+<h2>Türkçe</h2>
+
+<h3>Sorumlu</h3>
+<p>Batu Dallıağaç · <a href="mailto:dalliagacbatu@gmail.com">dalliagacbatu@gmail.com</a>. Kişisel, ticari olmayan bir proje. Ayrıca bkz. <a href="/impressum">Impressum</a>.</p>
+
+<h3>Uygulama neyi saklar</h3>
+<p>Uygulamada hesap, giriş ve kullanıcı veritabanı yoktur. Yalnız beş şey saklanır ve yalnız senin cihazında durur (iOS uygulamasının yerel deposunda ya da web'de tarayıcının <code>localStorage</code> alanında):</p>
+<ul>
+  <li>tamamlandı olarak işaretlediğin adımların kimlikleri (ör. <code>anmeldung</code>) ve her birini işaretlediğin tarih (adım sayfasındaki "tamamlandı" damgasında görünür),</li>
+  <li>seçtiğin dil,</li>
+  <li>tanıtım ekranlarını görüp görmediğin,</li>
+  <li>"Sor" özelliğine izin verip vermediğin (aşağıya bak),</li>
+  <li>iOS uygulamasının senden App Store puanı bir kez isteyip istemediği (bir daha sormaması için).</li>
+</ul>
+<p>Bunların hiçbiri bize ya da başkasına gönderilmez; tek istisna: bir adımı tamamlandı işaretlediğinde adımın kimliği anonim olarak sayılır ("Anonim kullanım sayıları" bölümüne bak). Ayrıca "Sor" ekranında gönderdiğin sorular cihazından çıkar (aşağıya bak). Uygulama adını, e-posta adresini, kimlik numaralarını, belgeleri, fotoğrafları, konumu ya da kişileri istemez; cihaz izni talep etmez.</p>
+
+<h3>Anonim kullanım sayıları — takip yok, çerez yok</h3>
+<p>Uygulamada reklam, çökme raporu ya da üçüncü taraf analitik yazılımı yoktur; çerez kullanılmaz. Uygulamanın kullanılıp kullanılmadığını öğrenmek için kendi sunucumuza (Cloudflare Workers, "Sor" ile aynı sunucu) iki tür anonim olay gönderir: "uygulama açıldı" ve "X adımı tamamlandı olarak işaretlendi" (yalnız adımın kimliği, ör. <code>anmeldung</code>; işareti geri almak gönderilmez). Bunun için cihazında hiçbir şey saklanmaz, kullanıcı kimliği yoktur; olaylar soru metni, belge ya da başka içerik taşımaz.</p>
+<p>Uygulamayı açtığın bağlantı bir kanal etiketi taşıyorsa (<code>k</code> parametresi, ör. <code>?k=esn</code>; yalnız sabit bir listedeki etiketler kabul edilir), bu etiket yalnız "uygulama açıldı" olayıyla birlikte gönderilir ve yalnız gün ve kanal bazında toplam olarak sayılır (ör. "esn: 6 Ekim'de 12"). iOS uygulaması <code>ios</code> etiketini gönderir. Etiket cihazında saklanmaz ve bir kişiye bağlanmaz.</p>
+<p>IP adresin teknik olarak sunucuya ulaşır. Her gün değişen, tek yönlü, tuzlu bir SHA-256 özetine çevrilir; özet yalnız her ziyaretçiyi günde bir kez (ve en fazla bir kanal etiketiyle) saymak ve günlük olay sayısını sınırlamak için kullanılır ve ertesi gün silinir. Ham IP adresi saklanmaz. Kalıcı olarak yalnız düz sayılar kalır: günlük ziyaretçi sayısı, gün ve kanal etiketi bazında ziyaretçi sayısı, bunlardan kaçının bir adımı tamamlandı işaretlediği ve her adımın kaç kez işaretlendiği. Özet her gün değiştiği için aynı kişi farklı günlerde tanınamaz. Hukuki dayanak: GDPR md. 6(1)(f) (ticari olmayan bir projenin kullanılıp kullanılmadığını bilmekte meşru menfaat). İtiraz etmek istersen e-posta yeterli; sayılar bir kişiye bağlanamaz.</p>
+
+<h3>Web barındırma</h3>
+<p>Web sürümü Vercel Inc. (ABD) tarafından barındırılır. Bir sayfayı açtığında tarayıcın zorunlu olarak Vercel'in sunucularına teknik veri iletir — özellikle IP adresi, tarih ve saat, istenen adres ve tarayıcı türü. Vercel bu veriyi sayfayı sunmak ve altyapısını kötüye kullanıma karşı korumak için işler; bu işlem AB dışında gerçekleşebilir. Bu kayıtları biz incelemeyiz ve başka verilerle birleştirmeyiz. Hukuki dayanak: GDPR md. 6(1)(f) (web sitesini güvenli sunmaya yönelik meşru menfaat). Vercel'in gizlilik politikası: <a href="https://vercel.com/legal/privacy-policy">vercel.com/legal/privacy-policy</a>.</p>
+
+<h3>Başka sitelere bağlantılar</h3>
+<p>Uygulama, çoğu Münih Belediyesi ve Alman makamlarının resmi hizmetleri olan dış sitelere bağlantı verir. Böyle bir bağlantıya tıklayınca uygulamadan çıkarsın; o siteler kendi gizlilik politikalarıyla üçüncü taraflarca işletilir.</p>
+
+<h3>Soru özelliği ("Sor") — yalnız iznin varsa</h3>
+<p>"Sor" ekranı, uygulamadaki adımlarla ilgili prosedür sorularını cevaplar. Cevapları bir insan değil, bir yapay zekâ modeli (Mistral AI) üretir; hata içerebilir. O ekranda izin vermeden önce hiçbir şey gönderilmez; izin yalnız cihazında saklanır.</p>
+<ul>
+  <li><strong>Ne gönderilir:</strong> yazdığın soru metni, seçili dil ve bir adım sayfasından soruyorsan o adımın kimliği (ör. <code>anmeldung</code>). Tamamlanan adımlar ve cihazındaki başka veriler gönderilmez. Soruya ad, adres, belge numarası gibi kişisel bilgi yazma.</li>
+  <li><strong>Sunucumuz:</strong> Cloudflare Workers (Cloudflare, Inc., ABD) üzerinde çalışan küçük bir sunucumuz soruyu alır, uygulamadaki ilgili adım içeriğini ekler ve yapay zekâ modeline iletir. Soru metnini saklamaz ve kaydetmez; loglama kapalıdır. Yalnız toplam sayaçlar tutar (soru sayısı ve sonucu, token kullanımı). IP adresin teknik olarak sunucuya ulaşır; günlük soru sınırı için her gün değişen, tek yönlü, tuzlu bir SHA-256 özetine çevrilir ve ertesi gün silinir. Ham IP adresi saklanmaz.</li>
+  <li><strong>Yapay zekâ modeli:</strong> soru ve adım içeriği, AB uç noktası üzerinden Mistral AI SAS (Paris, Fransa) tarafından işlenir; hesap ayarlarımızda API çağrılarıyla model eğitimi kapalıdır: veri model eğitimi için kullanılmaz, kötüye kullanım denetimi için en fazla 30 gün saklanabilir. Mistral AI'ın gizlilik politikası: <a href="https://mistral.ai/terms">mistral.ai/terms</a>.</li>
+  <li><strong>Hukuki dayanak:</strong> iznin, GDPR md. 6(1)(a). İzin isteğe bağlıdır; vermezsen uygulamanın geri kalanı aynen çalışır. İzni "Sor" ekranından istediğin an geri alabilirsin ("Sor iznini geri al"); sonrasında hiçbir şey gönderilmez. Geri alma, daha önce gönderilmiş soruları etkilemez.</li>
+</ul>
+
+<h3>Hakların</h3>
+<p>Veriler cihazında kaldığı için kontrol tamamen sende: tarayıcıda site verilerini silmek ya da iOS uygulamasını kaldırmak hepsini siler. Silinecek bir hesap ya da bizde tutulan bir kopya yoktur. GDPR kapsamında erişim, düzeltme, silme, kısıtlama, itiraz ve veri taşınabilirliği hakların ile bir veri koruma denetim makamına (Bavyera'da: Bayerisches Landesamt für Datenschutzaufsicht) şikâyet hakkın vardır. Sorular için yukarıdaki e-posta adresine yaz.</p>
+
+<h3>Değişiklikler</h3>
+<p>Uygulama veriyi farklı işlemeye başlarsa bu sayfa değişiklik yayına girmeden önce güncellenir ve yukarıdaki tarih değişir.</p>
+<p><a href="/impressum">Impressum (yasal bilgi)</a> · <a href="/support">Destek</a></p>
+</section>
+</main>
+</body>
+</html>
