@@ -57,7 +57,7 @@ export default function GlossaryScreen() {
         >
           <View style={[styles.content, wide && styles.contentWide]}>
           <View style={[styles.header, wide && styles.narrowBlock]}>
-            <ThemedText type="display" accessibilityRole="header">
+            <ThemedText type="display" accessibilityRole="header" aria-level={1}>
               {t('glossary.title')}
             </ThemedText>
             <ThemedText type="body" themeColor="textSecondary">
@@ -120,7 +120,7 @@ export default function GlossaryScreen() {
                     durum rengi (damga, birincil buton, bağlantı); dizin harfi
                     ise yalnız yön bulmak için, okunacak olan terimin kendisi. */}
                 <View style={[styles.letterRow, { borderBottomColor: theme.line }]}>
-                  <ThemedText type="heading" themeColor="textSecondary" accessibilityRole="header">
+                  <ThemedText type="heading" themeColor="textSecondary" accessibilityRole="header" aria-level={2}>
                     {group.letter}
                   </ThemedText>
                 </View>

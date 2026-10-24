@@ -21,7 +21,7 @@ function PolicyBlock({ lang, sections }: { lang: Lang; sections: PolicySection[]
   const theme = useTheme();
   return (
     <View style={styles.block}>
-      <ThemedText type="heading" accessibilityRole="header">
+      <ThemedText type="heading" accessibilityRole="header" aria-level={2}>
         {LANG_NAMES[lang]}
       </ThemedText>
       {sections.map((section) => (

@@ -563,7 +563,7 @@ export default function StepDetailScreen() {
     return (
       <ThemedView style={styles.container}>
         {/* Başlık verilmezse web'de rota adı ("adim/[id]") görünüyordu. */}
-        <Stack.Screen options={{ title: t('notFound.title') }} />
+        <Stack.Screen options={{ headerShown: true, title: t('notFound.title') }} />
         <SafeAreaView style={styles.container}>
           <StateView
             kind="empty"

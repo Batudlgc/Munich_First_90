@@ -10,7 +10,7 @@ import { Colors, FontFamily } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { CompletedStepsProvider } from '@/hooks/use-completed-steps';
 import { useOnboarding } from '@/hooks/use-onboarding';
-import { LanguageProvider } from '@/lib/language';
+import { LanguageProvider, useLanguage } from '@/lib/language';
 import { trackOpen } from '@/lib/metrics';
 
 SplashScreen.preventAutoHideAsync();
@@ -40,6 +40,27 @@ function navigationTheme(scheme: 'light' | 'dark'): Theme {
       heavy: { fontFamily: FontFamily.head800, fontWeight: 'normal' },
     },
   };
+}
+
+/**
+ * Ekran seçenekleri burada, ekranın kendi <Stack.Screen>'inde değil: web'in
+ * statik HTML'i (SSR) ilk render'da üretilir ve ekranın içindeki seçenekler
+ * oraya hiç yansımaz. Önceki hâlde Google'ın ve ekran okuyucunun gördüğü ilk
+ * <h1> rota adıydı ("hakkinda", "adim/[id]"); adım sayfasında ayrıca
+ * yüklenince kaybolan boş bir başlık çubuğu vardı. LanguageProvider içinde
+ * olsun diye ayrı bileşen.
+ */
+function AppStack() {
+  const { t } = useLanguage();
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(tabs)" />
+      {/* Adım sayfası kendi üst çubuğunu çizer; yerel başlık yalnız
+          bulunamayan adımda açılır ([id].tsx). */}
+      <Stack.Screen name="adim/[id]" options={{ headerShown: false, title: '' }} />
+      <Stack.Screen name="hakkinda" options={{ headerShown: true, title: t('about.title') }} />
+    </Stack>
+  );
 }
 
 // Sekmeler (tabs) tek başına bir Stack (üstüne ekran "iten" navigasyon) içinde
@@ -83,11 +104,7 @@ export default function RootLayout() {
       <CompletedStepsProvider>
         <ThemeProvider value={navigationTheme(colorScheme === 'dark' ? 'dark' : 'light')}>
           <WebHead />
-          <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="(tabs)" />
-            <Stack.Screen name="adim/[id]" options={{ headerShown: true }} />
-            <Stack.Screen name="hakkinda" options={{ headerShown: true }} />
-          </Stack>
+          <AppStack />
           {/* Web: tanıtımın görülüp görülmediği hydration'dan sonra okunur
               (seen === null). O ana kadar sayfa zemini renginde düz bir örtü:
               varsayılan dil/boş ilerleme bir kare bile görünmesin. */}
