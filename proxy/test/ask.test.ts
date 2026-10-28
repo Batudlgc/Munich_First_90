@@ -1,4 +1,4 @@
-import { reset } from 'cloudflare:test';
+import { reset, runDurableObjectAlarm, runInDurableObject } from 'cloudflare:test';
 import { env, exports } from 'cloudflare:workers';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -300,6 +300,135 @@ describe('İstek gövdesi sınırı (413)', () => {
   });
 });
 
+describe('Saklama: önceki günlerin IP özetleri (denetim 28.10)', () => {
+  const OLD = '2000-01-01';
+  const HASHED_TABLES = ['ip_daily', 'visit_daily', 'visit_channel'];
+
+  async function seedOldRows() {
+    await runInDurableObject(usage(), (_instance, state) => {
+      const sql = state.storage.sql;
+      sql.exec('INSERT INTO ip_daily (day, ip_hash, count) VALUES (?, ?, 1)', OLD, 'h-old');
+      sql.exec('INSERT INTO visit_daily (day, ip_hash, opened, completed, events) VALUES (?, ?, 1, 1, 1)', OLD, 'h-old');
+      sql.exec('INSERT INTO visit_channel (day, ip_hash, channel) VALUES (?, ?, ?)', OLD, 'h-old', CHANNELS[0]);
+      sql.exec('INSERT INTO ip_daily (day, ip_hash, count) VALUES (?, ?, 1)', today(), 'h-today');
+    });
+  }
+
+  async function oldRowCounts() {
+    return runInDurableObject(usage(), (_instance, state) =>
+      HASHED_TABLES.map((table) => state.storage.sql.exec<{ n: number }>(`SELECT COUNT(*) AS n FROM ${table} WHERE day < ?`, today()).one().n),
+    );
+  }
+
+  it('hiç istek gelmese de gece alarmı siler, bugünü bırakır ve kendini yeniden kurar', async () => {
+    await seedOldRows();
+    expect(await oldRowCounts()).toEqual([1, 1, 1]);
+
+    expect(await runDurableObjectAlarm(usage())).toBe(true);
+
+    expect(await oldRowCounts()).toEqual([0, 0, 0]);
+    const after = await runInDurableObject(usage(), async (_instance, state) => ({
+      todayRows: state.storage.sql.exec<{ n: number }>('SELECT COUNT(*) AS n FROM ip_daily WHERE day = ?', today()).one().n,
+      nextAlarm: await state.storage.getAlarm(),
+    }));
+    expect(after.todayRows).toBe(1);
+    expect(after.nextAlarm).toBeGreaterThan(Date.now());
+  });
+
+  it('/event isteği /ask tablolarının eski satırlarını da siler', async () => {
+    await seedOldRows();
+    expect((await ask({ event: 'open' }, { path: '/event' })).status).toBe(204);
+    expect(await oldRowCounts()).toEqual([0, 0, 0]);
+  });
+});
+
+describe('Denetim run 2 (28.10): hız sınırı, bütçe payı, sayı doğrulama', () => {
+  const mutableEnv = env as { DAILY_TOKEN_BUDGET: string; DAILY_IP_LIMIT?: string };
+
+  it('aynı adresten dakikada 100 istekten sonrası 429 (gövde okunmadan); başka adres etkilenmez', async () => {
+    const ip = freshIp();
+    for (let i = 0; i < 100; i++) {
+      expect((await ask({}, { ip, path: '/event' })).status).toBe(400);
+    }
+    const limited = await ask({ event: 'open' }, { ip, path: '/event' });
+    expect(limited.status).toBe(429);
+    expect(await limited.json()).toEqual({ error: 'rate_limited' });
+    expect((await ask({ event: 'open' }, { path: '/event' })).status).toBe(204);
+  });
+
+  it('bugün çok soran adres bütçenin son payını tüketemez; az soran adres hâlâ sorabilir', async () => {
+    mutableEnv.DAILY_TOKEN_BUDGET = '20000';
+    try {
+      upstreamReply = () => mistralReply('ok', 2000);
+      const heavy = freshIp();
+      let answered = 0;
+      for (let i = 0; i < 20; i++) {
+        const status = (await ask({ question: IN_SCOPE, lang: 'en' }, { ip: heavy })).status;
+        if (status === 503) break;
+        expect(status).toBe(200);
+        answered += 1;
+      }
+      expect(answered).toBeGreaterThanOrEqual(5);
+      expect((await usage().stats(today())).today.tokens).toBeLessThanOrEqual(14000);
+      expect((await ask({ question: IN_SCOPE, lang: 'en' })).status).toBe(200);
+    } finally {
+      mutableEnv.DAILY_TOKEN_BUDGET = '300000';
+    }
+  });
+
+  it('sağlayıcı negatif token bildirirse bütçe geri dolmaz', async () => {
+    upstreamReply = () => mistralReply('ok', -50000);
+    expect((await ask({ question: IN_SCOPE, lang: 'en' })).status).toBe(200);
+    expect((await usage().stats(today())).today.tokens).toBe(0);
+  });
+
+  it('sayısal limit ayarı eksikse limit sessizce kapanmaz: 500, modele gidilmez', async () => {
+    const saved = mutableEnv.DAILY_IP_LIMIT;
+    delete mutableEnv.DAILY_IP_LIMIT;
+    try {
+      expect((await ask({ question: IN_SCOPE, lang: 'en' })).status).toBe(500);
+      expect(upstreamCalls).toHaveLength(0);
+    } finally {
+      mutableEnv.DAILY_IP_LIMIT = saved;
+    }
+  });
+});
+
+describe('Denetim run 2 (PR 61\'den): yapılandırma ve gece yarısı', () => {
+  const mutableEnv = env as unknown as Record<string, string | undefined>;
+
+  it.each([
+    ['DAILY_IP_LIMIT', 'ask'],
+    ['DAILY_TOKEN_BUDGET', 'ask'],
+    ['MAX_OUTPUT_TOKENS', 'ask'],
+    ['DAILY_EVENT_LIMIT', 'event'],
+  ] as const)('%s eksik, boş ya da sayı değilse istek 500 verir; koruma sessizce kapanmaz', async (name, endpoint) => {
+    const original = mutableEnv[name];
+    try {
+      for (const bad of [undefined, '', 'abc', '-5']) {
+        if (bad === undefined) delete mutableEnv[name];
+        else mutableEnv[name] = bad;
+        const response =
+          endpoint === 'ask'
+            ? await ask({ question: IN_SCOPE, lang: 'en' })
+            : await ask({ event: 'open' }, { path: '/event' });
+        expect(response.status).toBe(500);
+      }
+      expect(upstreamCalls).toHaveLength(0);
+      expect((await usage().stats(today())).today).toEqual({ questions: 0, tokens: 0 });
+    } finally {
+      mutableEnv[name] = original;
+    }
+  });
+
+  it('eski güne ait geç gelen istek bugünün satırlarını silmez (gece yarısı yarışı)', async () => {
+    await usage().reserve(today(), 'new-hash', 20, 300000, 100);
+    // Günü Worker'da eski hesaplanmış, Durable Object'e sonradan ulaşan istek.
+    await usage().reserve('2020-01-01', 'late-hash', 20, 300000, 100);
+    expect((await usage().stats(today())).today).toEqual({ questions: 1, tokens: 100 });
+  });
+});
+
 describe('Upstream hatası ve gizlilik', () => {
   it('upstream hata verirse 502; yalnız HTTP kodu döner, gövde ayrıntısı dönmez', async () => {
     upstreamReply = () => new Response('upstream detail', { status: 401 });
@@ -466,6 +595,7 @@ describe('Kanal etiketi (L2) — POST /event channel, GET /stats kırılımı', 
         visitor_days: number;
         completer_days: number;
         questions_total: number;
+        questions_all: number;
         channels: Record<string, number>;
         days: { day: string; visitors: number; completers: number; channels: Record<string, number> }[];
       }>();
@@ -567,6 +697,16 @@ describe('Kanal etiketi (L2) — POST /event channel, GET /stats kırılımı', 
     expect(stats.days).toEqual([
       { day: today(), visitors: 5, completers: 1, channels: { 'tr-wa': 2, esn: 1, unlabeled: 2 } },
     ]);
+  });
+
+  it('questions_total yalnız modele ulaşan soruları sayar; kapsam dışı ve eşleşmeyen questions_all\'da', async () => {
+    const ip = freshIp();
+    for (let i = 0; i < 3; i++) await ask({ question: 'Should I appeal my rejected residence permit?', lang: 'en' }, { ip });
+    await ask({ question: 'What is the weather like today?', lang: 'en' }, { ip });
+    await ask({ question: IN_SCOPE, lang: 'en' }, { ip });
+    const stats = await readStats();
+    expect(stats.questions_total).toBe(1);
+    expect(stats.questions_all).toBe(5);
   });
 
   it('GET /stats boşken: period null, tüm sayılar 0', async () => {

@@ -3,6 +3,7 @@ import { DurableObject } from 'cloudflare:workers';
 import type { Channel } from '../../src/lib/channels';
 
 import type { Env } from './index';
+import { HEAVY_CALLER_BUDGET_SHARE, HEAVY_CALLER_QUESTIONS } from './limits';
 
 /**
  * Kullanım sayacı — tek (global) bir Durable Object, SQLite depolamalı.
@@ -15,18 +16,18 @@ import type { Env } from './index';
  *
  * Ne saklanır (başka hiçbir şey saklanmaz, soru metni ASLA):
  * - ip_daily: (gün, IP'nin tuzlu SHA-256 özeti) → o günkü soru sayısı.
- *   Ham IP yazılmaz; önceki günlerin satırları her çağrıda silinir.
+ *   Ham IP yazılmaz; önceki günlerin satırları silinir (bkz. `prune`).
  * - daily: gün → modele giden soru sayısı + harcanan token.
  * - totals: sonuç türü (answer / out_of_scope / no_match / ...) → toplam sayı.
  *   Kişisel veri içermez; C1 ölçüm bloğu buradan okur.
  * - visit_daily: (gün, IP'nin tuzlu özeti) → o gün "açıldı / adım tamamladı"
  *   bayrakları. Yalnız aynı gün içinde tekilleştirmek için; önceki günlerin
- *   satırları her çağrıda silinir (ip_daily ile aynı kural).
+ *   satırları silinir (ip_daily ile aynı kural).
  * - metrics_daily: gün → günlük tekil ziyaretçi ve tekil "adım tamamlayan" sayısı.
  *   Kalıcı olan tek gün bazlı kayıt; içinde kimlik/özet yok, yalnız iki sayı.
  * - visit_channel: (gün, IP'nin tuzlu özeti) → o gün ilk görülen kanal etiketi.
  *   Yalnız aynı gün içinde "bu ziyaretçi-gün zaten bir kanala yazıldı mı" diye
- *   bakmak için; önceki günlerin satırları her çağrıda silinir. Yeni kimlik YOK:
+ *   bakmak için; önceki günlerin satırları silinir. Yeni kimlik YOK:
  *   aynı günlük tuzlu özet kullanılır.
  * - channel_daily: (gün, kanal) → o kanaldan gelen ziyaretçi-gün sayısı. Kalıcı
  *   olan tek kanal kaydı; içinde kimlik/özet yok, yalnız gün × kanal toplamı.
@@ -47,25 +48,51 @@ export class UsageCounter extends DurableObject<Env> {
       CREATE TABLE IF NOT EXISTS channel_daily (day TEXT, channel TEXT, visitors INTEGER, PRIMARY KEY (day, channel));
       CREATE TABLE IF NOT EXISTS step_totals (step_id TEXT PRIMARY KEY, count INTEGER);
     `);
+    // Gece silme alarmı yoksa kur (uyanınca kurucu alarm'dan önce çalışır; var olanı ezme).
+    void ctx.blockConcurrencyWhile(async () => {
+      if ((await ctx.storage.getAlarm()) === null) await ctx.storage.setAlarm(nextUtcMidnight());
+    });
+  }
+
+  /**
+   * Önceki günlerin IP özetli satırlarını siler. Her istekte ve her gece UTC
+   * yarısında (alarm) çalışır: gizlilik metni "ertesi gün silinir" diyor;
+   * yalnız istekte silinseydi, o uca istek gelmeyen günlerde satırlar kalırdı
+   * (denetim 28.10). `<` (`<>` değil): gün dönümünde geç kalan eski günlü
+   * bir istek yeni günün satırlarını silmesin.
+   */
+  private prune(day: string): void {
+    const sql = this.ctx.storage.sql;
+    for (const table of ['ip_daily', 'daily', 'visit_daily', 'visit_channel']) {
+      sql.exec(`DELETE FROM ${table} WHERE day < ?`, day);
+    }
+  }
+
+  async alarm(): Promise<void> {
+    this.prune(new Date().toISOString().slice(0, 10));
+    await this.ctx.storage.setAlarm(nextUtcMidnight());
   }
 
   /**
    * Modele gitmeden önce yer ayırır: IP limiti aşılmamışsa ve `estimate`
    * token'lık çağrı günlük bütçeye sığıyorsa sayaçları artırır (tahmini token
-   * dahil) ve ok döner. Aşılmışsa hiçbir şeyi artırmaz. Çağrı bitince fark
+   * dahil) ve ok döner. Bugün çok soran adres için bütçe tavanı daha düşüktür
+   * (limits.ts `HEAVY_CALLER_*`).
+   * Aşılmışsa hiçbir şeyi artırmaz. Çağrı bitince fark
    * `addTokens(day, gerçek - estimate)` ile düzeltilir; çağrı hata verirse
    * `addTokens(day, -estimate)` ile geri verilir.
    */
   reserve(day: string, ipHash: string, ipLimit: number, tokenBudget: number, estimate: number): ReserveResult {
     const sql = this.ctx.storage.sql;
-    sql.exec('DELETE FROM ip_daily WHERE day <> ?', day);
-    sql.exec('DELETE FROM daily WHERE day <> ?', day);
+    this.prune(day);
 
     const ipRow = sql.exec<{ count: number }>('SELECT count FROM ip_daily WHERE day = ? AND ip_hash = ?', day, ipHash).toArray()[0];
-    if ((ipRow?.count ?? 0) >= ipLimit) return { ok: false, reason: 'ip_limit' };
+    const asked = ipRow?.count ?? 0;
+    if (asked >= ipLimit) return { ok: false, reason: 'ip_limit' };
 
-    const dayRow = sql.exec<{ tokens: number }>('SELECT tokens FROM daily WHERE day = ?', day).toArray()[0];
-    if ((dayRow?.tokens ?? 0) + estimate > tokenBudget) return { ok: false, reason: 'budget' };
+    const dayRow = sql.exec<{ tokens: number }>('SELECT COALESCE(tokens, 0) AS tokens FROM daily WHERE day = ?', day).toArray()[0];
+    const ceiling = asked >= HEAVY_CALLER_QUESTIONS ? Math.floor(tokenBudget * HEAVY_CALLER_BUDGET_SHARE) : tokenBudget;
+    if ((dayRow?.tokens ?? 0) + estimate > ceiling) return { ok: false, reason: 'budget' };
 
     sql.exec(
       `INSERT INTO ip_daily (day, ip_hash, count) VALUES (?, ?, 1)
@@ -135,8 +162,7 @@ export class UsageCounter extends DurableObject<Env> {
     channel: Channel | null = null,
   ): void {
     const sql = this.ctx.storage.sql;
-    sql.exec('DELETE FROM visit_daily WHERE day <> ?', day);
-    sql.exec('DELETE FROM visit_channel WHERE day <> ?', day);
+    this.prune(day);
 
     const row = sql
       .exec<{ opened: number; completed: number; events: number }>(
@@ -209,4 +235,10 @@ export class UsageCounter extends DurableObject<Env> {
     }
     return { days, step_done };
   }
+}
+
+/** Bir sonraki UTC gece yarısı (+30 sn pay), epoch milisaniye. */
+function nextUtcMidnight(): number {
+  const now = new Date();
+  return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1, 0, 0, 30);
 }

@@ -296,15 +296,38 @@ const IN_SCOPE_RULES: { id: string; keywords: string[] }[] = [
   },
 ];
 
+/** Görünmez biçim karakterleri: yumuşak tire, sıfır genişlikli boşluk/birleştirici, yön işaretleri, BOM. */
+const FORMAT_CHARS = /[­᠎​-‏‪-‮⁠-⁤﻿]/g;
+
+/** Latin harfe benzeyen Kiril ve Yunan harfleri → Latin karşılığı (yalnız eşleştirme için). */
+const LOOKALIKES: Record<string, string> = {
+  а: 'a', в: 'b', е: 'e', к: 'k', м: 'm', н: 'h', о: 'o', р: 'p', с: 'c', т: 't', у: 'y', х: 'x',
+  і: 'i', ј: 'j', ѕ: 's', ԁ: 'd', һ: 'h', ӏ: 'l',
+  А: 'a', В: 'b', Е: 'e', К: 'k', М: 'm', Н: 'h', О: 'o', Р: 'p', С: 'c', Т: 't', У: 'y', Х: 'x',
+  І: 'i', Ј: 'j', Ѕ: 's',
+  α: 'a', ι: 'i', κ: 'k', ν: 'v', ο: 'o', ρ: 'p', τ: 't', υ: 'u',
+  Α: 'a', Β: 'b', Ε: 'e', Ζ: 'z', Η: 'h', Ι: 'i', Κ: 'k', Μ: 'm', Ν: 'n', Ο: 'o', Ρ: 'p', Τ: 't', Υ: 'y', Χ: 'x',
+};
+
 /**
- * Soru metnini karşılaştırma için sadeleştirir: küçük harfe çevirir ve
- * Türkçe büyük İ/I harflerinin JS'in varsayılan (Türkçe olmayan)
- * toLowerCase()'de bozulmasını (İ -> "i̇" birleşik karakter) önler.
- * Önce İ/I'yı düzeltip SONRA 'tr-TR' locale'iyle küçültüyoruz ki
- * "ı/i/ş/ğ/ö/ü/ç" doğru eşleşsin.
+ * Soru metnini karşılaştırma için sadeleştirir. Önce kelimeyi görünmez
+ * karakterle, benzer harfle ya da çift boşlukla bölerek kuralı atlatma
+ * yollarını kapatır (denetim 28.10: tek görünmez karakter 30 yasak sorunun
+ * 19'unu geçiriyordu): NFKC, biçim karakterlerini sil, Kiril/Yunan benzerleri
+ * Latin'e çevir, boşlukları teke indir. Sonra Türkçe büyük İ/I harflerinin
+ * JS'in varsayılan toLowerCase()'de bozulmasını (İ -> "i̇") önler: önce İ/I'yı
+ * düzeltip SONRA 'tr-TR' ile küçültüyoruz ki "ı/i/ş/ğ/ö/ü/ç" doğru eşleşsin.
+ * Proxy'deki adım eşleştirici de bunu kullanır (proxy/src/steps.ts).
  */
-function normalize(question: string): string {
-  return question.replace(/İ/g, 'i').replace(/I/g, 'i').toLocaleLowerCase('tr-TR');
+export function normalizeQuestion(question: string): string {
+  return question
+    .normalize('NFKC')
+    .replace(FORMAT_CHARS, '')
+    .replace(/[Ͱ-ϿЀ-ԯ]/g, (char) => LOOKALIKES[char] ?? char)
+    .replace(/\s+/g, ' ')
+    .replace(/İ/g, 'i')
+    .replace(/I/g, 'i')
+    .toLocaleLowerCase('tr-TR');
 }
 
 /**
@@ -323,7 +346,7 @@ const BRING_VERBS = [
 ];
 
 export function classifyQuestion(question: string): ScopeResult {
-  const normalized = normalize(question);
+  const normalized = normalizeQuestion(question);
 
   const outHits = OUT_OF_SCOPE_RULES.map((rule) => ({
     rule,

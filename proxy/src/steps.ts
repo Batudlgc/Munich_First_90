@@ -4,6 +4,7 @@
 // Workers'ta dosya sistemi olmadığı için her dosya tek tek import edilir;
 // test/steps.test.ts klasördeki dosyalarla bu listenin aynı olduğunu denetler.
 import type { Lang } from './lang';
+import { normalizeQuestion } from '../../src/lib/scope';
 
 import abmeldung from '../../src/data/steps/abmeldung.json';
 import anmeldung from '../../src/data/steps/anmeldung.json';
@@ -84,10 +85,8 @@ const STOPWORDS = new Set([
   'için', 'münchen', 'munich', 'münih',
 ]);
 
-/** scope.ts ile aynı normalleştirme: Türkçe İ/I sorununu önleyip küçük harfe çevirir. */
-export function normalize(text: string): string {
-  return text.replace(/İ/g, 'i').replace(/I/g, 'i').toLocaleLowerCase('tr-TR');
-}
+/** scope.ts ile aynı normalleştirme (görünmez karakter, benzer harf, Türkçe İ/I). */
+export const normalize = normalizeQuestion;
 
 /** Adımın id'si, resmi adı ve üç dildeki başlığından anahtar kelimeler çıkarır. */
 function keywordsOf(step: ProxyStep): Set<string> {

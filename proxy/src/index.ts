@@ -10,6 +10,7 @@
  *   1. Doğrulama (dil, uzunluk, izinli Origin)
  *   2. Kapsam bekçisi — uygulamayla AYNI dosya: src/lib/scope.ts
  *   3. Adım eşleştirme — eşleşen adım yoksa cevap yok
+ *   0. Hız sınırı — adres başına dakikada en fazla 100 istek (/ask + /event)
  *   4. Limit — IP başına günlük soru sayısı + günlük token bütçesi
  *   5. Model çağrısı — yalnız eşleşen adımın JSON'u + soru
  * Soru metni hiçbir yere yazılmaz, loglanmaz: kodda console çağrısı yok,
@@ -31,6 +32,8 @@ export { UsageCounter } from './usage';
 
 export type Env = {
   USAGE: DurableObjectNamespace<UsageCounter>;
+  /** Kaba sel freni (wrangler.jsonc `ratelimits`): Cloudflare konumu başına, yaklaşık. */
+  RATE_LIMITER: RateLimit;
   LLM_BASE_URL: string;
   LLM_MODEL: string;
   /** Secret (`wrangler secret put LLM_API_KEY`). Repoda ve istemcide asla. */
@@ -68,6 +71,14 @@ export default {
     if (request.method !== 'POST') return json({ error: 'method_not_allowed' }, 405, cors);
 
     try {
+      // Gövde okunmadan ve sayaca yazılmadan önce: modele gitmeyen yollar
+      // (kapsam dışı, eşleşmeyen, /event) da sel gibi istekle doldurulamasın.
+      // Anahtar ham IP değil, günlük tuzlu özet (gizlilik metniyle aynı kimlik).
+      const day = new Date().toISOString().slice(0, 10);
+      const ip = request.headers.get('CF-Connecting-IP') ?? 'unknown';
+      const { success } = await env.RATE_LIMITER.limit({ key: await hashIp(ip, day, env.IP_HASH_SALT) });
+      if (!success) return json({ error: 'rate_limited' }, 429, cors);
+
       return path === '/ask' ? await handleAsk(request, env, cors) : await handleEvent(request, env, cors);
     } catch {
       // Hata ayrıntısı bilerek yazılmıyor: istisna mesajı soru metnini taşıyabilir.
@@ -107,7 +118,7 @@ async function handleAsk(request: Request, env: Env, cors: HeadersInit): Promise
 
   // 4. Limit. Token bütçesi çağrıdan ÖNCE tahmini tutarla ayrılır (eşzamanlı
   // istekler bütçeyi aşamasın); çağrı bitince gerçek kullanıma göre düzeltilir.
-  const maxOutputTokens = Number(env.MAX_OUTPUT_TOKENS);
+  const maxOutputTokens = positiveNumber(env.MAX_OUTPUT_TOKENS);
   const systemPrompt = buildSystemPrompt(steps, lang);
   const estimate = estimateTokens(systemPrompt, question, maxOutputTokens);
   const day = new Date().toISOString().slice(0, 10);
@@ -115,8 +126,8 @@ async function handleAsk(request: Request, env: Env, cors: HeadersInit): Promise
   const reservation = await usage.reserve(
     day,
     await hashIp(ip, day, env.IP_HASH_SALT),
-    Number(env.DAILY_IP_LIMIT),
-    Number(env.DAILY_TOKEN_BUDGET),
+    positiveNumber(env.DAILY_IP_LIMIT),
+    positiveNumber(env.DAILY_TOKEN_BUDGET),
     estimate,
   );
   if (!reservation.ok) {
@@ -180,7 +191,7 @@ async function handleEvent(request: Request, env: Env, cors: HeadersInit): Promi
     await hashIp(ip, day, env.IP_HASH_SALT),
     event,
     event === 'step_done' ? (step_id as string) : null,
-    Number(env.DAILY_EVENT_LIMIT),
+    positiveNumber(env.DAILY_EVENT_LIMIT),
     // Geçersiz/eksik etiket isteği reddetmez, yalnız etiketsiz sayılır; step_done'daki etiket yok sayılır.
     event === 'open' ? parseChannel(channel) : null,
   );
@@ -209,9 +220,12 @@ async function handleStats(request: Request, env: Env): Promise<Response> {
     for (const [label, n] of Object.entries(dayChannels)) channels[label] = (channels[label] ?? 0) + n;
     return { ...d, channels: dayChannels };
   });
-  // Soru sayısı: kullanıcıya yanıt dönen sorular. Limit/bütçe/upstream hataları ve
-  // cihazda kapsam bekçisine takılanlar sayılmaz (ayrıntı: `questions`).
-  const answered = ['answer', 'no_answer', 'no_match', 'out_of_scope'];
+  // questions_total: modele ulaşan sorular (answer + no_answer). Bunlar IP limiti
+  // ve bütçeyle sınırlı; kapsam dışı / eşleşmeyen sorular modele gitmediği için
+  // tek adresten sınırsız şişirilebilirdi (denetim 28.10). Eski tanım
+  // (yanıt dönen her soru) `questions_all`'da. Ayrıntı: `questions`.
+  const toModel = ['answer', 'no_answer'];
+  const answered = [...toModel, 'no_match', 'out_of_scope'];
   return json(
     {
       // Günler arası tekilleştirme yok (günlük değişen özet): ziyaretçi-gün,
@@ -220,7 +234,8 @@ async function handleStats(request: Request, env: Env): Promise<Response> {
       period: days.length > 0 ? { from: days[0].day, to: days[days.length - 1].day, days: days.length } : null,
       visitor_days: days.reduce((sum, d) => sum + d.visitors, 0),
       completer_days: days.reduce((sum, d) => sum + d.completers, 0),
-      questions_total: answered.reduce((sum, key) => sum + (questions.totals[key] ?? 0), 0),
+      questions_total: toModel.reduce((sum, key) => sum + (questions.totals[key] ?? 0), 0),
+      questions_all: answered.reduce((sum, key) => sum + (questions.totals[key] ?? 0), 0),
       channels,
       days,
       step_done: metrics.step_done,
@@ -285,6 +300,13 @@ async function hashIp(ip: string, day: string, salt: string | undefined): Promis
   if (!salt) throw new Error('IP_HASH_SALT is not configured');
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${salt}:${day}:${ipBucket(ip)}`));
   return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+/** wrangler.jsonc'deki sayısal limit. Eksik/bozuksa limit sessizce kapanmasın: hata (500). */
+function positiveNumber(value: string | undefined): number {
+  const number = Number(value);
+  if (!Number.isFinite(number) || number <= 0) throw new Error('numeric limit variable is not configured');
+  return number;
 }
 
 function json(body: unknown, status: number, headers: HeadersInit): Response {

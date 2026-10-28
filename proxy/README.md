@@ -66,6 +66,7 @@ curl -s -H "Authorization: Bearer $STATS_TOKEN" https://pratik-proxy.dalliagac.w
   "visitor_days": 5,
   "completer_days": 1,
   "questions_total": 1,
+  "questions_all": 1,
   "channels": {
     "tr-wa": 2, "tr-tg": 0, "esn": 1, "fb": 0, "reddit": 0, "linkedin": 0,
     "mail": 0, "dm": 0, "qr": 0, "danisman": 0, "ios": 0, "unlabeled": 2
@@ -84,9 +85,13 @@ curl -s -H "Authorization: Bearer $STATS_TOKEN" https://pratik-proxy.dalliagac.w
   `channels` içinde izinli her kanal görünür (0 dahil); `unlabeled` = etiketsiz ziyaretçi-gün
   (doğrudan giriş, eski istemci, geçersiz etiket). `sum(channels) == visitor_days`.
 - `days[].channels`: o günün kırılımı (yalnız sıfırdan büyükler).
-- `questions_total`: yanıt dönen Sor soruları = `answer + no_answer + no_match + out_of_scope`.
-  Limit/bütçe/upstream hataları ve cihazda kapsam bekçisine takılan sorular (istek çıkmaz)
-  dahil değil; ayrıntı `questions{}` (sonuç türüne göre).
+- `questions_total`: modele ulaşan Sor soruları = `answer + no_answer` (28.10.2026'dan beri).
+  Bunlar IP limiti ve bütçeyle sınırlı; tek adres şişiremez.
+- `questions_all`: yanıt dönen tüm sorular = `answer + no_answer + no_match + out_of_scope`
+  (28.10.2026'ya kadarki `questions_total` tanımı). Kapsam dışı / eşleşmeyen sorular modele
+  gitmediği için tek adresten şişirilebilir; ham sayı olarak okunmalı.
+  İkisinde de limit/bütçe/upstream hataları ve cihazda kapsam bekçisine takılan sorular
+  (istek çıkmaz) yok; ayrıntı `questions{}` (sonuç türüne göre).
 - Ziyaretçi-gün **tekil kullanıcı değildir**: aynı kişi başka ağdan/başka gün tekrar sayılır
   (fazla), ortak IP'den (kampüs Wi-Fi, mobil NAT) gelen birden çok kişi tek sayılır (eksik).
   Yaklaşık bir gösterge; üst ya da alt sınır olarak okunmamalı. Bu bilinçli bir gizlilik tercihidir.

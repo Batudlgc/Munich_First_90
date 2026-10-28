@@ -13,4 +13,8 @@ export default defineConfig({
       },
     }),
   ],
+  // Bazı testler 60-100 istek atar (olay limiti, hız sınırı); her istek hız
+  // sınırından da geçtiği için yavaş CI makinesinde varsayılan 5 sn yetmedi ve
+  // yarıda kalan test sonraki testin sayaçlarını bozdu (28.10).
+  test: { testTimeout: 30_000 },
 });

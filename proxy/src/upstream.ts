@@ -72,9 +72,11 @@ export async function completeChat(
 
   // Sağlayıcı kullanım bilgisi döndürmezse bütçe yine işlesin diye kaba tahmin
   // — sayaçta sıfır görünmesinden iyidir.
+  // Negatif/bozuk değer bütçeyi geri doldurmasın; büyük değer bütçeyi yalnız kapatır (güvenli yön).
+  const reported = body?.usage?.total_tokens;
   const totalTokens =
-    typeof body?.usage?.total_tokens === 'number'
-      ? body.usage.total_tokens
+    typeof reported === 'number' && Number.isFinite(reported)
+      ? Math.max(Math.round(reported), 0)
       : estimateTokens(systemPrompt, question, config.maxOutputTokens);
   return { text: text.trim(), totalTokens };
 }

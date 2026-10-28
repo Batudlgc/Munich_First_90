@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { classifyQuestion, type ScopeVerdict } from './scope';
+import { FORBIDDEN } from '../../proxy/eval/cases';
+import { classifyQuestion, normalizeQuestion, type ScopeVerdict } from './scope';
 
 /**
  * Bu vakalar docs/research/rdg-yasak-sorular.md ile BİREBİR aynıdır.
@@ -133,5 +134,63 @@ describe('lansman: mümkün mü / gerekli mi soruları', () => {
   });
   it.each(outOfScope)('kapsam dışı: %s', (q) => {
     expect(classifyQuestion(q).verdict).toBe('out_of_scope');
+  });
+});
+
+/**
+ * Atlatma denemeleri (denetim 28.10): kelimeyi görünmez karakterle, benzer
+ * harfle ya da çift boşlukla bölmek kuralı atlatmamalı. B5'in 30 yasak sorusu
+ * değişmeden de, bozulmuş hâliyle de kesilir.
+ */
+describe('Kapsam bekçisi atlatma denemeleri', () => {
+  const insertAfterFirstLetter = (q: string, mark: string) =>
+    q.replace(/(\p{L})(\p{L})/gu, `$1${mark}$2`);
+  const CYRILLIC: Record<string, string> = { a: 'а', e: 'е', o: 'о', p: 'р', c: 'с', x: 'х', y: 'у' };
+  const variants: [string, (q: string) => string][] = [
+    ['sıfır genişlikli boşluk', (q) => insertAfterFirstLetter(q, '\u200B')],
+    ['yumuşak tire', (q) => insertAfterFirstLetter(q, '\u00AD')],
+    ['sıfır genişlikli birleştirici', (q) => insertAfterFirstLetter(q, '\u200D')],
+    ['Kiril benzer harf', (q) => q.replace(/[aeopcxy]/g, (ch) => CYRILLIC[ch])],
+    ['çift boşluk', (q) => q.replace(/ /g, '  ')],
+    ['bölünmez boşluk', (q) => q.replace(/ /g, '\u00A0')],
+  ];
+
+  it.each(FORBIDDEN.map((c) => [c.id, c.q]))('%s değişmeden kesilir', (_id, q) => {
+    expect(classifyQuestion(q).verdict).toBe('out_of_scope');
+  });
+
+  for (const [name, perturb] of variants) {
+    it.each(FORBIDDEN.map((c) => [c.id, c.q]))(`%s ${name} ile de kesilir`, (_id, q) => {
+      expect(classifyQuestion(perturb(q)).verdict).toBe('out_of_scope');
+    });
+  }
+
+  it('normalleştirme Türkçe harfleri ve normal metni bozmaz', () => {
+    expect(normalizeQuestion('İkamet İzni Şart mı?')).toBe('ikamet izni şart mı?');
+    expect(normalizeQuestion('Anmeldung\u200B  für  Studierende')).toBe('anmeldung für studierende');
+  });
+});
+
+// PR 61'den (aynı denetim): biçim oynamaları hiçbir sorunun kararını değiştirmez;
+// kapsam içi sorular da kapsam içi kalır.
+describe('classifyQuestion: biçim oynamalarına dayanıklılık', () => {
+  const variants: [string, (q: string) => string][] = [
+    ['her harfin arasında sıfır genişlikli boşluk', (q) => [...q].join('\u200B')],
+    ['her harfin arasında yumuşak tire', (q) => [...q].join('\u00AD')],
+    ['tam genişlikli ASCII harfler', (q) => q.replace(/[A-Za-z]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0xfee0))],
+    ['çift boşluk', (q) => q.replace(/ /g, '  ')],
+    ['sekme ve satır sonu', (q) => q.replace(/ /g, '\t\n')],
+  ];
+
+  describe.each(variants)('%s', (_name, vary) => {
+    it.each(TEST_CASES)('"$question" aynı karara varır', ({ question }) => {
+      expect(classifyQuestion(vary(question)).verdict).toBe(classifyQuestion(question).verdict);
+    });
+  });
+
+  it('Türkçe büyük İ ve I ile tam genişlikli Ｉ hâlâ doğru eşleşir', () => {
+    expect(classifyQuestion('İTİRAZ ETMELİ MİYİM?').verdict).toBe('out_of_scope');
+    expect(classifyQuestion('ITIRAZ ETMELI MIYIM?').verdict).toBe('out_of_scope');
+    expect(classifyQuestion('Ｉｔｉｒａｚ etmeli miyim?').verdict).toBe('out_of_scope');
   });
 });
