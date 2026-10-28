@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { OUT_OF_SCOPE_RESPONSE } from '../../src/lib/scope';
 import { CHANNELS } from '../../src/lib/channels';
+import { ipBucket } from '../src/ip';
 import { MAX_QUESTION_LENGTH } from '../src/limits';
 
 // Upstream'e (Mistral) giden her isteği yakalayan sahte fetch. Testler
@@ -175,6 +176,127 @@ describe('Limitler', () => {
     expect(blocked.status).toBe(503);
     expect(await blocked.json()).toEqual({ error: 'budget_exhausted' });
     expect(upstreamCalls).toHaveLength(1);
+  });
+});
+
+describe('Limit atlatma (denetim 28.10)', () => {
+  const mutableEnv = env as { IP_HASH_SALT?: string; DAILY_TOKEN_BUDGET: string };
+
+  it('ipBucket: IPv6 /64 tek istemci sayılır, IPv4 ve eşlenmiş IPv4 değişmez', () => {
+    expect(ipBucket('203.0.113.7')).toBe('203.0.113.7');
+    expect(ipBucket('::ffff:203.0.113.7')).toBe('203.0.113.7');
+    expect(ipBucket('2001:db8:1:2:aaaa:bbbb:cccc:dddd')).toBe('2001:db8:1:2::/64');
+    expect(ipBucket('2001:DB8:1:2::1')).toBe('2001:db8:1:2::/64');
+    expect(ipBucket('2001:0db8:0001:0002:0:0:0:9')).toBe('2001:db8:1:2::/64');
+    expect(ipBucket('2001:db8::1')).toBe('2001:db8:0:0::/64');
+    expect(ipBucket('::1')).toBe('0:0:0:0::/64');
+    expect(ipBucket('not-an-ip:')).toBe('not-an-ip:');
+  });
+
+  it('aynı IPv6 /64 içinden adres değiştirmek IP limitini aşmaz', async () => {
+    const limit = Number(env.DAILY_IP_LIMIT);
+    for (let i = 0; i < limit; i++) {
+      const ip = `2001:db8:aaaa:bbbb::${(i + 1).toString(16)}`;
+      expect((await ask({ question: IN_SCOPE, lang: 'en' }, { ip })).status).toBe(200);
+    }
+    expect((await ask({ question: IN_SCOPE, lang: 'en' }, { ip: '2001:db8:aaaa:bbbb:1:2:3:4' })).status).toBe(429);
+    // Başka bir /64 etkilenmez.
+    expect((await ask({ question: IN_SCOPE, lang: 'en' }, { ip: '2001:db8:aaaa:cccc::1' })).status).toBe(200);
+  });
+
+  it('eşzamanlı istekler günlük token bütçesini aşamaz (bütçe çağrıdan önce ayrılır)', async () => {
+    mutableEnv.DAILY_TOKEN_BUDGET = '7000';
+    try {
+      upstreamReply = () => mistralReply('ok', 100);
+      const responses = await Promise.all(Array.from({ length: 20 }, () => ask({ question: IN_SCOPE, lang: 'en' })));
+      const ok = responses.filter((r) => r.status === 200).length;
+      const blocked = responses.filter((r) => r.status === 503).length;
+      expect(ok).toBe(upstreamCalls.length);
+      expect(ok).toBeGreaterThan(0);
+      expect(ok).toBeLessThan(20);
+      expect(ok + blocked).toBe(20);
+    } finally {
+      mutableEnv.DAILY_TOKEN_BUDGET = '300000';
+    }
+  });
+
+  it('upstream hata verirse ayrılan token geri verilir', async () => {
+    upstreamReply = () => new Response('x', { status: 500 });
+    expect((await ask({ question: IN_SCOPE, lang: 'en' })).status).toBe(502);
+    expect((await usage().stats(today())).today.tokens).toBe(0);
+  });
+
+  it('başarılı çağrıda günlük token gerçek kullanıma eşitlenir', async () => {
+    upstreamReply = () => mistralReply('ok', 1234);
+    await ask({ question: IN_SCOPE, lang: 'en' });
+    expect((await usage().stats(today())).today.tokens).toBe(1234);
+  });
+
+  it('IP_HASH_SALT tanımlı değilse /ask ve /event 500 verir, modele gidilmez', async () => {
+    const salt = mutableEnv.IP_HASH_SALT;
+    delete mutableEnv.IP_HASH_SALT;
+    try {
+      expect((await ask({ question: IN_SCOPE, lang: 'en' })).status).toBe(500);
+      expect((await ask({ event: 'open' }, { path: '/event' })).status).toBe(500);
+      expect(upstreamCalls).toHaveLength(0);
+    } finally {
+      mutableEnv.IP_HASH_SALT = salt;
+    }
+  });
+});
+
+describe('İstek gövdesi sınırı (413)', () => {
+  const post = (path: string, body: BodyInit, extra: Record<string, string> = {}) =>
+    exports.default.fetch(`https://proxy.test${path}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'CF-Connecting-IP': freshIp(), ...extra },
+      body,
+    });
+  const streamOf = (text: string) =>
+    new ReadableStream<Uint8Array>({
+      start(controller) {
+        const bytes = new TextEncoder().encode(text);
+        for (let i = 0; i < bytes.length; i += 1000) controller.enqueue(bytes.slice(i, i + 1000));
+        controller.close();
+      },
+    });
+
+  it('/ask: 4 KB üstü gövde 413, modele ve sayaçlara gidilmez', async () => {
+    const response = await post('/ask', JSON.stringify({ question: IN_SCOPE, lang: 'en', pad: 'x'.repeat(5000) }));
+    expect(response.status).toBe(413);
+    expect(await response.json()).toEqual({ error: 'payload_too_large' });
+    expect(upstreamCalls).toHaveLength(0);
+    expect(await usage().stats(today())).toEqual({ totals: {}, today: { questions: 0, tokens: 0 } });
+  });
+
+  it('/event: 4 KB üstü gövde 413, ölçüm sayacı artmaz', async () => {
+    const response = await post('/event', JSON.stringify({ event: 'open', pad: 'x'.repeat(5000) }));
+    expect(response.status).toBe(413);
+    expect((await usage().metrics()).days).toEqual([]);
+  });
+
+  it('Content-Length olmayan akış da sınırda kesilir', async () => {
+    const huge = JSON.stringify({ question: IN_SCOPE, lang: 'en', pad: 'x'.repeat(50_000) });
+    const response = await exports.default.fetch('https://proxy.test/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'CF-Connecting-IP': freshIp() },
+      body: streamOf(huge),
+      // @ts-expect-error workerd akış gövdesinde duplex ister; DOM tipinde yok.
+      duplex: 'half',
+    });
+    expect(response.status).toBe(413);
+    expect(upstreamCalls).toHaveLength(0);
+  });
+
+  it('izinli en uzun soru (500 çok baytlı karakter) sınırın altında kalır', async () => {
+    const body = JSON.stringify({ question: 'ü'.repeat(MAX_QUESTION_LENGTH), lang: 'de' });
+    expect(new TextEncoder().encode(body).length).toBeLessThan(4096);
+    expect((await post('/ask', body)).status).toBe(200);
+  });
+
+  it('geçersiz JSON hâlâ 400 (413 değil)', async () => {
+    expect((await post('/ask', '{not json')).status).toBe(400);
+    expect((await post('/event', '')).status).toBe(400);
   });
 });
 

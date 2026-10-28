@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
 import { CONSENT_VERSION, grantAiConsent, hasAiConsent, revokeAiConsent } from '@/lib/ai-consent';
-import { askQuestion, parseAskResponse } from '@/lib/ask';
+import { askQuestion, isSafeAskUrl, parseAskResponse } from '@/lib/ask';
 import { OUT_OF_SCOPE_RESPONSE } from '@/lib/scope';
 
 const BASE = 'https://proxy.test';
@@ -170,5 +170,20 @@ describe('parseAskResponse', () => {
     expect(parseAskResponse(null)).toBeNull();
     expect(parseAskResponse({ status: 'answer', answer: 'a', source_step_ids: [1] })).toBeNull();
     expect(parseAskResponse({ status: 'error' })).toBeNull();
+  });
+});
+
+describe('isSafeAskUrl', () => {
+  it('https ve yerel geliştirme adreslerine izin verir', () => {
+    expect(isSafeAskUrl('https://pratik-proxy.dalliagac.workers.dev')).toBe(true);
+    expect(isSafeAskUrl('http://localhost:8787')).toBe(true);
+    expect(isSafeAskUrl('http://127.0.0.1:8787')).toBe(true);
+  });
+
+  it('şifresiz uzak adresi ve benzeri hileleri reddeder', () => {
+    expect(isSafeAskUrl('http://pratik-proxy.example.com')).toBe(false);
+    expect(isSafeAskUrl('http://localhost.evil.com')).toBe(false);
+    expect(isSafeAskUrl('ftp://example.com')).toBe(false);
+    expect(isSafeAskUrl('pratik-proxy.example.com')).toBe(false);
   });
 });

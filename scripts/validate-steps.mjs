@@ -8,6 +8,8 @@
 //   - adımlar arasında döngüsel bağımlılık olmamalı
 //   - RANDEVU KATMANI (A4): appointment.mode "no_appointment" ise note
 //     (gerekçe) dolu; diğer modlarda booking_url ya da appointment.phone dolu
+//   - URL KURALI: booking_url ve tüm sources[] https:// olmalı; hiçbir metin
+//     http://, javascript:, data: gibi şemalı adres içeremez
 //   - ÜÇ DİL KURALI: her çeviri nesnesinde en/tr/de ÜÇÜ DE dolu olmalı; biri
 //     boşsa HATA. Gerekçe: eksik çeviri ekranda boş bir bölüm olarak görünür,
 //     kullanıcı bunu "bilgi yok" sanar.
@@ -196,6 +198,26 @@ function collectTranslations(value, at, found) {
   }
 }
 
+// --- URL şeması kuralı: yalnız https:// ----------------------------------------
+const HTTPS_URL = /^https:\/\/\S+$/i;
+/** Metnin herhangi bir yerinde düz http:// adresi. */
+const INSECURE_URL_IN_TEXT = /\bhttp:\/\//i;
+/** Metin bir betik/veri/yerel şemayla başlıyor (javascript:, data:, mailto: ...). */
+const DANGEROUS_SCHEME = /^\s*(?:javascript|data|vbscript|file|ftp|blob|mailto|tel|sms):/i;
+/** "şema://" ile başlayan her metin (ör. ftp://, ws://). https:// ayrıca kabul edilir. */
+const OTHER_SCHEME_URL = /^\s*[a-z][a-z0-9+.-]*:\/\//i;
+
+/** Adımdaki her metin değerini yolu ile toplar (çeviri nesneleri ve diziler dahil). */
+function collectStrings(value, at, found) {
+  if (typeof value === 'string') {
+    found.push({ at, text: value });
+  } else if (Array.isArray(value)) {
+    value.forEach((item, index) => collectStrings(item, `${at}[${index}]`, found));
+  } else if (value !== null && typeof value === 'object') {
+    for (const [key, child] of Object.entries(value)) collectStrings(child, at ? `${at}.${key}` : key, found);
+  }
+}
+
 // --- Katman kuralı sezgisi: "official" alanları Almanca kalmalı ---------------
 // Tam bir dil tanıma değil, ucuz bir kontrol. ö/ü/ç harfleri hem Almanca hem
 // Türkçe'de var, bu yüzden ayırt edici değil; ı/ğ/ş yalnızca Türkçe'de var.
@@ -331,6 +353,28 @@ function main() {
       const msg = `"${at}" çevirisi eksik: ${missing.join(', ')} boş`;
       if (allowBlankTranslations) blankWarnings.push(`[${key}] ${msg}`);
       else addError(key, msg);
+    }
+
+    // URL şeması kuralı: adım verisindeki her bağlantı https:// olmalı. Bu alanlar
+    // ExternalLink/openExternal ile cihazda açılır; http:// ya da javascript:/data:
+    // gibi şemalar kaynak güncellemesinde sızarsa kullanıcı güvensiz adrese gider.
+    if (step) {
+      const urlFields = [['booking_url', step.booking_url]];
+      (step.sources ?? []).forEach((url, i) => urlFields.push([`sources[${i}]`, url]));
+      (step.appointment?.sources ?? []).forEach((url, i) => urlFields.push([`appointment.sources[${i}]`, url]));
+      urlFields.push(['official_title_check.source', step.official_title_check?.source]);
+      for (const [at, url] of urlFields) {
+        if (typeof url === 'string' && !HTTPS_URL.test(url)) {
+          addError(key, `"${at}" https:// ile başlayan bir adres olmalı: "${url.slice(0, 70)}"`);
+        }
+      }
+      const strings = [];
+      collectStrings(step, '', strings);
+      for (const { at, text } of strings) {
+        if (INSECURE_URL_IN_TEXT.test(text) || DANGEROUS_SCHEME.test(text) || (OTHER_SCHEME_URL.test(text) && !HTTPS_URL.test(text))) {
+          addError(key, `"${at}" https:// dışı bir adres içeriyor: "${text.slice(0, 70)}"`);
+        }
+      }
     }
 
     // Katman kuralı: resmi terimler Almanca kalmalı.

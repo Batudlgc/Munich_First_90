@@ -51,5 +51,13 @@
     "test": "vitest run",
     "build:web": "expo export --platform web --output-dir dist-web --clear && cp \"dist-web/+not-found.html\" dist-web/404.html && rm -f dist-web/_sitemap.html && node scripts/make-sitemap.mjs && node scripts/check-csp.mjs",
     "eval:ask": "vitest run proxy/eval"
+  },
+  "overrides": {
+    "minimatch@3": {
+      "brace-expansion": "^1.1.21"
+    },
+    "@expo/cli": {
+      "zod": "^4.6.7"
+    }
   }
 }

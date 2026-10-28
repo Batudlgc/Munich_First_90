@@ -71,10 +71,19 @@ export async function completeChat(
   if (typeof text !== 'string') throw new UpstreamError('upstream response has no text');
 
   // Sağlayıcı kullanım bilgisi döndürmezse bütçe yine işlesin diye kaba tahmin
-  // (~4 karakter/token + çıkış tavanı) — sayaçta sıfır görünmesinden iyidir.
+  // — sayaçta sıfır görünmesinden iyidir.
   const totalTokens =
     typeof body?.usage?.total_tokens === 'number'
       ? body.usage.total_tokens
-      : Math.ceil((systemPrompt.length + question.length) / 4) + config.maxOutputTokens;
+      : estimateTokens(systemPrompt, question, config.maxOutputTokens);
   return { text: text.trim(), totalTokens };
+}
+
+/**
+ * Bir çağrının üst sınır tahmini: ~4 karakter/token + çıkış tavanı. Bütçe,
+ * çağrı BAŞLAMADAN bu kadar ayrılır (usage.ts `reserve`); aksi halde eşzamanlı
+ * istekler bütçe henüz yazılmadan hepsi geçerdi.
+ */
+export function estimateTokens(systemPrompt: string, question: string, maxOutputTokens: number): number {
+  return Math.ceil((systemPrompt.length + question.length) / 4) + maxOutputTokens;
 }

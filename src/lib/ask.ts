@@ -59,9 +59,14 @@ export type AskOptions = {
   timeoutMs?: number;
 };
 
+/** Soru metni şifresiz gitmesin: yalnız https (yerel geliştirme için localhost http'ye izin). */
+export function isSafeAskUrl(url: string): boolean {
+  return /^https:\/\//i.test(url) || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?(\/|$)/i.test(url);
+}
+
 export function getAskBaseUrl(): string | null {
-  const url = process.env.EXPO_PUBLIC_ASK_URL;
-  return url && url.trim().length > 0 ? url.trim().replace(/\/+$/, '') : null;
+  const url = process.env.EXPO_PUBLIC_ASK_URL?.trim().replace(/\/+$/, '');
+  return url && isSafeAskUrl(url) ? url : null;
 }
 
 export async function askQuestion(

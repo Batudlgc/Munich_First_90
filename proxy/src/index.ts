@@ -18,11 +18,13 @@
 import { CHANNELS, parseChannel } from '../../src/lib/channels';
 import { classifyQuestion, OUT_OF_SCOPE_RESPONSE } from '../../src/lib/scope';
 
+import { readJsonBody, TOO_LARGE } from './body';
+import { ipBucket } from './ip';
 import { LANGS, type Lang } from './lang';
 import { MAX_QUESTION_LENGTH, MIN_QUESTION_LENGTH } from './limits';
 import { buildSystemPrompt, NO_ANSWER, stripUnknownUrls } from './prompt';
 import { getStep, matchSteps, type ProxyStep } from './steps';
-import { completeChat, UpstreamError } from './upstream';
+import { completeChat, estimateTokens, UpstreamError } from './upstream';
 import type { UsageCounter } from './usage';
 
 export { UsageCounter } from './usage';
@@ -75,7 +77,9 @@ export default {
 } satisfies ExportedHandler<Env>;
 
 async function handleAsk(request: Request, env: Env, cors: HeadersInit): Promise<Response> {
-  const parsed = parseAsk(await request.json().catch(() => null));
+  const raw = await readJsonBody(request);
+  if (raw === TOO_LARGE) return json({ error: 'payload_too_large' }, 413, cors);
+  const parsed = parseAsk(raw);
   if (!parsed) return json({ error: 'invalid_request' }, 400, cors);
   const { question, lang, stepId } = parsed;
 
@@ -101,14 +105,19 @@ async function handleAsk(request: Request, env: Env, cors: HeadersInit): Promise
     return json({ status: 'no_match' } satisfies AskResponse, 200, cors);
   }
 
-  // 4. Limit.
+  // 4. Limit. Token bütçesi çağrıdan ÖNCE tahmini tutarla ayrılır (eşzamanlı
+  // istekler bütçeyi aşamasın); çağrı bitince gerçek kullanıma göre düzeltilir.
+  const maxOutputTokens = Number(env.MAX_OUTPUT_TOKENS);
+  const systemPrompt = buildSystemPrompt(steps, lang);
+  const estimate = estimateTokens(systemPrompt, question, maxOutputTokens);
   const day = new Date().toISOString().slice(0, 10);
   const ip = request.headers.get('CF-Connecting-IP') ?? 'unknown';
   const reservation = await usage.reserve(
     day,
-    await hashIp(ip, day, env.IP_HASH_SALT ?? ''),
+    await hashIp(ip, day, env.IP_HASH_SALT),
     Number(env.DAILY_IP_LIMIT),
     Number(env.DAILY_TOKEN_BUDGET),
+    estimate,
   );
   if (!reservation.ok) {
     await usage.countOutcome(reservation.reason);
@@ -125,17 +134,18 @@ async function handleAsk(request: Request, env: Env, cors: HeadersInit): Promise
         baseUrl: env.LLM_BASE_URL,
         model: env.LLM_MODEL,
         token: env.LLM_API_KEY,
-        maxOutputTokens: Number(env.MAX_OUTPUT_TOKENS),
+        maxOutputTokens,
       },
-      buildSystemPrompt(steps, lang),
+      systemPrompt,
       question,
     );
   } catch (error) {
+    await usage.addTokens(day, -estimate); // çağrı tamamlanmadı: ayrılan token geri verilir
     if (!(error instanceof UpstreamError)) throw error;
     await usage.countOutcome('upstream_error');
     return json({ error: 'upstream_error', upstream_status: error.status ?? null }, 502, cors);
   }
-  await usage.addTokens(day, result.totalTokens);
+  await usage.addTokens(day, result.totalTokens - estimate);
 
   const source_step_ids = steps.map((step) => step.id);
   if (result.text.includes(NO_ANSWER)) {
@@ -153,7 +163,8 @@ async function handleAsk(request: Request, env: Env, cors: HeadersInit): Promise
  * (eski istemciler dahil) olay etiketsiz sayılır.
  */
 async function handleEvent(request: Request, env: Env, cors: HeadersInit): Promise<Response> {
-  const body = await request.json().catch(() => null);
+  const body = await readJsonBody(request);
+  if (body === TOO_LARGE) return json({ error: 'payload_too_large' }, 413, cors);
   if (typeof body !== 'object' || body === null) return json({ error: 'invalid_request' }, 400, cors);
   const { event, step_id, channel } = body as Record<string, unknown>;
   if (event !== 'open' && event !== 'step_done') return json({ error: 'invalid_request' }, 400, cors);
@@ -166,7 +177,7 @@ async function handleEvent(request: Request, env: Env, cors: HeadersInit): Promi
   const usage = env.USAGE.get(env.USAGE.idFromName('global'));
   await usage.recordEvent(
     day,
-    await hashIp(ip, day, env.IP_HASH_SALT ?? ''),
+    await hashIp(ip, day, env.IP_HASH_SALT),
     event,
     event === 'step_done' ? (step_id as string) : null,
     Number(env.DAILY_EVENT_LIMIT),
@@ -266,9 +277,13 @@ function corsHeaders(request: Request, env: Env): Record<string, string> | null 
   };
 }
 
-/** Ham IP yerine günlük değişen, tuzlu SHA-256 özeti saklanır. */
-async function hashIp(ip: string, day: string, salt: string): Promise<string> {
-  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${salt}:${day}:${ip}`));
+/**
+ * Ham IP yerine günlük değişen, tuzlu SHA-256 özeti saklanır. Tuz yoksa
+ * (secret unutulmuşsa) özet IP uzayını taramakla çözülebilirdi: açık hata verilir.
+ */
+async function hashIp(ip: string, day: string, salt: string | undefined): Promise<string> {
+  if (!salt) throw new Error('IP_HASH_SALT is not configured');
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${salt}:${day}:${ipBucket(ip)}`));
   return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
 }
 

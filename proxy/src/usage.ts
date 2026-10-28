@@ -50,11 +50,13 @@ export class UsageCounter extends DurableObject<Env> {
   }
 
   /**
-   * Modele gitmeden önce yer ayırır: IP limiti ve günlük token bütçesi
-   * aşılmamışsa sayaçları artırır ve ok döner. Aşılmışsa hiçbir şeyi
-   * artırmaz.
+   * Modele gitmeden önce yer ayırır: IP limiti aşılmamışsa ve `estimate`
+   * token'lık çağrı günlük bütçeye sığıyorsa sayaçları artırır (tahmini token
+   * dahil) ve ok döner. Aşılmışsa hiçbir şeyi artırmaz. Çağrı bitince fark
+   * `addTokens(day, gerçek - estimate)` ile düzeltilir; çağrı hata verirse
+   * `addTokens(day, -estimate)` ile geri verilir.
    */
-  reserve(day: string, ipHash: string, ipLimit: number, tokenBudget: number): ReserveResult {
+  reserve(day: string, ipHash: string, ipLimit: number, tokenBudget: number, estimate: number): ReserveResult {
     const sql = this.ctx.storage.sql;
     sql.exec('DELETE FROM ip_daily WHERE day <> ?', day);
     sql.exec('DELETE FROM daily WHERE day <> ?', day);
@@ -63,7 +65,7 @@ export class UsageCounter extends DurableObject<Env> {
     if ((ipRow?.count ?? 0) >= ipLimit) return { ok: false, reason: 'ip_limit' };
 
     const dayRow = sql.exec<{ tokens: number }>('SELECT tokens FROM daily WHERE day = ?', day).toArray()[0];
-    if ((dayRow?.tokens ?? 0) >= tokenBudget) return { ok: false, reason: 'budget' };
+    if ((dayRow?.tokens ?? 0) + estimate > tokenBudget) return { ok: false, reason: 'budget' };
 
     sql.exec(
       `INSERT INTO ip_daily (day, ip_hash, count) VALUES (?, ?, 1)
@@ -72,14 +74,15 @@ export class UsageCounter extends DurableObject<Env> {
       ipHash,
     );
     sql.exec(
-      `INSERT INTO daily (day, questions, tokens) VALUES (?, 1, 0)
-       ON CONFLICT (day) DO UPDATE SET questions = questions + 1`,
+      `INSERT INTO daily (day, questions, tokens) VALUES (?, 1, ?)
+       ON CONFLICT (day) DO UPDATE SET questions = questions + 1, tokens = tokens + excluded.tokens`,
       day,
+      estimate,
     );
     return { ok: true };
   }
 
-  /** Model cevabından sonra gerçek token kullanımını günlük bütçeye yazar. */
+  /** Günlük bütçeye token farkı yazar (gerçek − ayrılan; çağrı hata verirse −ayrılan). */
   addTokens(day: string, tokens: number): void {
     this.ctx.storage.sql.exec(
       `INSERT INTO daily (day, questions, tokens) VALUES (?, 0, ?)
